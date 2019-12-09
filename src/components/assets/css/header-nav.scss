@@ -1,5 +1,6 @@
 @import "../../../scss/variables.scss";
 
+
 section.header.navbar .container .unauthenticated {
   align-items: center;
   display: flex;
@@ -8,6 +9,30 @@ section.header.navbar .container .unauthenticated {
   height: 60px;
   justify-content: space-between;
   width: 100%;
+  .container-header-logo .header-logo {
+    justify-content: flex-start;
+    height: 36px !important;
+    img.fiterr-logo {
+      max-height: 36px !important;
+    }
+  }
+  .header-nav a.link-header {
+    border: solid 1px $primaryOrange;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 10px;
+    min-height: 26px;
+    padding: 4px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .header-nav a.link-header:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: solid 1px #fff;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 section.header.navbar .container .authenticated {
@@ -18,76 +43,112 @@ section.header.navbar .container .authenticated {
   height: 46px;
   justify-content: space-between;
   width: 100%;
+  .header-search form {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 0.8em;
+    height: 28px;
+    width: 100%;
+    input.search-field {
+      border-color:#d66500;
+      border-radius: 3px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-style: solid;
+      border-width: 1px;
+      border-right-width: 0px;
+      color: #333;
+      height: 100%;
+      padding: 0 6px;
+      width: calc(100% - 50px);
+    }
+    button.search-btn {
+      background-color: #f3f3f3;
+      border-color:#d66500;
+      border-radius: 3px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-style: solid;
+      border-width: 1px;
+      border-left-width: 0px;
+      color: #000;
+      font-size: 0.9em;
+      height: 100%;
+      width: 50px;
+    }
+    button.search-btn:hover {
+      background-color: #e6e6e6;
+    }
+  }
+  .container-header-nav .header-nav.profile {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 46px;
+    justify-content: flex-end;
+    width: 100%;
+    .link-newsfeed,
+    .link-profile,
+    .link-dashboard {
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0);
+      border: solid 1px rgba(0, 0, 0, 0);
+      border-radius: 3px;
+      color: #fff;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: 34px;
+      justify-content: flex-end;
+      padding-left: 6px;
+      padding-right: 6px;
+      img.profile-image {
+        border: 1px solid #d8d8d8;
+        border-radius: 1px;
+        height: 28px;
+        width: 28px;
+      }
+      .newsfeed-text span,
+      .profile-image-text span,
+      .dashboard-text span {
+        color: #fff;
+        font-weight: 500;
+        margin-left: 6px;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .container-header-nav .header-nav .link-newsfeed:hover,
+  .container-header-nav .header-nav .link-profile:hover,
+  .container-header-nav .header-nav .link-dashboard:hover {
+    background-color: rgba(0, 0, 0, 0.085);
+    border: solid 1px rgba(0, 0, 0, 0.02);
+  }
+  .header-nav .top-nav-vr {
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.085);
+    display: flex;
+    flex-direction: row;
+    height: 26px;
+    justify-content: flex-start;
+    margin: 0px 5px;
+  }
+  .header-notifications {
+    align-items: center;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 34px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .header-notifications.last {
+    margin-right: 0px;
+    padding-right: 2px;
+  }
+  .header-notifications:hover {
+    color: #fff;
+  }
 }
-
-.header.navbar {
-  font-weight: 500;
-}
-
-.unauthenticated .container-header-logo .header-logo {
-  justify-content: flex-start;
-  height: 36px !important;
-}
-
-.unauthenticated .header-logo img.fiterr-logo {
-  max-height: 36px !important;
-}
-
-.header-nav a.link-header {
-  border: solid 1px $primaryOrange;
-  border-radius: 3px;
-  color: #fff;
-  margin-left: 10px;
-  min-height: 26px;
-  padding: 4px 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.header-nav a.link-header:hover {
-  background-color: rgba(255, 255, 255, 0.06);
-  border: solid 1px #fff;
-  color: #fff;
-  text-decoration: none;
-}
-
-
-.header-search form {
-  display: flex;
-  flex-wrap: nowrap;
-  height: 28px;
-  width: 100%;
-}
-
-.header-search form input.search-field {
-  border-color:#d66500;
-  border-radius: 3px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-style: solid;
-  border-width: 1px;
-  border-right-width: 0px;
-  color: #333;
-  height: 100%;
-  padding: 0 6px;
-  width: calc(100% - 50px);
-}
-
-.header-search form button.search-btn {
-  background-color: #f3f3f3;
-  border-color:#d66500;
-  border-radius: 3px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-style: solid;
-  border-width: 1px;
-  border-left-width: 0px;
-  color: #000;
-  height: 100%;
-  width: 50px;
-}
-
-.header-search form button.search-btn:hover {
-  background-color: #e6e6e6;
-}
-
