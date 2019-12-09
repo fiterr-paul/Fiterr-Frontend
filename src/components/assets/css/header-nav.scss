@@ -1,0 +1,93 @@
+@import "../../../scss/variables.scss";
+
+section.header.navbar .container .unauthenticated {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 60px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+section.header.navbar .container .authenticated {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 46px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header.navbar {
+  font-weight: 500;
+}
+
+.unauthenticated .container-header-logo .header-logo {
+  justify-content: flex-start;
+  height: 36px !important;
+}
+
+.unauthenticated .header-logo img.fiterr-logo {
+  max-height: 36px !important;
+}
+
+.header-nav a.link-header {
+  border: solid 1px $primaryOrange;
+  border-radius: 3px;
+  color: #fff;
+  margin-left: 10px;
+  min-height: 26px;
+  padding: 4px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header-nav a.link-header:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: solid 1px #fff;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.header-search form {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 28px;
+  width: 100%;
+}
+
+.header-search form input.search-field {
+  border-color:#d66500;
+  border-radius: 3px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-right-width: 0px;
+  color: #333;
+  height: 100%;
+  padding: 0 6px;
+  width: calc(100% - 50px);
+}
+
+.header-search form button.search-btn {
+  background-color: #f3f3f3;
+  border-color:#d66500;
+  border-radius: 3px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 0px;
+  color: #000;
+  height: 100%;
+  width: 50px;
+}
+
+.header-search form button.search-btn:hover {
+  background-color: #e6e6e6;
+}
+

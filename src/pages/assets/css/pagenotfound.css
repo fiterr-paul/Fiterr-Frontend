@@ -1,0 +1,9 @@
+.pagenotfound {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: calc(100vh - 60px);
+  justify-content: center;
+  width: 100%;
+}
