@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './assets/css/header-nav.scss';
 import { Link } from 'react-router-dom'
 import Logo from './assets/images/icn-fiterr-white-500x500.png';
@@ -120,4 +120,4 @@ const SubHeaderAuthenticated = () => {
 };
 
 
-export default headerAuthenticated;
+export default HeaderAuthenticated;
