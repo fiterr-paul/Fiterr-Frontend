@@ -75,6 +75,33 @@ const headerAuthenticated = () => {
           </div>
         </div>
       </section>
+      <SubHeaderAuthenticated />
+    </>
+  )
+};
+
+const SubHeaderAuthenticated = () => {
+
+  const scrollPage = () => {
+    window.scrollTo(0, 0);
+  };
+
+  return (
+    <>
+      <section className="subheader navbar">
+        <div className="container">
+          <div className="submenu">
+            <div className="col-left">
+              <Link onClick={scrollPage} className="link-submenu" to='/'> dashboard </Link>
+              <Link onClick={scrollPage} className="link-submenu" to='/'> training </Link>
+              <Link onClick={scrollPage} className="link-submenu" to='/'> nutrition </Link>
+            </div>
+            <div className="col-right">
+              <Link onClick={scrollPage} className="link-submenu" to='/'> settings </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 };
