@@ -63,7 +63,7 @@ Third party applications that we plan on using for the web app include:
 
 ## Entity Relationship Diagram
 
-![ERD](https://dl.dropboxusercontent.com/s/a8b56is2y0c7r7r/Fiterr%20ERD.png?dl=0)
+![ERD](https://dl.dropboxusercontent.com/s/7kzcntghzymru01/Screen%20Shot%202019-12-10%20at%202.08.43%20pm.png?dl=0)
 
 ## Application Architecture Diagram
 
