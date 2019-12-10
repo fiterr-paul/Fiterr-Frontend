@@ -1,7 +1,12 @@
 @import './variables.scss';
 
+
 * {
   box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1em;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -10,103 +15,101 @@
 .container-app {
   display: block;
   width: 100%;
+  div.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    max-width: 1024px;
+    min-width: 820px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+  }
+  section.header,
+  section.subheader,
+  section.body,
+  section.footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+  }
+  section.header.navbar {
+    background-color: $primaryOrange;
+    position: sticky;
+    top: 0px;
+  }
+  section.subheader.navbar {
+    background-color: #fff;
+    position: sticky;
+    top: 46px;;
+  }
+  section.header.navbar .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  section.subheader.navbar .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  section.footer.footer .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  section.body.body {
+    background-color: $bodyBG;
+    height: 100vh;
+  }
+  section.footer.footer {
+    background-color: #424242;
+    bottom: 0;
+  }
+  .container-header-logo,
+  .container-header-search,
+  .container-header-nav,
+  .container-footer-nav {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    .header-logo {
+      justify-content: flex-start;
+      height: 26px !important;
+      img.fiterr-logo {
+        max-height: 26px !important;
+      }
+    }
+    .header-search {
+      justify-content: flex-start;
+      min-width: 300px;
+      margin-left: 10px;
+    }
+    .footer-nav {
+      justify-content: flex-end;
+    }
+    .header-nav {
+      justify-content: flex-end;
+    }
+  }
+  a.link {
+    color: $primaryOrangeHover;
+  }
+  a.link:hover {
+    color: $primaryOrangeHover;
+    text-decoration: underline;
+  }
 }
-
-section.header,
-section.body,
-section.footer {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  width: 100%;
-}
-
-section.header.navbar {
-  background-color: $primaryOrange;
-  position: fixed;
-}
-
-section.header.navbar .container {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-section.footer.footer .container {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-section.body.body {
-  background-color: $bodyBG;
-  height: 100vh;
-  padding-top: 60px;
-}
-
-section.footer.footer {
-  background-color: #424242;
-  bottom: 0;
-}
-
-div.container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  max-width: 1024px;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%;
-}
-
-.container-header-logo,
-.container-header-search,
-.container-header-nav,
-.container-footer-nav {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 100%;
-}
-
-.container-header-logo .header-logo {
-  justify-content: flex-start;
-  height: 26px !important
-}
-
-.container-header-search .header-search {
-  justify-content: flex-start;
-  min-width: 300px;
-  margin-left: 10px;
-}
-
-.container-header-nav .header-nav {
-  justify-content: flex-end;
-}
-
-.container-footer-nav .footer-nav {
-  justify-content: flex-end;
-}
-
-.header-logo img.fiterr-logo {
-  max-height: 26px !important;
-}
-
-a.link {
-  color: $primaryOrangeHover;
-}
-
-a.link:active, a.link:focus, a.link:hover {
-  color: $primaryOrangeHover;
-  text-decoration: underline;
-}
-

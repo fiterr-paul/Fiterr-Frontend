@@ -21,16 +21,20 @@ import PrivateRoute from './components/routing/PrivateRoute';
 const Router = () => {
   return (
     <>
-      <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route path='/enthusiasts' component={Enthusiasts} />
-        <Route path='/professionals' component={Professionals} />
-        <Route path='/search' component={Search} />
-        <Route path='/login' component={Login} />
-        <Route path='/signup' component={Signup} />
-        <Route path='/contact' component={Contact} />
-        <Route path='*' component={PageNotFound} />
-      </Switch>
+      <section className="body body">
+        <div className="container">
+          <Switch>
+            <Route exact path='/' component={Homepage} />
+            <Route path='/enthusiasts' component={Enthusiasts} />
+            <Route path='/professionals' component={Professionals} />
+            <Route path='/search' component={Search} />
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/contact' component={Contact} />
+            <Route path='*' component={PageNotFound} />
+          </Switch>
+        </div>
+      </section>
     </>
   );
 };

@@ -1,5 +1,6 @@
 @import "../../../scss/variables.scss";
 
+
 section.footer.footer .container .unauthenticated {
   align-items: center;
   display: flex;
@@ -8,33 +9,25 @@ section.footer.footer .container .unauthenticated {
   height: 150px;
   justify-content: space-between;
   width: 100%;
+  .container-footer-logo .footer-logo {
+    justify-content: flex-start;
+    height: 36px !important;
+    .fiterr-logo {
+      max-height: 36px !important;
+    }
+  }
+  .footer-nav a.link-footer {
+    color: #ddd;
+    font-size: 0.8em;
+    font-weight: 400;
+    margin-left: 15px;
+    min-height: 26px;
+    padding: 4px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .footer-nav a.link-footer:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
-
-.footer.footer {
-  font-weight: 500;
-}
-
-.unauthenticated .container-footer-logo .footer-logo {
-  justify-content: flex-start;
-  height: 36px !important;
-}
-
-.unauthenticated .footer-logo img.fiterr-logo {
-  max-height: 36px !important;
-}
-
-.footer-nav a.link-footer {
-  color: #ddd;
-  font-size: 0.8em;
-  margin-left: 10px;
-  min-height: 26px;
-  padding: 4px 8px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.footer-nav a.link-footer:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
