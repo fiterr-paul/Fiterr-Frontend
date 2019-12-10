@@ -41,12 +41,15 @@
   section.header.navbar {
     background-color: $primaryOrange;
     position: sticky;
+    position: -webkit-sticky; /* Safari */
     top: 0px;
   }
   section.subheader.navbar {
     background-color: #fff;
+    border-bottom: solid 1px #dddfe2;
     position: sticky;
-    top: 46px;;
+    position: -webkit-sticky; /* Safari */
+    top: 46px;
   }
   section.header.navbar .container {
     align-items: center;

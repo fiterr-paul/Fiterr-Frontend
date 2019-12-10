@@ -93,8 +93,9 @@ const SubHeaderAuthenticated = () => {
           <div className="submenu">
             <div className="col-left">
               <Link onClick={scrollPage} className="link-submenu" to='/'> dashboard </Link>
-              <Link onClick={scrollPage} className="link-submenu" to='/'> training </Link>
-              <Link onClick={scrollPage} className="link-submenu" to='/'> nutrition </Link>
+              <Link onClick={scrollPage} className="link-submenu" to='/'> clients </Link>
+              <Link onClick={scrollPage} className="link-submenu" to='/'> bookings </Link>
+              <Link onClick={scrollPage} className="link-submenu" to='/'> finances </Link>
             </div>
             <div className="col-right">
               <Link onClick={scrollPage} className="link-submenu" to='/'> settings </Link>

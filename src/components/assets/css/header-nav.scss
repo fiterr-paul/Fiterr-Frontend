@@ -167,11 +167,38 @@ section.subheader.navbar .container .submenu {
     flex-direction: row;
     flex-wrap: nowrap;
     height: 100%;
+    justify-content: flex-start;
+    .link-submenu {
+      margin-right: 12px;
+    }
   }
   .col-right {
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     height: 100%;
+    justify-content: flex-end;
+    .link-submenu {
+      margin-left: 12px;
+    }
   }
+  .link-submenu {
+    align-items: center;
+    box-sizing: content-box;
+    color: #424242;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: center;
+    padding: 0 4px;
+    text-transform: capitalize;
+  }
+  .link-submenu:hover {
+    border-bottom: solid 2px #fd7800;
+    box-sizing: border-box;
+    margin-top: 1px;
+  }
+  
 }
