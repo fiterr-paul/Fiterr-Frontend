@@ -5,8 +5,18 @@ import Logo from './assets/images/icn-fiterr-white-500x500.png';
 
 import profileImgPaul from './assets/images/paul-900x900.jpg';
 
+//not working for some reason
+import AuthContext from '../context/auth/authContext';
 
-const headerAuthenticated = () => {
+const HeaderAuthenticated = () => {
+
+  const authContext = useContext(AuthContext);
+  const { isAuthenticated, logout, user } = authContext;
+
+  const onLogout = () => {
+    console.log('logging out');
+    logout();
+  }
 
   const scrollPage = () => {
     window.scrollTo(0, 0);
@@ -70,6 +80,9 @@ const headerAuthenticated = () => {
                   <div className="header-notifications last">
                     <i className="fas fa-cog"></i>
                   </div>
+                  <a onClick={onLogout} href='#!' className="link-header">
+                    <i className="fas fa-sign-out-alt"></i>{' '} <span className="hide-sm">Logout</span>
+                  </a>
               </div>
             </div>
           </div>
