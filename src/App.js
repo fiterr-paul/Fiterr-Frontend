@@ -9,8 +9,8 @@ import FooterUnauthenticated from './components/footerUnauthenticated';
 function App() {
   return (
     <div className="container-app">
-      <HeaderUnauthenticated />
-      {/* <HeaderAuthenticated /> */}
+      {/* <HeaderUnauthenticated /> */}
+      <HeaderAuthenticated />
       <Router />  
       <FooterUnauthenticated />
     </div>

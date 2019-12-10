@@ -28,6 +28,7 @@
     width: 100%;
   }
   section.header,
+  section.subheader,
   section.body,
   section.footer {
     align-items: center;
@@ -39,9 +40,22 @@
   }
   section.header.navbar {
     background-color: $primaryOrange;
-    position: fixed;
+    position: sticky;
+    top: 0px;
+  }
+  section.subheader.navbar {
+    background-color: #fff;
+    position: sticky;
+    top: 46px;;
   }
   section.header.navbar .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  section.subheader.navbar .container {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -58,7 +72,6 @@
   section.body.body {
     background-color: $bodyBG;
     height: 100vh;
-    padding-top: 60px;
   }
   section.footer.footer {
     background-color: #424242;
