@@ -44,8 +44,18 @@ _**Tech stack**_
 
 The tech stack being utilised to complete this project will be the MERN stack.
 
+The MERN stack is a javascript stack that uses the open-source technologies MongoDB, Express, React and Node.js.
+
+**MongoDB**: NoSQL document oriented database that stores and provides all data as JSON.
+
+**Express**: back end web application framework that handles the routing of requests.
+
+**React**: facebook-owned library used for creating front end views rendered in HTML
+
+**Node.js**: cross-platform JavaScript runtime environment
+
 Third party applications that we plan on using for the web app include:
-* passport (authentication and authorisation)
+* passport (authentication and authorization)
 * stripe (payment handling)
 * aws s3 bucket (image and media uploads)
 * formspree (confirmation email)
