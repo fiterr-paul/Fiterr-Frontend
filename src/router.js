@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import PageNotFound from './pages/pageNotFound';
 import Homepage from './pages/homepage';
+import ProfileSetup from './components/profile/ProfileSetup'
 import Enthusiasts from './pages/enthusiasts';
 import Professionals from './pages/professionals';
 import PrivatePage from './pages/private';
@@ -24,6 +25,7 @@ const Router = () => {
         <div className="container">
           <Switch>
             <Route exact path='/' component={Homepage} />
+            <Route path='/create-profile' component={ProfileSetup}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             <Route path='/professionals' component={Professionals} />

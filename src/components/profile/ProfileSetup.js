@@ -4,22 +4,28 @@ const ProfileSetup = (props) => {
     const profileContext = useContext(ProfileContext);
     const { makeProfile } = profileContext
     const [profile, setProfile] = useState({
-        aboutMe = '',
-        fitnessInterests = '',
-        image = null
+        aboutMe: '',
+        fitnessInterests: '',
+        image: null
     })
     const { aboutMe, fitnessInterests, image } = profile
+    
     const onSubmit = (e) => {
         e.preventDefault();
-        makeProfile({
-            aboutMe,
-            fitnessInterests,
-            image
-        })
+        const body = new FormData()
+        body.append('aboutMe', aboutMe)
+        body.append('fitnessInterests', fitnessInterests)
+        body.append('image', image)
+        console.log(body)
+        makeProfile(body)
         
     }
     const onChange = (e) =>{
         setProfile({...profile, [e.target.name]: e.target.value })
+    }
+    const onFileChange = (e) => {
+        console.log(e.target.files[0])
+        setProfile({...profile, [e.target.name]: e.target.files[0]})
     }
     return(
         <>
@@ -31,7 +37,7 @@ const ProfileSetup = (props) => {
                     <label >Fitness Interests</label>
                     <input type="text" name="fitnessInterests" id="fitnessInterests" value={fitnessInterests} onChange={onChange}/>
                     <label >Upload an Image</label>
-                    <input type="file" name="image" id="image" value={image} onChange={onChange}/>
+                    <input type="file" name="image" id="image" onChange={onFileChange}/>
                     <input type="submit" value="Submit"/>
                 </div>
             </form>
