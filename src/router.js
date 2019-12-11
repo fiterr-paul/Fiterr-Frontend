@@ -11,6 +11,7 @@ import Search from './pages/search';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Register';
 import Contact from './pages/contact';
+import Newsfeed from './pages/newsfeed';
 
 
 
@@ -24,6 +25,7 @@ const Router = () => {
           <Switch>
             <Route exact path='/' component={Homepage} />
             <Route path='/create-profile' component={ProfileSetup}/>
+            <PrivateRoute exact path = '/newsfeed' component={Newsfeed}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             <Route path='/professionals' component={Professionals} />
