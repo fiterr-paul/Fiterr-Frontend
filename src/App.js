@@ -1,9 +1,11 @@
 import React from 'react';
 import './scss/app.scss';
 import Router from './router';
-import HeaderUnauthenticated from './components/headerUnauthenticated';
-import HeaderAuthenticated from './components/headerAuthenticated';
-import FooterUnauthenticated from './components/footerUnauthenticated';
+import HeaderUnauthenticated from './components/HeaderUnauthenticated';
+import HeaderAuthenticated from './components/HeaderAuthenticated';
+import FooterUnauthenticated from './components/FooterUnauthenticated';
+
+import Navbar from './components/layout/Navbar';
 
 // Bringing in states
 import AuthState from './context/auth/AuthState';
@@ -17,8 +19,7 @@ function App() {
       <AuthState>
         <ProfileState>
           <div className="container-app">
-            {/* <HeaderUnauthenticated /> */}
-            <HeaderAuthenticated />
+            <Navbar />
             <Router />  
             <FooterUnauthenticated />
           </div>
