@@ -91,16 +91,49 @@ As a site user, I would like to be notified of posts and new packages etc. when 
 
 As a business owner I want a platform where I can grow and improve my business by finding relevant content in my feed.
 
+As a business owner I want to be able to maximise my potential market by finding new customers through social media. 
+
 As a professional I want to be able to join other businesses ive been invited to join and work closely with other trainers. 
 
-As a professional managing clients i want to have a direct line of communication with them and manage appointments.
+As a professional managing clients I want to have a direct line of communication with them and manage appointments.
 
 As a guest user on fiterr I want to be able to locate professional trainers and businesses by searching for them without an account so that i can see what the site has to offer.
 
 As an enthusiast who has had multiple trainers and purchased multiple packages I want to be able to view my past transactions and history.
 
 
+
 ## Wireframes and Mockups
+
+#### Homepage
+
+![Homepage](https://dl.dropboxusercontent.com/s/ehc8nm9lwvjhbpt/01-homepage.png?dl=0)
+
+#### Sign Up
+
+![Sign Up](https://dl.dropboxusercontent.com/s/i4hxfex70am7wyv/02-signup.png?dl=0)
+
+#### Login
+
+![Login](https://dl.dropboxusercontent.com/s/clvwdabvy4imabc/02-login.png?dl=0)
+
+#### News Feed
+
+![NewsFeed](https://dl.dropboxusercontent.com/s/jjtsu2hc3e5zjn9/04-newsfeed.png?dl=0)
+
+#### User Profile(Desktop)
+
+![Desktop User Profile](https://dl.dropbox.com/s/ix0p5yyddh8y4z3/03.1-user-profile-desktop.png?dl=0)
+
+#### User Profile(Tablet)
+![Tablet User Profile](https://dl.dropboxusercontent.com/s/j9i7c4yx6c0jknj/03.2-user-profile-tablet.png?dl=0)
+
+#### Business Page(Desktop)
+![Business Page Desktop](https://dl.dropboxusercontent.com/s/5o1ax1gi50h1gdt/05.1-business_page-desktop.png?dl=0)
+
+#### Business Page(Tablet)
+
+![Business Page Tablet](https://dl.dropboxusercontent.com/s/uksmw59nad4oqaa/05.1-business_page-tablet.png?dl=0)
 
 ## Collaborative Tools (Agile methodology)
 
