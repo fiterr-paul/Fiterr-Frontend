@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import './assets/css/header-nav.scss';
+import './assets/scss/header-nav.scss';
 import { Link } from 'react-router-dom'
-import Logo from './assets/images/icn-fiterr-white-500x500.png';
+import Logo from './assets/media/icn-fiterr-white-500x500.png';
 
-import profileImgPaul from './assets/images/paul-900x900.jpg';
+import profileImgPaul from './assets/media/paul-900x900.jpg';
 
 //not working for some reason
 import AuthContext from '../context/auth/authContext';
@@ -76,13 +76,14 @@ const HeaderAuthenticated = () => {
                   <div className="header-notifications">
                     <i className="fas fa-tasks"></i>
                   </div>
-                  <div className="top-nav-vr top-nav-vr-last"></div>
-                  <div className="header-notifications last">
+                  <div className="top-nav-vr"></div>
+                  <div className="header-notifications">
                     <i className="fas fa-cog"></i>
                   </div>
-                  <a onClick={onLogout} href='#!' className="link-header">
-                    <i className="fas fa-sign-out-alt"></i>{' '} <span className="hide-sm">Logout</span>
-                  </a>
+                  <div className="top-nav-vr top-nav-vr-last"></div>
+                  <div onClick={onLogout} href='' className="header-notifications last">
+                  <i className="fas fa-lock"></i>{' '} <span style={{marginLeft: '4px'}}>Logout</span>
+                  </div>
               </div>
             </div>
           </div>

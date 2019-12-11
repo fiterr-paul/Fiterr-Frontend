@@ -4,7 +4,11 @@ import React from 'react';
 const Signup = () => {
   return (
     <>
-      <h1>Signup</h1>
+      <section className="body">
+        <div className="container">
+          <h1>Register</h1>
+        </div>
+      </section>
     </>
   )
 };

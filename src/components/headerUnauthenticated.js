@@ -1,7 +1,7 @@
 import React from 'react';
-import './assets/css/header-nav.scss';
+import './assets/scss/header-nav.scss';
 import { Link } from 'react-router-dom'
-import Logo from './assets/images/logo-fiterr-white-3154x1042.png';
+import Logo from './assets/media/logo-fiterr-white-3154x1042.png';
 
 
 const headerUnauthenticated = () => {
@@ -28,7 +28,7 @@ const headerUnauthenticated = () => {
               <Link onClick={scrollPage} className="link-header" to='/professionals'>professionals</Link>
               <Link onClick={scrollPage} className="link-header" to='/search'>search</Link>
               <Link onClick={scrollPage} className="link-header" to='/login'>login</Link>
-              <Link onClick={scrollPage} className="link-header" to='/signup'>signup</Link>
+              <Link onClick={scrollPage} className="link-header signup" to='/signup'>signup</Link>
             </div>
           </div>
         </div>

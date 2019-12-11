@@ -4,7 +4,11 @@ import React from 'react';
 const Enthusiasts = () => {
   return (
     <>
-      <h1>Enthusiasts</h1>
+      <section className="body">
+        <div className="container">
+          <h1>Enthusiasts</h1>
+        </div>
+      </section>
     </>
   )
 };
