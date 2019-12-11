@@ -63,7 +63,7 @@ Third party applications that we plan on using for the web app include:
 
 ## Entity Relationship Diagram
 
-![ERD](https://dl.dropboxusercontent.com/s/7kzcntghzymru01/Screen%20Shot%202019-12-10%20at%202.08.43%20pm.png?dl=0)
+![ERD](https://dl.dropboxusercontent.com/s/vesxfee680awa1h/Screen%20Shot%202019-12-11%20at%2011.28.12%20am.png?dl=0)
 
 ## Application Architecture Diagram
 
