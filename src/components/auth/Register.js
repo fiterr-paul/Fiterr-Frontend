@@ -18,7 +18,7 @@ const Register = (props) => {
         }
 
         if(isAuthenticated){
-            props.history.push('/');
+            props.history.push('/create-profile');
         }
 
         if(error === 'User already exists'){

@@ -1,12 +1,17 @@
 import React, {useReducer} from 'react';
 import ProfileContext from './profileContext'
-import axios from 'axios';
+import profileReducer from './profileReducer'
 import { SET_PROFILE, REMOVE_PROFILE } from '../types'
+
+import request from '../../utils/axios-config'
+
 const config = {
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     }
 }
+
+
 const ProfileState = props => {
     const initialState = {
         profile: null,
@@ -16,8 +21,8 @@ const ProfileState = props => {
     const [state, dispatch] = useReducer(profileReducer, initialState);
 
     const makeProfile = async (formData) => {
-        const response = await axios.post('http://localhost:5000/api/profiles/create', formData, config)
-        
+        const response = await request.post('/api/profiles/create', formData, config)
+        console.log(response.data)
         dispatch({
             type: SET_PROFILE,
             payload: response.data

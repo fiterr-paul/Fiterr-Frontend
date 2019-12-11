@@ -44,8 +44,18 @@ _**Tech stack**_
 
 The tech stack being utilised to complete this project will be the MERN stack.
 
+The MERN stack is a javascript stack that uses the open-source technologies MongoDB, Express, React and Node.js.
+
+**MongoDB**: NoSQL document oriented database that stores and provides all data as JSON.
+
+**Express**: back end web application framework that handles the routing of requests.
+
+**React**: facebook-owned library used for creating front end views rendered in HTML
+
+**Node.js**: cross-platform JavaScript runtime environment
+
 Third party applications that we plan on using for the web app include:
-* passport (authentication and authorisation)
+* passport (authentication and authorization)
 * stripe (payment handling)
 * aws s3 bucket (image and media uploads)
 * formspree (confirmation email)
@@ -55,7 +65,7 @@ Third party applications that we plan on using for the web app include:
 
 ## Dataflow Diagram
 
-![Data flow diagram](https://dl.dropboxusercontent.com/s/bbxazfj6w5p7q0a/Screen%20Shot%202019-12-03%20at%203.37.52%20pm.png?dl=0)
+![Data flow diagram](https://dl.dropboxusercontent.com/s/oyj066ybdxy4yn0/Screen%20Shot%202019-12-10%20at%206.33.59%20pm.png?dl=0)
 
 ## User Flow Diagram
 
@@ -63,7 +73,7 @@ Third party applications that we plan on using for the web app include:
 
 ## Entity Relationship Diagram
 
-![ERD](https://dl.dropboxusercontent.com/s/a8b56is2y0c7r7r/Fiterr%20ERD.png?dl=0)
+![ERD](https://dl.dropboxusercontent.com/s/vesxfee680awa1h/Screen%20Shot%202019-12-11%20at%2011.28.12%20am.png?dl=0)
 
 ## Application Architecture Diagram
 
@@ -81,15 +91,58 @@ As a site user, I would like to be notified of posts and new packages etc. when 
 
 As a business owner I want a platform where I can grow and improve my business by finding relevant content in my feed.
 
+As a business owner I want to be able to maximise my potential market by finding new customers through social media. 
+
 As a professional I want to be able to join other businesses ive been invited to join and work closely with other trainers. 
 
-As a professional managing clients i want to have a direct line of communication with them and manage appointments.
+As a professional managing clients I want to have a direct line of communication with them and manage appointments.
 
 As a guest user on fiterr I want to be able to locate professional trainers and businesses by searching for them without an account so that i can see what the site has to offer.
 
 As an enthusiast who has had multiple trainers and purchased multiple packages I want to be able to view my past transactions and history.
 
 
+
 ## Wireframes and Mockups
 
+#### Homepage
+
+![Homepage](https://dl.dropboxusercontent.com/s/ehc8nm9lwvjhbpt/01-homepage.png?dl=0)
+
+#### Sign Up
+
+![Sign Up](https://dl.dropboxusercontent.com/s/i4hxfex70am7wyv/02-signup.png?dl=0)
+
+#### Login
+
+![Login](https://dl.dropboxusercontent.com/s/clvwdabvy4imabc/02-login.png?dl=0)
+
+#### News Feed
+
+![NewsFeed](https://dl.dropboxusercontent.com/s/jjtsu2hc3e5zjn9/04-newsfeed.png?dl=0)
+
+#### User Profile(Desktop)
+
+![Desktop User Profile](https://dl.dropbox.com/s/ix0p5yyddh8y4z3/03.1-user-profile-desktop.png?dl=0)
+
+#### User Profile(Tablet)
+![Tablet User Profile](https://dl.dropboxusercontent.com/s/j9i7c4yx6c0jknj/03.2-user-profile-tablet.png?dl=0)
+
+#### Business Page(Desktop)
+![Business Page Desktop](https://dl.dropboxusercontent.com/s/5o1ax1gi50h1gdt/05.1-business_page-desktop.png?dl=0)
+
+#### Business Page(Tablet)
+
+![Business Page Tablet](https://dl.dropboxusercontent.com/s/uksmw59nad4oqaa/05.1-business_page-tablet.png?dl=0)
+
 ## Collaborative Tools (Agile methodology)
+
+### Trello Progress Screenshots 
+
+* Sprint 1 : <br>
+Completing Documentation for Real World App "Fiterr"
+![Sprint 1](https://dl.dropboxusercontent.com/s/m6vcotu1dna728m/Screen%20Shot%202019-12-11%20at%2012.05.15%20pm.png?dl=0)
+
+* Sprint 2 : <br>
+Initialising App and Creating Routes
+![Sprint 2](https://dl.dropboxusercontent.com/s/aschhc8u73vktx4/Screen%20Shot%202019-12-11%20at%202.18.02%20pm.png?dl=0)
