@@ -1,8 +1,6 @@
 import React from 'react';
 import './scss/app.scss';
 import Router from './router';
-import HeaderUnauthenticated from './components/HeaderUnauthenticated';
-import HeaderAuthenticated from './components/HeaderAuthenticated';
 import FooterUnauthenticated from './components/FooterUnauthenticated';
 
 import Navbar from './components/layout/Navbar';
@@ -11,7 +9,6 @@ import Navbar from './components/layout/Navbar';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import ProfileState from './context/profile/ProfileState'
-
 
 function App() {
   return (
