@@ -1,7 +1,7 @@
 import React from 'react';
-import './assets/css/footer.scss';
+import './assets/scss/footer.scss';
 import { Link } from 'react-router-dom'
-import Logo from './assets/images/logo-fiterr-white-3154x1042.png';
+import Logo from './assets/media/logo-fiterr-white-3154x1042.png';
 
 
 const footerUnauthenticated = () => {

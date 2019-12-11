@@ -4,7 +4,11 @@ import React from 'react';
 const Search = () => {
   return (
     <>
-      <h1>Search</h1>
+      <section className="body">
+        <div className="container">
+          <h1>Search</h1>
+        </div>
+      </section>
     </>
   )
 };

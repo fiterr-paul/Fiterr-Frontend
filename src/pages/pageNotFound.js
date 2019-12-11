@@ -1,8 +1,8 @@
 import React from 'react';
-import './assets/css/pagenotfound.scss';
+import './assets/scss/index.scss';
 import { Link } from 'react-router-dom'
 
-import profileImgPaul from './assets/images/error-page.jpg';
+import profileImgPaul from './assets/media/error-page.jpg';
 
 
 const PageNotFound = () => {
@@ -13,14 +13,18 @@ const PageNotFound = () => {
 
   return (
     <>
-      <div className="pagenotfound">
-        <div className="image">
-          <img className="profile-image" src={profileImgPaul} alt=""/>
+      <section className="body">
+        <div className="container">
+          <div className="pagenotfound">
+            <div className="image">
+              <img className="profile-image" src={profileImgPaul} alt=""/>
+            </div>
+            <div className="text">
+              <span>This Page Does Not Exist! <br /> <Link onClick={scrollPage} className="link" to='/'>Click Here</Link> and FUCK OFF!</span>
+            </div>
+          </div>
         </div>
-        <div className="text">
-          <span>This Page Does Not Exist! <br /> <Link onClick={scrollPage} className="link" to='/'>Click Here</Link> and FUCK OFF!</span>
-        </div>
-      </div>
+      </section>
     </>
   )
 };

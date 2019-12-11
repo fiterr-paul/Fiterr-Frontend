@@ -4,7 +4,11 @@ import React from 'react';
 const Login = () => {
   return (
     <>
-      <h1>Login</h1>
+      <section className="body">
+        <div className="container">
+          <h1>Login</h1>
+        </div>
+      </section>
     </>
   )
 };

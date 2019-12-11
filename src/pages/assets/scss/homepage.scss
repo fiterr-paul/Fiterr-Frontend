@@ -1,0 +1,19 @@
+@import "../../../scss/variables.scss";
+
+
+.container-app section.body.homepage {
+  // background-color: #fd0000;
+  
+}
+.video-overlay {
+  background: #000;
+  // height: 100%;
+  z-index: 1;
+}
+
+.homepage video#video {
+  // height: auto;
+  width: 100vw;
+  // z-index: 0;
+  overflow: hidden;
+}
