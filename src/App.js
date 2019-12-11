@@ -17,8 +17,8 @@ function App() {
       <AuthState>
         <ProfileState>
           <div className="container-app">
-            {/* <HeaderUnauthenticated /> */}
-            <HeaderAuthenticated />
+            <HeaderUnauthenticated />
+            {/* <HeaderAuthenticated /> */}
             <Router />  
             <FooterUnauthenticated />
           </div>
