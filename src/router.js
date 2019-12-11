@@ -5,6 +5,7 @@ import PageNotFound from './pages/pageNotFound';
 import Homepage from './pages/homepage';
 import Enthusiasts from './pages/enthusiasts';
 import Professionals from './pages/professionals';
+import PrivatePage from './pages/private';
 import Search from './pages/search';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Register';
@@ -23,6 +24,7 @@ const Router = () => {
         <div className="container">
           <Switch>
             <Route exact path='/' component={Homepage} />
+            <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
