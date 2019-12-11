@@ -10,9 +10,6 @@ const Homepage = () => {
   return (
     <>
       <section className="body homepage">
-        {/* <div className="container">
-          Homepage
-        </div> */}
           <video preload="preload"  id="video" autoPlay="autoplay" loop="loop">
           <source src={splashVideoMP4} type="video/mp4"></source>
           </video>

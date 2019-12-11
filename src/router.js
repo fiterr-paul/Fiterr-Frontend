@@ -21,8 +21,6 @@ import PrivateRoute from './components/routing/PrivateRoute';
 const Router = () => {
   return (
     <>
-      <section className="body body">
-        <div className="container">
           <Switch>
             <Route exact path='/' component={Homepage} />
             <Route path='/create-profile' component={ProfileSetup}/>
@@ -35,8 +33,6 @@ const Router = () => {
             <Route path='/contact' component={Contact} />
             <Route path='*' component={PageNotFound} />
           </Switch>
-        </div>
-      </section>
     </>
   );
 };
