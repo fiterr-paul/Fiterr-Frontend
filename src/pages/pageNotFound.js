@@ -1,6 +1,8 @@
 import React from 'react';
-import './assets/css/pagenotfound.css';
+import './assets/css/pagenotfound.scss';
 import { Link } from 'react-router-dom'
+
+import profileImgPaul from './assets/images/error-page.jpg';
 
 
 const PageNotFound = () => {
@@ -10,9 +12,16 @@ const PageNotFound = () => {
   };
 
   return (
-    <div className="pagenotfound">
-      <h3>This Page Does Not Exist ... <Link onClick={scrollPage} className="link" to='/'>Click Here</Link> and FUCK OFF CUNT!</h3>
-    </div>
+    <>
+      <div className="pagenotfound">
+        <div className="image">
+          <img className="profile-image" src={profileImgPaul} alt=""/>
+        </div>
+        <div className="text">
+          <span>This Page Does Not Exist! <br /> <Link onClick={scrollPage} className="link" to='/'>Click Here</Link> and FUCK OFF!</span>
+        </div>
+      </div>
+    </>
   )
 };
 

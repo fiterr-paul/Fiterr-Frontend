@@ -3,17 +3,16 @@ import { Switch, Route } from 'react-router-dom';
 
 import PageNotFound from './pages/pageNotFound';
 import Homepage from './pages/homepage';
-import Enthusiasts from './pages/enthusiasts.js';
-import Professionals from './pages/professionals.js';
-import Search from './pages/search.js';
-// import Login from './pages/login.jsx';
-// import Signup from './pages/signup.jsx';
-import Contact from './pages/contact.js';
 import ProfileSetup from './components/profile/ProfileSetup'
-
-// new Login and Signup
+import Enthusiasts from './pages/enthusiasts';
+import Professionals from './pages/professionals';
+import PrivatePage from './pages/private';
+import Search from './pages/search';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Register';
+import Contact from './pages/contact';
+
+
 
 // Private Routes
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -27,6 +26,7 @@ const Router = () => {
           <Switch>
             <Route exact path='/' component={Homepage} />
             <Route path='/create-profile' component={ProfileSetup}/>
+            <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
