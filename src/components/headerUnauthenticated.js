@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Logo from './assets/media/logo-fiterr-white-3154x1042.png';
 
 
-const headerUnauthenticated = () => {
+const HeaderUnauthenticated = () => {
 
   const scrollPage = () => {
     window.scrollTo(0, 0);
@@ -38,4 +38,4 @@ const headerUnauthenticated = () => {
 };
 
 
-export default headerUnauthenticated;
+export default HeaderUnauthenticated;
