@@ -24,7 +24,7 @@ const Router = () => {
     <>
           <Switch>
             <Route exact path='/' component={Homepage} />
-            <Route path='/create-profile' component={ProfileSetup}/>
+            <PrivateRoute exact path = '/create-profile' component={ProfileSetup}/>
             <PrivateRoute exact path = '/newsfeed' component={Newsfeed}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />

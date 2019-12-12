@@ -66,13 +66,25 @@ const AuthState = props => {
         try {
             const res = await request.post('/api/users/register', formData, config);
             console.log(res);
+
+            dispatch({
+                type: REGISTER_SUCCESS,
+                payload: res.data   //this will be the token - in the reducer we set the token in local storage
+            })
+
+            loadUser();
+
         } catch (err) {
             console.error(err);
             console.log(err.response);
             setAlert(err.response.data.msg, err.response.data.type);
+
+            dispatch({
+                type: REGISTER_FAIL,
+                payload: err.response.data.msg
+            })
         }
 
-        loadUser();
     }
 
     // Login user
@@ -97,10 +109,10 @@ const AuthState = props => {
         } catch (err) {
             console.log(err);
             // console.log(err.response.data);
-            // dispatch({
-            //     type: LOGIN_FAIL,
-            //     payload: err.response.data.msg
-            // })
+            dispatch({
+                type: LOGIN_FAIL,
+                // payload: err.response.data.msg
+            })
         }
     }
 
