@@ -13,7 +13,7 @@ const PageNotFound = () => {
 
   return (
     <>
-      <section className="body">
+      <section className="body error-page">
         <div className="container">
           <div className="pagenotfound">
             <div className="image">

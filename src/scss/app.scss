@@ -112,9 +112,9 @@
   }
   a.link {
     color: $primaryOrangeHover;
-  }
-  a.link:hover {
-    color: $primaryOrangeHover;
-    text-decoration: underline;
+    &:hover {
+      color: $primaryOrangeHover;
+      text-decoration: underline;
+    }
   }
 }

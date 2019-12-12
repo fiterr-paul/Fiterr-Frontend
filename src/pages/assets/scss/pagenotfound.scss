@@ -1,38 +1,40 @@
 @import "../../../scss/variables.scss";
 
 
-.pagenotfound {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  margin-top: -60px;
-  width: 100%;
-  .image {
+.container-app section.body.error-page {
+  height: calc(100vh - 60px);
+  .pagenotfound {
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
-    img.profile-image {
-      border-radius: 10px;
-      border: 1px solid #666;
-      width: 200px;
+    .image {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      width: 100%;
+      img.profile-image {
+        border-radius: 10px;
+        border: 1px solid #666;
+        width: 200px;
+      }
     }
-  }
-  .text {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    padding-left: 20px;
-    width: 100%;
-    span {
-      font-size: 1.6em;
-      line-height: 1.2em;
+    .text {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding-left: 20px;
+      width: 100%;
+      span {
+        font-size: 1.6em;
+        line-height: 1.2em;
+      }
     }
   }
 }
