@@ -1,8 +1,6 @@
 import React from 'react';
 import './scss/app.scss';
 import Router from './router';
-import HeaderUnauthenticated from './components/HeaderUnauthenticated';
-import HeaderAuthenticated from './components/HeaderAuthenticated';
 import FooterUnauthenticated from './components/FooterUnauthenticated';
 
 import Navbar from './components/layout/Navbar';
