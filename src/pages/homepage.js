@@ -10,7 +10,7 @@ const Homepage = () => {
     <>
       <section className="body homepage">
         <video preload="preload"  id="video" autoPlay="autoplay" loop="loop">
-        <source src={splashVideoMP4} type="video/mp4"></source>
+          <source src={splashVideoMP4} type="video/mp4"></source>
         </video>
       </section>
     </>
