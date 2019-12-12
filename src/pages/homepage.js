@@ -10,10 +10,10 @@ const Homepage = () => {
   return (
     <>
       <section className="body homepage">
-          {/* <video preload="preload"  id="video" autoPlay="autoplay" loop="loop">
+          <video preload="preload"  id="video" autoPlay="autoplay" loop="loop">
           <source src={splashVideoMP4} type="video/mp4"></source>
-          </video> */}
-          <h1>Splash page</h1>
+          </video>
+          {/* <h1>Splash page</h1> */}
       </section>
     </>
   )
