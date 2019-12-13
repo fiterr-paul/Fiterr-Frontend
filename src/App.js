@@ -9,18 +9,21 @@ import Navbar from './components/layout/Navbar';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import ProfileState from './context/profile/ProfileState'
+import SearchState from './context/search/SearchState'
 
 function App() {
   return (
     <AlertState>
       <AuthState>
-        <ProfileState>
-          <div className="container-app">
-            <Navbar />
-            <Router />  
-            <FooterUnauthenticated />
-          </div>
-        </ProfileState>
+        <SearchState>
+          <ProfileState>
+            <div className="container-app">
+              <Navbar />
+              <Router />  
+              <FooterUnauthenticated />
+            </div>
+          </ProfileState>
+        </SearchState>
       </AuthState>
     </AlertState>
   )

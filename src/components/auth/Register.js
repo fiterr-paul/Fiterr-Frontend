@@ -8,6 +8,8 @@ const Register = (props) => {
     const authContext = useContext(AuthContext);
     const alertContext = useContext(AlertContext);
 
+    console.log(props);
+
     const { setAlert } = alertContext;
     const { register, error, clearErrors, isAuthenticated, loadUser } = authContext;
 

@@ -1,17 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './assets/scss/header-nav.scss';
-import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router';
+import { Link, useHistory } from 'react-router-dom'
 import Logo from './assets/media/icn-fiterr-white-500x500.png';
 
 import profileImgPaul from './assets/media/paul-900x900.jpg';
 
-//not working for some reason
 import AuthContext from '../context/auth/authContext';
+import SearchContext from '../context/search/searchContext';
 
 const HeaderAuthenticated = () => {
 
+  const history = useHistory();
+
   const authContext = useContext(AuthContext);
-  const { isAuthenticated, logout, user } = authContext;
+  const searchContext = useContext(SearchContext);
+
+  const { searchUsers } = searchContext;
+  const { isAuthenticated, logout, user, loading } = authContext;
+
+  const [search, setSearch] = useState('');
 
   const onLogout = () => {
     console.log('logging out');
@@ -21,6 +29,17 @@ const HeaderAuthenticated = () => {
   const scrollPage = () => {
     window.scrollTo(0, 0);
   };
+
+  const onSearch = (e) => {
+    setSearch(e.target.value);
+  }
+
+  const searchFormSubmit = (e) => {
+    e.preventDefault();
+    searchUsers({ search });
+    setSearch('');
+    history.push('/search');
+  }
 
   return (
     <>
@@ -35,8 +54,8 @@ const HeaderAuthenticated = () => {
               </div>
               <div className="container-header-search">
                 <div className="header-search">
-                  <form>
-                    <input type="text" className="search-field" placeholder="search" />
+                  <form onSubmit={searchFormSubmit}>
+                    <input onChange={onSearch} value={search} type="text" className="search-field" placeholder="search" />
                     <button type="submit" label="search" className="search-btn"><i className="fas fa-search"></i></button>
                   </form>
                 </div>
@@ -62,7 +81,7 @@ const HeaderAuthenticated = () => {
                 <Link onClick={scrollPage} className="link-profile" to='/'>
                   <img className="profile-image" src={profileImgPaul} alt=""/>
                   <div className="profile-image-text">
-                    <span>paul</span>
+                    <span>User</span>
                   </div>
                 </Link>
                 
@@ -122,4 +141,4 @@ const SubHeaderAuthenticated = () => {
 };
 
 
-export default HeaderAuthenticated;
+export default withRouter(HeaderAuthenticated);
