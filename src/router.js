@@ -12,6 +12,7 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Register';
 import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
+import Profile from './pages/Profile';
 
 
 
@@ -28,6 +29,7 @@ const Router = () => {
             <PrivateRoute exact path = '/newsfeed' component={Newsfeed}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
+            <Route path='/profile/:id' component={Profile} />
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
             <Route path='/login' component={Login} />

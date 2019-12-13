@@ -20,7 +20,7 @@ const Login = (props) => {
     }
     
     if(isAuthenticated){
-      props.history.push('/');
+      props.history.push('/newsfeed');
     }
 
     // if(error === 'Invalid Credentials'){
