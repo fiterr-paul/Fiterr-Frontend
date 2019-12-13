@@ -56,27 +56,29 @@ const Login = (props) => {
     <>
       <section className="body login">
         <div className="image-overlay">
-        <div className="container">
-          <div className='form-container'>
-            <h1>login to your account</h1>
-            <form onSubmit={onSubmit}>
-              <div className="form-login">
-                <label htmlFor="email">email address</label>
-                <input type="email" name="email" value={email} onChange={onChange}/>
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">password</label>
-                <input type="password" name="password" value={password} onChange={onChange}/>
-              </div>
-              <input type="submit" value="Login" className='btn btn-primary btn-block'/>
-            </form>
+          <div className="container">
+            <div className='form-container'>
+              <h1>login to your account</h1>
+              <form className='login' onSubmit={onSubmit}>
+                <div className="field-row title">
+                  <h3>Enter your account details</h3>
+                </div>
+                <div className="field-row input">
+                  <input type="email" name="email" value={email} onChange={onChange} autoComplete="off" placeholder="Email Address or Mobile/Cell Number" required/>
+                </div>
+                <div className="field-row input">
+                  <input type="password" name="password" value={password} onChange={onChange} autoComplete="off" placeholder="Enter Your Password" required/>
+                </div>
+                <div className="field-row button">
+                  <button type="submit" value="Login"> login </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
         </div>
       </section>
     </>
-    )
-
+  )
 };
 
 
