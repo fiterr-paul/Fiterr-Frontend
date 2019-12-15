@@ -40,14 +40,14 @@ const AuthState = props => {
 
         try {
             const res = await request.get('/api/auth');   //this route checks the token to see if youre a valid user
-            console.log(res);
+            // console.log(res);
 
             dispatch({
                 type: USER_LOADED,
                 payload: res.data   //this is the actual user data that we get from hitting the GET /api/auth endpoint
             })
         } catch (err) {
-            console.log('hereistheerror', err);
+            console.log('Error:', err);
             dispatch({
                 type: AUTH_ERROR
             })
@@ -65,7 +65,6 @@ const AuthState = props => {
 
         try {
             const res = await request.post('/api/users/register', formData, config);
-            console.log(res);
 
             dispatch({
                 type: REGISTER_SUCCESS,
@@ -76,7 +75,6 @@ const AuthState = props => {
 
         } catch (err) {
             console.error(err);
-            console.log(err.response);
             setAlert(err.response.data.msg, err.response.data.type);
 
             dispatch({
@@ -97,8 +95,6 @@ const AuthState = props => {
 
         try {
             const res = await request.post('/api/users/login', formData, config);
-            console.log('here', res);
-
 
             dispatch({
                 type: LOGIN_SUCCESS,
@@ -120,7 +116,6 @@ const AuthState = props => {
     const logout = async() => {
         // have to hit the backend logout route;
         await request.get('http://localhost:5000/api/users/logout')
-        console.log('going to logout now');
 
         dispatch({
             type: LOGOUT
