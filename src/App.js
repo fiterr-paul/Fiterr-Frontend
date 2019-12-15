@@ -2,7 +2,6 @@ import React from 'react';
 import './scss/app.scss';
 import Router from './router';
 import FooterUnauthenticated from './components/FooterUnauthenticated';
-
 import Navbar from './components/layout/Navbar';
 
 // Bringing in states
