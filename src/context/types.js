@@ -20,3 +20,4 @@ export const REMOVE_PROFILE = 'REMOVE_PROFILE'
 // Search Context
 export const SEARCH_USERS = 'SEARCH_USERS';
 export const GET_VIEWING_USER = 'GET_VIEWING_USER';
+export const SEARCHING_FOR_RESULTS = 'SEARCHING_FOR_RESULTS';
