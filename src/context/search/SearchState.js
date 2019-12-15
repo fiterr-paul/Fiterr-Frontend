@@ -8,21 +8,23 @@ import request from '../../utils/axios-config';
 
 import {
     SEARCH_USERS,
-    GET_VIEWING_USER
+    GET_VIEWING_USER,
+    SEARCHING_FOR_RESULTS
   } from '../types';
 
 const SearchState = props => {
     const initialState = {
-        searching: true,
-        searchedUsers: null,
+        searching: false,
+        searched: false,
+        searchedUsers: [],
+        searchTerm: '',
         error: null,
         viewingUser: null,
     };
 
     const [state, dispatch] = useReducer(searchReducer, initialState);
-
    
-    // Load user
+
     const searchUsers = async(searchTerm) => {
         const config = {
             headers: {
@@ -31,13 +33,20 @@ const SearchState = props => {
         }
 
         try {
+            dispatch({
+                type: SEARCHING_FOR_RESULTS
+            })
+
             const res = await request.post('/api/users/search-users', searchTerm, config);
             console.log('users data is here', res.data.searchedUsers);
 
-            // dispatch
+            const payload = { 
+                searchedUsers: res.data.searchedUsers,
+                // searchTerm: searchTerm.search
+            }
             dispatch({
                 type: SEARCH_USERS,
-                payload: res.data.searchedUsers
+                payload: payload
             })
 
         } catch (err) {
@@ -76,9 +85,11 @@ const SearchState = props => {
          value={{
             searchedUsers: state.searchedUsers,
             searching: state.searching,
+            searched: state.searched,
             viewingUser: state.viewingUser,
+            searchTerm: state.searchTerm,
             searchUsers,
-            getUser
+            getUser,
          }}>
             { props.children }
         </SearchContext.Provider>

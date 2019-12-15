@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './assets/scss/header-nav.scss';
 import { withRouter } from 'react-router';
 import { Link, useHistory } from 'react-router-dom'
@@ -21,6 +21,12 @@ const HeaderAuthenticated = () => {
 
   const [search, setSearch] = useState('');
 
+  // console.log('---', isAuthenticated, user);  // when does a component rerender in react with context?
+
+  let profileUrl;
+  user ? profileUrl=`/profile/${user.username}` : profileUrl='#';
+  console.log(profileUrl);
+
   const onLogout = () => {
     console.log('logging out');
     logout();
@@ -38,7 +44,7 @@ const HeaderAuthenticated = () => {
     e.preventDefault();
     searchUsers({ search });
     setSearch('');
-    history.push('/search');
+    history.push(`/search?query=${search}`);
   }
 
   return (
@@ -71,17 +77,17 @@ const HeaderAuthenticated = () => {
                   </div>
                 </Link>
                 <div className="top-nav-vr"></div>
-                <Link onClick={scrollPage} className="link-newsfeed" to='/'>
+                <Link onClick={scrollPage} className="link-newsfeed" to='/newsfeed'>
                   <i className="fas fa-newspaper"></i>
                   <div className="newsfeed-text">
                     <span>newsfeed</span>
                   </div>
                 </Link>
                 <div className="top-nav-vr"></div>
-                <Link onClick={scrollPage} className="link-profile" to='/'>
+                <Link onClick={scrollPage} className="link-profile" to={profileUrl}>
                   <img className="profile-image" src={profileImgPaul} alt=""/>
                   <div className="profile-image-text">
-                    <span>User</span>
+                    <span>{ user ? user.username : '' }</span>
                   </div>
                 </Link>
                 

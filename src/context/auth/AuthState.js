@@ -65,7 +65,6 @@ const AuthState = props => {
 
         try {
             const res = await request.post('/api/users/register', formData, config);
-            // console.log(res);
 
             dispatch({
                 type: REGISTER_SUCCESS,
@@ -96,8 +95,6 @@ const AuthState = props => {
 
         try {
             const res = await request.post('/api/users/login', formData, config);
-            console.log('here', res);
-
 
             dispatch({
                 type: LOGIN_SUCCESS,
