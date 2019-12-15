@@ -3,7 +3,6 @@ import './scss/app.scss';
 import './scss/jov.css';
 import Router from './router';
 import FooterUnauthenticated from './components/FooterUnauthenticated';
-
 import Navbar from './components/layout/Navbar';
 
 // Bringing in states

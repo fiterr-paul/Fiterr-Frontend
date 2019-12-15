@@ -9,10 +9,11 @@ const Homepage = () => {
   return (
     <>
       <section className="body homepage">
-        {/* <video preload="preload"  id="video" autoPlay="autoplay" loop="loop">
-          <source src={splashVideoMP4} type="video/mp4"></source>
-        </video> */}
-        <h2>Video plays in the homepage</h2>
+        <div className="video-overlay">
+          <video preload="preload"  id="video" autoPlay="autoplay" loop="loop">
+            <source src={splashVideoMP4} type="video/mp4"></source>
+          </video>
+        </div>
       </section>
     </>
   )

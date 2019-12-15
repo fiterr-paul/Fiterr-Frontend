@@ -2,15 +2,33 @@
 
 
 .container-app section.body.homepage {
+  align-items: center;
   display: flex;
-  height: calc(100vh - 60px);
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow: hidden;
+  .video-overlay:before {
+    content: '';
+    // background-color: rgba(0, 0, 0, 0.774);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - 60px);
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
   video#video {
-    height: 100%;
+    display: block;
+    width: 100%;
+    z-index: 0;
   }
 }
-.video-overlay {
-  // background: #000;
-  // height: 100%;
-  // z-index: 1;
-}
-

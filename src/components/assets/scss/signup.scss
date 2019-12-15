@@ -2,7 +2,7 @@
 
 
 .container-app section.body.signup {
-  background-image: url('../media/girl-running.jpg');
+  background-image: url('../media/girl-stretching.jpg');
   background-position: center left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,7 +10,7 @@
   height: calc(100vh - 60px);
   .image-overlay {
     align-items: center;
-    background-color: rgba(15, 15, 15, 0.3);
+    background-color: rgba(15, 15, 15, 0.1);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
