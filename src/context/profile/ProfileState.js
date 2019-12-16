@@ -28,12 +28,21 @@ const ProfileState = props => {
             payload: response.data
         })
     }
+
+    const getProfile = async (user) => {
+        const response = await request.get(`/api/profiles?id=${user._id}`)
+        dispatch({
+            type: SET_PROFILE,
+            payload: response.data
+        })
+    }
     return(
         <ProfileContext.Provider
             value={{
                 profile: state.profile,
                 profileComplete: state.profileComplete,
-                makeProfile
+                makeProfile,
+                getProfile
             }}>
                 { props.children }
         </ProfileContext.Provider>

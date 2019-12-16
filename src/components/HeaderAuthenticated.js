@@ -84,7 +84,7 @@ const HeaderAuthenticated = () => {
                   </div>
                 </Link>
                 <div className="top-nav-vr"></div>
-                <Link onClick={scrollPage} className="link-profile" to={profileUrl}>
+                <Link onClick={scrollPage} className="link-profile" to={`/profile/${user.username}`}>
                   <img className="profile-image" src={profileImgPaul} alt=""/>
                   <div className="profile-image-text">
                     <span>{ user ? user.username : '' }</span>

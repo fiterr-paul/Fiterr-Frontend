@@ -2,15 +2,18 @@ import React, { useState, useContext, useEffect } from 'react';
 import '../assets/scss/login.scss';
 import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
+import ProfileContext from '../../context/profile/profileContext'
 
 
 const Login = (props) => {
 
-  const alertContext = useContext(AlertContext);
-  const authContext = useContext(AuthContext);
-
-  const { setAlert } = alertContext;
-  const { login, error, clearErrors, isAuthenticated, loadUser } = authContext;
+    const alertContext = useContext(AlertContext);
+    const authContext = useContext(AuthContext);
+    const profileContext = useContext(ProfileContext)
+    
+    const { setAlert } = alertContext;
+    const { login, error, clearErrors, isAuthenticated, loadUser } = authContext;
+    const { getProfile } = profileContext
 
   useEffect(() => {
     
