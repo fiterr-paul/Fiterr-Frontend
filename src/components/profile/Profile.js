@@ -7,21 +7,22 @@ const Profile = (props) => {
     const authContext = useContext(AuthContext)
     // destructure anything from profileContext
     const { profile, getProfile } = profileContext
-    const { user } = authContext
-    const findDisplayPhoto = () => {
-        const profilePic = profile.images.forEach(photo => {
-            if(photo.displayPhoto){
-                return photo
-            }
-        });
-        return profilePic
+    const { user, isAuthenticated, loadUser } = authContext
+    const defaultPic = "https://image.shutterstock.com/z/stock-vector-man-avatar-profile-picture-vector-icon-153720509.jpg"
+    if(!isAuthenticated){loadUser()
+        getProfile()
     }
-    getProfile(user)
+    console.log(profile)
+    
+
+
+    
     return(
         <>
             <h1>Welcome To Your Profile {user.username}</h1>
-            <img src={findDisplayPhoto} alt="Display Photo"/>
-            <p>{profile.aboutMe}</p>
+
+            <img width="100px" src={profile.displayImage? profile.displayImage : defaultPic} alt="Display Photo"/>
+            <p>About Me: {profile.aboutMe}</p>
             <p>{profile.fitnessInterests}</p>
         </>
     )
