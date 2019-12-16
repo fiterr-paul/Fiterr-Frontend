@@ -9,9 +9,8 @@ const Profile = (props) => {
     const { profile, getProfile } = profileContext
     const { user, isAuthenticated, loadUser } = authContext
     const defaultPic = "https://image.shutterstock.com/z/stock-vector-man-avatar-profile-picture-vector-icon-153720509.jpg"
-    if(!isAuthenticated){loadUser()
-        getProfile()
-    }
+    if(!isAuthenticated){loadUser()}
+    if(!profile){getProfile()}
     console.log(profile)
     
 
@@ -24,6 +23,14 @@ const Profile = (props) => {
             <img width="100px" src={profile.displayImage? profile.displayImage : defaultPic} alt="Display Photo"/>
             <p>About Me: {profile.aboutMe}</p>
             <p>{profile.fitnessInterests}</p>
+
+            <div className="followers">
+                <h3>Followers: {profile.followers.length}</h3>
+                {profile.followers.map(follower => {
+                    return <p>{follower.username}</p>
+                })}
+                <h3>Following: {profile.following.length}</h3>
+            </div>
         </>
     )
 }
