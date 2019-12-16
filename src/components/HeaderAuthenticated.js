@@ -8,6 +8,7 @@ import profileImgPaul from './assets/media/paul-900x900.jpg';
 
 import AuthContext from '../context/auth/authContext';
 import SearchContext from '../context/search/searchContext';
+import ProfileContext from '../context/profile/profileContext'
 
 const HeaderAuthenticated = () => {
 
@@ -15,16 +16,18 @@ const HeaderAuthenticated = () => {
 
   const authContext = useContext(AuthContext);
   const searchContext = useContext(SearchContext);
+  const profileContext = useContext(ProfileContext)
 
   const { searchUsers } = searchContext;
   const { isAuthenticated, logout, user, loading } = authContext;
+  const { getProfile, profile } = profileContext
 
   const [search, setSearch] = useState('');
 
   // console.log('---', isAuthenticated, user);  // when does a component rerender in react with context?
 
   let profileUrl;
-  user ? profileUrl=`/profile/${user.username}` : profileUrl='#';
+  user ? profileUrl=`/${user.username}` : profileUrl='#';
   console.log(profileUrl);
 
   const onLogout = () => {
@@ -84,7 +87,7 @@ const HeaderAuthenticated = () => {
                   </div>
                 </Link>
                 <div className="top-nav-vr"></div>
-                <Link onClick={scrollPage} className="link-profile" to={`/profile/${user.username}`}>
+                <Link onClick={scrollPage} className="link-profile" to={`/${user.username}`}>
                   <img className="profile-image" src={profileImgPaul} alt=""/>
                   <div className="profile-image-text">
                     <span>{ user ? user.username : '' }</span>

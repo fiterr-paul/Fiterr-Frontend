@@ -24,11 +24,12 @@ const Router = () => {
     <>
           <Switch>
             <Route exact path='/' component={Homepage} />
+            <PrivateRoute exact path = '/profile/:username' component={Profile} />
             <PrivateRoute exact path = '/create-profile' component={ProfileSetup}/>
             <PrivateRoute exact path = '/newsfeed' component={Newsfeed}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
-            <Route path='/profile/:id' component={Profile} />
+            {/* <Route path='/profile/:id' component={Profile} /> */} 
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
             <Route path='/login' component={Login} />

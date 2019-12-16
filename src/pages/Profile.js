@@ -24,7 +24,6 @@ const Profile = (props) => {
         
     useEffect(() => {
         getUser({ id });
-        
     }, []);
     
     const checkFollowing = () => {
