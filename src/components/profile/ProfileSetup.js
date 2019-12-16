@@ -1,7 +1,11 @@
 import React, {useState, useContext } from 'react'
 import ProfileContext from '../../context/profile/profileContext'
+import AuthContext from '../../context/auth/authContext'
+
 const ProfileSetup = (props) => {
     const profileContext = useContext(ProfileContext);
+    const authContext = useContext(AuthContext);
+    const { user } = authContext
     const { makeProfile } = profileContext
     const [profile, setProfile] = useState({
         aboutMe: '',
@@ -10,21 +14,20 @@ const ProfileSetup = (props) => {
     })
     const { aboutMe, fitnessInterests, image } = profile
     
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         const body = new FormData()
         body.append('aboutMe', aboutMe)
         body.append('fitnessInterests', fitnessInterests)
         body.append('image', image)
         console.log(body)
-        makeProfile(body)
-        
+        await makeProfile(body)
+        props.history.push(`/profile/${user.username}`)
     }
     const onChange = (e) =>{
         setProfile({...profile, [e.target.name]: e.target.value })
     }
     const onFileChange = (e) => {
-        console.log(e.target.files[0])
         setProfile({...profile, [e.target.name]: e.target.files[0]})
     }
     return(
@@ -41,6 +44,7 @@ const ProfileSetup = (props) => {
                     <input type="submit" value="Submit"/>
                 </div>
             </form>
+            <a href=""></a>
         </>
     )
 }
