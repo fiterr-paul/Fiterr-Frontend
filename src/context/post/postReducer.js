@@ -1,4 +1,4 @@
-import { UPDATE_LAST_POST, SET_POSTS } from '../types'
+import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS } from '../types'
 
 export default (state, action) => {
     switch(action.type){
