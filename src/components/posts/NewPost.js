@@ -1,12 +1,17 @@
 import React, {useState, useContext} from 'react'
 import ProfileContext from '../../context/profile/profileContext'
 import AuthContext from '../../context/auth/authContext'
+import PostContext from '../../context/post/postContext'
 
 const NewPost = (props) => {
     const profileContext = useContext(ProfileContext)
     const authContext = useContext(AuthContext)
+    const postContext = useContext(PostContext)
+
     const { profile } = profileContext
     const { user, isAuthenticated, loadUser } = authContext
+    const { makePost } = postContext
+    
     if(!isAuthenticated){ loadUser() }
     const [post, setPost] = useState({
         postTitle: '',

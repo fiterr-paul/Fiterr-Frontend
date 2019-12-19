@@ -36,11 +36,9 @@ const AuthState = props => {
    
     // Load user
     const loadUser = async () => {
-
-
         try {
             const res = await request.get('/api/auth');   //this route checks the token to see if youre a valid user
-            // console.log(res);
+            console.log(res.data);
 
             dispatch({
                 type: USER_LOADED,

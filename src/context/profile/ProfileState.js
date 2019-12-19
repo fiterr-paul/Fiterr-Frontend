@@ -30,7 +30,7 @@ const ProfileState = props => {
     }
 
     const getProfile = async (user) => {
-        const response = await request.get(`/api/profiles`)
+        const response = await request.get(`/api/profiles?id=${user}`)
         dispatch({
             type: SET_PROFILE,
             payload: response.data

@@ -20,7 +20,6 @@ const Login = (props) => {
     if(isAuthenticated === null){
       console.log('attempting to load the user');
       loadUser();
-      getProfile()
     }
     
     if(isAuthenticated){

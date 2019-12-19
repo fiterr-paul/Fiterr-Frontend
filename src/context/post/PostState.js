@@ -26,11 +26,11 @@ const PostState = props => {
     const {user} = authContext
 
     const profileContext = useContext(ProfileContext)
-    const {profile} = profileContext
+    const { profile } = profileContext
 
 
     const makePost = async (formData) => {
-        response = await request.post('/api/newsfeed/create-post', formData, config)
+        const response = await request.post('/api/newsfeed/create-post', formData, config)
         dispatch({
             type: UPDATE_LAST_POST,
             payload: response.data
@@ -38,7 +38,7 @@ const PostState = props => {
     }
 
     const getUserPosts = async () => {
-        response = await request.get(`/api/newsfeed/get-my-posts?userID=${user.id}`, config) // call after a makePost in order to include the lastest post last
+        const response = await request.get(`/api/newsfeed/get-my-posts?userID=${user._id}`, config) // call after a makePost in order to include the lastest post last
         dispatch({
             type: SET_POSTS,
             payload: response.data
@@ -46,13 +46,18 @@ const PostState = props => {
     }
 
     const getFollowingPosts = async() => {
-        response  = await request.get(`/api/users/following-posts?following=${profile.following}`) //need profileID to access following users to find their posts
+        // console.log(profile)
+        // console.log(profile.following) // its saying cant find property following of null but when i log profile it exists? 
+        const followingJSON = JSON.stringify(profile.following)
+        console.log('followingjson', followingJSON)
+        
+        const response  = await request.get(`/api/users/following-posts?following=${followingJSON}`) //need profileID to access following users to find their posts
         dispatch({
             type: FIND_FOLLOWING_POSTS,
             payload: response.data
         })
+        
     }
-
     return(
         <PostContext.Provider
             value={{
@@ -68,3 +73,4 @@ const PostState = props => {
     )
 
 }
+export default PostState
