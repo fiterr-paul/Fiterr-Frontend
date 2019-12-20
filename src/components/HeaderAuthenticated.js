@@ -28,7 +28,7 @@ const HeaderAuthenticated = () => {
 
   let profileUrl;
   user ? profileUrl=`/${user.username}` : profileUrl='#';
-  console.log(profileUrl);
+  // console.log(profileUrl);
 
   const onLogout = () => {
     console.log('logging out');
@@ -87,7 +87,7 @@ const HeaderAuthenticated = () => {
                   </div>
                 </Link>
                 <div className="top-nav-vr"></div>
-                <Link onClick={scrollPage} className="link-profile" to={`/${user.username}`}>
+                <Link onClick={scrollPage} className="link-profile" to={profileUrl}>
                   <img className="profile-image" src={profileImgPaul} alt=""/>
                   <div className="profile-image-text">
                     <span>{ user ? user.username : '' }</span>

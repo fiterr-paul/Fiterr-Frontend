@@ -1,35 +1,55 @@
-import React, {useState, useContext } from 'react'
+import React, {useState, useContext, useEffect } from 'react'
 import ProfileContext from '../../context/profile/profileContext'
 import AuthContext from '../../context/auth/authContext'
 
 const ProfileSetup = (props) => {
     const profileContext = useContext(ProfileContext);
     const authContext = useContext(AuthContext);
-    const { user } = authContext
-    const { makeProfile } = profileContext
+
+    const { user } = authContext;
+    const { makeProfile, getProfile, profileComplete } = profileContext;
+
+    useEffect(() => {
+        if(profileComplete){
+            props.history.push('/newsfeed');
+        }
+    }, [profileComplete] );
+
     const [profile, setProfile] = useState({
         aboutMe: '',
         fitnessInterests: '',
         image: null
     })
-    const { aboutMe, fitnessInterests, image } = profile
+
+    const { aboutMe, fitnessInterests, image } = profile;
+    // console.log(profile);
     
     const onSubmit = async (e) => {
         e.preventDefault();
-        const body = new FormData()
+
+        let body = new FormData();
         body.append('aboutMe', aboutMe)
         body.append('fitnessInterests', fitnessInterests)
         body.append('image', image)
-        console.log(body)
-        await makeProfile(body)
-        props.history.push(`/profile/${user.username}`)
+
+        // this is used to log the FormData object
+        // for (var key of body.entries()) {
+        //     console.log(key[0]);
+        //     console.log(key[1]);
+        // }
+        
+        makeProfile(body);
+        // props.history.push(`/profile/${user.username}`)
     }
+
     const onChange = (e) =>{
         setProfile({...profile, [e.target.name]: e.target.value })
     }
+
     const onFileChange = (e) => {
         setProfile({...profile, [e.target.name]: e.target.files[0]})
     }
+
     return(
         <>
             <h1>Customize your profile!</h1>

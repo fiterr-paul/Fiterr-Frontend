@@ -13,11 +13,12 @@ const NewPost = (props) => {
     const { makePost } = postContext
     
     if(!isAuthenticated){ loadUser() }
+
     const [post, setPost] = useState({
         postTitle: '',
         postDescription: '',
         image: null,
-        userID: user._id
+        // userID: user._id    // should we put the user id with the post on the backend?
     })
 
     const {postTitle, postDescription, image, userID} = post
@@ -28,7 +29,7 @@ const NewPost = (props) => {
         body.append('postTitle', postTitle)
         body.append('postDescription', postDescription)
         body.append('image', image)
-        body.append('userID', userID)
+        // body.append('userID', userID)
         await makePost(body)
     }
 
