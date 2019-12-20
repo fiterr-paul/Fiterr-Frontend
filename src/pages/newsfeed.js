@@ -13,15 +13,23 @@ const Newsfeed = (props) => {
     const { loadUser, isAuthenticated, user } = authContext
 
     if(!isAuthenticated){loadUser()}
-    console.log('ihaveuser', user)
+    console.log('ihaveuser', user);
+
     const { profile, getProfile } = profileContext
     const { getFollowingPosts, followingPosts } = postContext
 
-    if(!profile){getProfile(user._id)}
+    if(isAuthenticated && !profile){
+        getProfile(user._id)
+    } else { 
+        console.log('we already have a profile loaded') 
+    }
+    console.log('Profile', profile);
+
     
     useEffect(()=>{
         getFollowingPosts()
-    })
+    }, [])
+
 
     if(followingPosts){
         const posts = followingPosts.map(function(post) {

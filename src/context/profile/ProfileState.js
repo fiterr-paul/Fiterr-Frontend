@@ -22,20 +22,22 @@ const ProfileState = props => {
 
     const makeProfile = async (formData) => {
         const response = await request.post('/api/profiles/create', formData, config)
-        console.log(response.data)
+        console.log('This is the created profile:', response.data)
+        dispatch({
+            type: SET_PROFILE,
+            payload: response.data
+        });
+    }
+
+    const getProfile = async (user) => {
+        const response = await request.get(`/api/profiles?id=${user}`);
+        console.log('got it here', response.data);
         dispatch({
             type: SET_PROFILE,
             payload: response.data
         })
     }
 
-    const getProfile = async (user) => {
-        const response = await request.get(`/api/profiles?id=${user}`)
-        dispatch({
-            type: SET_PROFILE,
-            payload: response.data
-        })
-    }
     return(
         <ProfileContext.Provider
             value={{

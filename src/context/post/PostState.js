@@ -5,7 +5,6 @@ import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS } from '../types'
 import AuthContext from '../auth/authContext';
 import ProfileContext from '../profile/profileContext'
 
-
 import request from '../../utils/axios-config'
 
 const config = {
@@ -46,8 +45,8 @@ const PostState = props => {
     }
 
     const getFollowingPosts = async() => {
-        // console.log(profile)
-        // console.log(profile.following) // its saying cant find property following of null but when i log profile it exists? 
+        console.log(profile)
+        console.log(profile.following) // its saying cant find property following of null but when i log profile it exists? 
         const followingJSON = JSON.stringify(profile.following)
         console.log('followingjson', followingJSON)
         
@@ -55,9 +54,10 @@ const PostState = props => {
         dispatch({
             type: FIND_FOLLOWING_POSTS,
             payload: response.data
-        })
-        
+        })  
+
     }
+
     return(
         <PostContext.Provider
             value={{

@@ -11,16 +11,15 @@ const Profile = (props) => {
     const defaultPic = "https://image.shutterstock.com/z/stock-vector-man-avatar-profile-picture-vector-icon-153720509.jpg"
     if(!isAuthenticated){loadUser()}
     if(!profile){getProfile()}
-    console.log(profile)
+
+    console.log('does a profile exist?', profile)
     
-
-
     
     return(
         <>
             <h1>Welcome To Your Profile {user.username}</h1>
 
-            <img width="100px" src={profile.displayImage? profile.displayImage : defaultPic} alt="Display Photo"/>
+            {/* <img width="100px" src={profile.displayImage? profile.displayImage : defaultPic} alt="Display Photo"/> */}
             <p>About Me: {profile.aboutMe}</p>
             <p>{profile.fitnessInterests}</p>
 
