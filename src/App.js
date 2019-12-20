@@ -2,7 +2,7 @@ import React from 'react';
 import './scss/app.scss';
 import './scss/jov.css';
 import Router from './router';
-import FooterUnauthenticated from './components/FooterUnauthenticated';
+import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
 
 // Bringing in states
@@ -20,7 +20,7 @@ function App() {
             <div className="container-app">
               <Navbar />
               <Router />  
-              <FooterUnauthenticated />
+              <Footer />
             </div>
           </ProfileState>
         </SearchState>

@@ -13,6 +13,7 @@ import Signup from './components/auth/Register';
 import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
 import Profile from './pages/Profile';
+import draftProfile from './pages/draftProfile';
 
 
 
@@ -30,6 +31,7 @@ const Router = () => {
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             <Route path='/profile/:id' component={Profile} />
+            <Route path='/draftprofile' component={draftProfile} />
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
             <Route path='/login' component={Login} />
