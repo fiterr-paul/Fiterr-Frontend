@@ -37,7 +37,7 @@ const PostState = props => {
     }
 
     const getUserPosts = async () => {
-        const response = await request.get(`/api/newsfeed/get-my-posts?userID=${user._id}`, config) // call after a makePost in order to include the lastest post last
+        const response = await request.get(`/api/newsfeed/get-user-posts?userID=${user._id}`, config) // call after a makePost in order to include the lastest post last
         dispatch({
             type: SET_POSTS,
             payload: response.data
@@ -50,7 +50,7 @@ const PostState = props => {
         const followingJSON = JSON.stringify(profile.following)
         console.log('followingjson', followingJSON)
         
-        const response  = await request.get(`/api/users/following-posts?following=${followingJSON}`) //need profileID to access following users to find their posts
+        const response  = await request.get(`/api/newsfeed/following-posts?following=${followingJSON}`) //need profileID to access following users to find their posts
         dispatch({
             type: FIND_FOLLOWING_POSTS,
             payload: response.data
