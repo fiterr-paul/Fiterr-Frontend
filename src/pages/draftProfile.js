@@ -238,6 +238,7 @@ const ProfileBodyTimeline = () => {
             </div>
           </div>
         </div>
+        <TimelinePosts />
       </div>
     </>
   )
@@ -348,58 +349,102 @@ const ProfileBodyWidgets = () => {
 };
 
 
-const Posts = () => {
+const TimelinePosts = () => {
   return (
     <>
-    <div className="timeline-post-wrapper">
-
-      <div className="timeline-post">
-          timeline post
-        </div>
-      </div>
-
       <div className="timeline-post-wrapper">
-        <div className="timeline-post">
-          timeline post
+        <div className="header">
+          <div className="profile-image">
+            <img src={profileImgPaul} alt=""/>
+          </div>
+          <div className="post-info">
+            <div className="post-title">
+              <h3><Link to='/'>paul meier</Link> <span>made a post</span></h3>
+            </div>
+            <div className="post-date">
+              <span> december 22 </span>
+              <div className="post-options">
+                <button type="button" value="post-options">
+                  <i className="fas fa-globe-americas"></i>
+                  <i className="fas fa-caret-down"></i>
+                </ button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="timeline-post-wrapper">
-        <div className="timeline-post">
-          timeline post
+        <div className="body">
+          <div className="post-content">
+            <span>
+              I wish I was better at coding vanilla JavaScript and React. 🤦🏼‍♂️ Then perhaps maybe I wouldn't feel like such a fucking dumb cunt 🤪
+            </span>
+          </div>
         </div>
-      </div>
-
-      <div className="timeline-post-wrapper">
-        <div className="timeline-post">
-          timeline post
+        <div className="post-actions-wrapper post-actions-info">
+          <div className="social-actions">
+            <div className="icon-wrapper like">
+              <div className="icon-bgr">
+                <i className="far fa-thumbs-up"></i>
+              </div>
+              {/* <span>1 person likes this</span> */}
+              <span>15 people like this</span>
+            </div>
+            <div className="icon-wrapper comment">
+              <div className="icon-bgr">
+                <i className="far fa-comment-alt"></i>
+              </div>
+              <span>2 comments</span>
+            </div>
+            <div className="icon-wrapper share">
+              <div className="icon-bgr">
+                <i className="far fa-share-square"></i>
+              </div>
+              <span>3 shares</span>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="timeline-post-wrapper">
-        <div className="timeline-post">
-          timeline post
+        <div className="post-actions-wrapper">
+          <div className="social-actions">
+            <button type="button" className="social-like" name="" value="social-like">
+              <i className="far fa-thumbs-up"></i>
+              <span>like</span>
+            </button>
+            <button type="button" className="social-comment" name="" value="social-comment">
+              <i className="far fa-comment-alt"></i>
+              <span>comment</span>
+            </button>
+            <button type="button" className="social-share" name="" value="social-share">
+              <i className="far fa-share-square"></i>
+              <span>share</span>
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div className="timeline-post-wrapper">
-        <div className="timeline-post">
-          timeline post
+        <div className="post-comments-wrapper">
+          <div className="post-comment">
+            <div className="comment-wrapper">
+              <div className="comment-image">
+                <img src={profileImgPaul} alt=""/>
+              </div>
+              <div className="comment-body">
+                <div className="comment-content">
+                  <div className="author-name">
+                    <h3>fat bastard</h3> <span>posted a comment</span>
+                  </div>
+                  <span>comment body</span>
+                </div>
+                <div className="comment-actions">
+                  comment actions
+                </div>
+              </div>
+
+              {/* <div className="reply">
+              this is a reply
+              </div> */}
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="timeline-post-wrapper">
-        <div className="timeline-post">
-          timeline post
-        </div>
       </div>
-
-      <div className="timeline-post-wrapper">
-      <div className="timeline-post">
-        timeline post
-      </div>
-
-    </div>
     </>
   )
 };
