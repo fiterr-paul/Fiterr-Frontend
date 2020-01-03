@@ -9,11 +9,11 @@ const ProfileSetup = (props) => {
     const { user } = authContext;
     const { makeProfile, getProfile, profileComplete } = profileContext;
 
-    useEffect(() => {
-        if(profileComplete){
-            props.history.push('/newsfeed');
-        }
-    }, [profileComplete] );
+    // useEffect(() => {
+    //     if(profileComplete){
+    //         props.history.push('/newsfeed');
+    //     }
+    // }, [profileComplete] );
 
     const [profile, setProfile] = useState({
         aboutMe: '',
@@ -40,6 +40,7 @@ const ProfileSetup = (props) => {
         
         makeProfile(body);
         // props.history.push(`/profile/${user.username}`)
+        props.history.push('/newsfeed');
     }
 
     const onChange = (e) =>{

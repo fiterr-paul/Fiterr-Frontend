@@ -62,6 +62,7 @@ const Search = (props) => {
 
         </div>
       </div>
+
       <div className="jov-container">
         <div className="jov-results">
           {searching ? (<Spinner/>) : 
@@ -71,6 +72,7 @@ const Search = (props) => {
           }
         </div>
       </div>
+      
     </Fragment>
   )
 }

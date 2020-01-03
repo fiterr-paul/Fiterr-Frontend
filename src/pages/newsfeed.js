@@ -1,48 +1,40 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, Fragment } from 'react'
 import NewPost from '../components/posts/NewPost'
-import PostContext from '../context/post/postContext'
+import NewsfeedPosts from '../components/posts/NewsfeedPosts'
 import AuthContext from '../context/auth/authContext'
 import ProfileContext from '../context/profile/profileContext'
 
+import Spinner from '../components/layout/Spinner';
 
 const Newsfeed = (props) => {
-    const postContext = useContext(PostContext)
     const authContext = useContext(AuthContext)
     const profileContext = useContext(ProfileContext)
      
     const { loadUser, isAuthenticated, user } = authContext
-
-    if(!isAuthenticated){loadUser()}
-    console.log('ihaveuser', user);
-
     const { profile, getProfile } = profileContext
-    const { getFollowingPosts, followingPosts } = postContext
 
-    if(isAuthenticated && !profile){
-        getProfile(user._id)
-    } else { 
-        console.log('we already have a profile loaded') 
-    }
-    console.log('Profile', profile);
+    // on page reload, we need to put the profile and the user back into the state
+    // if(!isAuthenticated){ loadUser() }
+    // if(user && !profile){ getProfile(user._id) }
+    // console.log('reload', isAuthenticated, user, profile);
 
-    
-    useEffect(()=>{
-        getFollowingPosts()
-    }, [])
+    useEffect(() => {
+        if(!isAuthenticated){ loadUser() }
+        if(user && !profile){ getProfile(user._id) }
+        console.log('Component reloaded')
+    }, [isAuthenticated]);
 
 
-    if(followingPosts){
-        const posts = followingPosts.map(function(post) {
-            return(
-            <div>
-                <h1>{post.title}</h1>
-                <p>{post.description}</p>
-                <img src={post.image} alt="Post Image"/>
-            </div>
-            ) 
-        })
-        return(
-            <>
+    if(!isAuthenticated && !profile){
+        return (
+            <Fragment>
+                <h1>Loading user...</h1>
+                <Spinner />
+            </Fragment>
+        )
+    } else {
+        return (
+            <Fragment>
                 <section className="body">
                     <div className="container">
                         <h1>Newsfeed</h1>
@@ -50,26 +42,13 @@ const Newsfeed = (props) => {
                             <NewPost />
                         </div>
                         <div className="followingPosts">
-                            {posts}
+                            <NewsfeedPosts/>
                         </div>
                     </div>
-                </section> 
-            </>
+                </section>
+            </Fragment>
         )
     }
-    return (
-        <>
-           <section className="body">
-                <div className="container">
-                    <h1>Newsfeed</h1>
-                    <div>
-                        <NewPost />
-                    </div>
-                    <p>FOllow more people to see posts</p>
-                </div>
-            </section> 
-        </>
-    )
 }
 
 export default Newsfeed

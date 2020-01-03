@@ -18,7 +18,7 @@ const Login = (props) => {
   useEffect(() => {
     
     if(isAuthenticated === null){
-      console.log('attempt to load the user');
+      // console.log('attempt to load the user');
       loadUser();
     }
     

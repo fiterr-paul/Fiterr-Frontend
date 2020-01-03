@@ -8,7 +8,8 @@ import profileImgPaul from './assets/media/paul-900x900.jpg';
 
 import AuthContext from '../context/auth/authContext';
 import SearchContext from '../context/search/searchContext';
-import ProfileContext from '../context/profile/profileContext'
+import ProfileContext from '../context/profile/profileContext';
+import PostContext from '../context/post/postContext';
 
 const HeaderAuthenticated = () => {
 
@@ -17,22 +18,25 @@ const HeaderAuthenticated = () => {
   const authContext = useContext(AuthContext);
   const searchContext = useContext(SearchContext);
   const profileContext = useContext(ProfileContext)
+  const postContext = useContext(PostContext)
 
-  const { searchUsers } = searchContext;
+  const { searchUsers, clearViewingUser, clearSearchState } = searchContext;
   const { isAuthenticated, logout, user, loading } = authContext;
-  const { getProfile, profile } = profileContext
+  const { getProfile, profile, clearProfile } = profileContext;
+  const { clearPostState } = postContext;
 
   const [search, setSearch] = useState('');
 
   // console.log('---', isAuthenticated, user);  // when does a component rerender in react with context?
 
-  let profileUrl;
-  user ? profileUrl=`/${user.username}` : profileUrl='#';
-  // console.log(profileUrl);
-
   const onLogout = () => {
     console.log('logging out');
+    // need to clear all the contexts here
+    clearSearchState();
+    clearPostState();
+    clearProfile();
     logout();
+    history.push(`/`);   //by the time we get redirected to the login page, all of our state will be empty  
   }
 
   const scrollPage = () => {
@@ -45,6 +49,7 @@ const HeaderAuthenticated = () => {
 
   const searchFormSubmit = (e) => {
     e.preventDefault();
+    clearViewingUser();
     searchUsers({ search });
     setSearch('');
     history.push(`/search?query=${search}`);
@@ -87,8 +92,8 @@ const HeaderAuthenticated = () => {
                   </div>
                 </Link>
                 <div className="top-nav-vr"></div>
-                <Link onClick={scrollPage} className="link-profile" to={profileUrl}>
-                  <img className="profile-image" src={profileImgPaul} alt=""/>
+                <Link onClick={scrollPage} className="link-profile" to={user ? `/${user.username}` : '#'}>
+                  <img className="profile-image" src={profile ? profile.displayImage : profileImgPaul} alt=""/>
                   <div className="profile-image-text">
                     <span>{ user ? user.username : '' }</span>
                   </div>
@@ -98,9 +103,11 @@ const HeaderAuthenticated = () => {
                   <div className="header-notifications">
                     <i className="fas fa-globe-americas"></i>
                   </div>
-                  <div className="header-notifications">
-                    <i className="fas fa-comment-dots"></i>
-                  </div>
+                  <Link to='/messages'>
+                    <div className="header-notifications">
+                      <i className="fas fa-comment-dots"></i>
+                    </div>
+                  </Link>
                   <div className="header-notifications">
                     <i className="fas fa-tasks"></i>
                   </div>

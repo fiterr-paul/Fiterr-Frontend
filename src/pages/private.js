@@ -16,7 +16,7 @@ const PrivatePage = () => {
     // in order for private route to work you have to check if you can load the user on the actual private route as seen below in the use effect.
     // HOWEVER, the issue seems to be that it takes way too long to check for a loaded user
     useEffect(() => {
-        authContext.loadUser();
+        loadUser();
         // eslint-disable-next-line
     }, [])
 
