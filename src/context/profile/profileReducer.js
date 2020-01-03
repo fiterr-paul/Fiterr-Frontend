@@ -1,6 +1,6 @@
 import {
     SET_PROFILE,
-    REMOVE_PROFILE
+    CLEAR_PROFILE
 } from '../types'
 export default (state, action) => {
     switch(action.type){
@@ -9,7 +9,7 @@ export default (state, action) => {
                 profile: action.payload,
                 profileComplete: true
             }
-        case REMOVE_PROFILE:
+        case CLEAR_PROFILE:
             return{
                 profile: null,
                 profileComplete: null

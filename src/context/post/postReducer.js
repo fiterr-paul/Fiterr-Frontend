@@ -1,4 +1,4 @@
-import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS } from '../types'
+import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_VIEWING_POSTS, CLEAR_POST_STATE } from '../types'
 
 export default (state, action) => {
     switch(action.type){
@@ -12,10 +12,28 @@ export default (state, action) => {
                 ...state,
                 myPosts: action.payload
             }
+        case REMOVE_POST: 
+            return {
+                ...state,
+                myPosts: action.payload
+                // myPosts: state.myPosts.filter(post => post._id !== action.payload)
+            }
         case FIND_FOLLOWING_POSTS:
             return{
                 ...state,
                 followingPosts: action.payload
+            }
+        case GET_VIEWING_POSTS:
+            return {
+                ...state,
+                viewingPosts: action.payload
+            }
+        case CLEAR_POST_STATE:
+            return {
+                myPosts: [],
+                lastPost: null,
+                followingPosts: null,
+                viewingPosts: null
             }
         default:
             return state

@@ -21,7 +21,6 @@ import {
 
 const AuthState = props => {
     const initialState = {
-        token: localStorage.getItem('token'),
         isAuthenticated: null,
         loading: true,
         user: null,
@@ -50,7 +49,6 @@ const AuthState = props => {
                 type: AUTH_ERROR
             })
         }
-        
     }
 
     // Register user
@@ -66,7 +64,7 @@ const AuthState = props => {
 
             dispatch({
                 type: REGISTER_SUCCESS,
-                payload: res.data   //this will be the token - in the reducer we set the token in local storage
+                payload: res.data
             })
 
             loadUser();
@@ -113,7 +111,7 @@ const AuthState = props => {
     // Logout user 
     const logout = async() => {
         // have to hit the backend logout route;
-        await request.get('http://localhost:5000/api/users/logout')
+        await request.get('/api/users/logout')
 
         dispatch({
             type: LOGOUT
@@ -131,7 +129,6 @@ const AuthState = props => {
     return (
         <AuthContext.Provider
          value={{
-            token: state.token,
             isAuthenticated: state.isAuthenticated,
             loading: state.loading,
             user: state.user,

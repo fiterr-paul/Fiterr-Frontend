@@ -22,7 +22,6 @@ export default (state, action) => {
         case LOGIN_SUCCESS:
         return {
             ...state,
-            // ...action.payload,
             isAuthenticated: true,
             loading: false
         };

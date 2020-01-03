@@ -56,3 +56,118 @@
     align-items: center;
     /* border: 1px solid pink; */
 }
+
+
+/* NEW POST */
+.new-post {
+    /* border: 2px solid green; */
+    margin: 2rem 0;
+}
+
+.new-post-field {
+    /* border: 2px solid black; */
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.new-post-submit {
+    background-color: #FD7800;
+    border: none;
+    color: white;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* .input-file-label {
+    padding: 0.625rem 1.25rem;
+} */
+
+.inputfile {
+    /* display: none; */
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+}
+
+.input-file-label {
+    cursor: pointer;
+    padding: 0.625rem 1.25rem;
+}
+
+.input-file-name {
+    margin-left: 0.5rem;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: rgb(216, 216, 216);
+}
+
+/* USER POSTS */
+.user-posts {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-post {
+    border: 1px solid grey;
+    width: 25%;
+    margin-top: 2rem;
+}
+
+.remove-post {
+    cursor: pointer;
+}
+
+.newsfeed-posts {
+    border: 1px solid red;
+    margin: 1rem;
+}
+
+.newsfeed-post {
+    border: 0.2px solid green;
+    margin: 1rem;
+}
+
+/* OTHER PROFILE */
+.other-profile-container {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.other-profile-details {
+    border: 1px solid black;
+    width: 25%;
+    margin: 2rem 0;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* FOLLOW BUTTON */
+.follow-btn {
+    border: 0.2px solid black;
+    width: 35%;
+    margin: 1rem 0;
+    padding: 0.4rem 0.8rem;
+    background-color: #FD7800;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    /* align-items: center; */
+
+}

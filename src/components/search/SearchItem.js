@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SearchItem = ({ user }) => {
-    console.log(user);
+    console.log('Search item user:', user);
 
     const { username, _id } = user;
 
@@ -16,11 +16,11 @@ const SearchItem = ({ user }) => {
         id = _id;
     }
 
-    console.log(id);
+    console.log('We have the id:', id);
 
     return (
         <div>
-            <Link to={`/profile/${id}`}>{user.firstname} {user.lastname}</Link>
+            <Link to={`/${id}`}>{user.firstname} {user.lastname}</Link>
         </div>
     )
 }

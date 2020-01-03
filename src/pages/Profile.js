@@ -1,55 +1,50 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, Fragment } from 'react';
 
 import SearchContext from '../context/search/searchContext';
 import AuthContext from '../context/auth/authContext';
+import ProfileContext from '../context/profile/profileContext';
 
-import MyProfile from './MyProfile';
+// import MyProfile from './MyProfile'; // not going to use this anymore as Jordy's Profile component acts as the myprofile component
+
+import Spinner from '../components/layout/Spinner';
+import MyProfile from '../components/profile/MyProfile';
+import OtherProfile from '../components/profile/OtherProfile';
 
 const Profile = (props) => {
 
     const authContext = useContext(AuthContext);
+    const profileContext = useContext(ProfileContext);
+
+    // console.log('User state is currently:', user);
     const { user, isAuthenticated, loadUser } = authContext;
-    console.log('this is the user', user);
-    if(!isAuthenticated){ loadUser() }  // need this line to relog back in on a page sometime in development
-    
-    const searchContext = useContext(SearchContext);
-    const { getUser, viewingUser } = searchContext;
+    const { profile, getProfile } = profileContext;
 
+    const { match: { params: { username } } } = props;
 
-    const { match: { params } } = props;
-    const { id } = params;
-    console.log('params', id);
-    
-    const [following, setFollowing] = useState(false);
-        
+    // Need to put loading code in useEffect, otherwise it just constantly runs in a loop if placed outside
     useEffect(() => {
-        getUser({ id });
-    }, []);
+        if(!isAuthenticated){ loadUser() }  // need this line to relog back in on a page in development
+        if(isAuthenticated && !profile){ getProfile(user._id) }
+    }, [isAuthenticated])
     
-    const checkFollowing = () => {
-        // if we (the user in the auth state) has viewingUsers _id in their following array then set the state to following being true
-        // and then render follow or following depending on this state
-    }
-    
-    //going to render the MyProfile component if the profile username/id param is the same as yours
-    if(user && (id === user._id || id === user.username)){
-        console.log("GOING TO RENDER THE MYPROFILE COMPONENT");
-        return <MyProfile />
-    }
-
-    if(!viewingUser){
+    if(!isAuthenticated && !profile){
         return (
-            <h1>Loading user details...</h1>
+            <Fragment>
+                <h1>Loading user...</h1>
+                <Spinner />
+            </Fragment>
         )
     } else {
-        return (
-            <div>
-                <h1>{viewingUser.firstname} {viewingUser.lastname}</h1>
-                <h1>Email: {viewingUser.email}</h1>
-                <h1>Gender: {viewingUser.gender}</h1>
-                <button>Follow</button>
-            </div>
-        )
+        // logic to determine whether we show our profile or another users profile
+        if(username == user._id || username === user.username) {
+            return (
+                <MyProfile />
+            )
+        } else {
+            return (
+                <OtherProfile username={username}/>
+            )
+        }
     }
 }
 
