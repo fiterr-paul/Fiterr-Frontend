@@ -13,7 +13,9 @@ import Signup from './components/auth/Register';
 import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
-import Profile from './pages/profile';
+import Profile from './pages/Profile';
+import ProfessionalCreate from './components/professional/ProfessionalCreate'
+import PageCreate from './components/page/PageCreate'
 
 
 // Private Routes
@@ -29,6 +31,8 @@ const Router = () => {
             <PrivateRoute exact path = '/create-profile' component={ProfileSetup}/>
             <PrivateRoute exact path = '/newsfeed' component={Newsfeed}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
+            <PrivateRoute exact path = '/become-professional' component={ProfessionalCreate} />
+            <PrivateRoute exact path = '/page-create' component={PageCreate} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             <Route path='/professionals' component={Professionals} />

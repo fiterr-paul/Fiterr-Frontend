@@ -11,6 +11,7 @@ import AlertState from './context/alert/AlertState';
 import ProfileState from './context/profile/ProfileState'
 import SearchState from './context/search/SearchState'
 import PostState from './context/post/PostState';
+import IsUserProfessional from './components/professional/isProfessional'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <PostState>
               <div className="container-app">
                 <Navbar />
+                <IsUserProfessional />
                 <Router />  
                 <FooterUnauthenticated />
               </div>
