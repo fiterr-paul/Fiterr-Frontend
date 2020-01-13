@@ -14,6 +14,10 @@ import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
 import Profile from './pages/Profile';
+
+// this is the draft version of the real profile page
+import draftProfile from './pages/draftProfile';
+
 import ProfessionalCreate from './components/professional/ProfessionalCreate'
 import PageCreate from './components/page/PageCreate'
 
@@ -35,6 +39,9 @@ const Router = () => {
             <PrivateRoute exact path = '/page-create' component={PageCreate} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
+            
+            <Route path='/draftprofile' component={draftProfile} />
+            
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
             <Route path='/login' component={Login} />
