@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import { Link, useHistory } from 'react-router-dom';
 import AuthContext from '../context/auth/authContext';
 import './assets/scss/index.scss';
+import StickyBox from "react-sticky-box";
 
 import profileImgPaul from '../components/assets/media/paul-900x900.jpg';
 import pageImg1 from '../components/assets/media/logo-paul_meier_fitness-1080x1080.png';
@@ -16,7 +17,9 @@ const draftProfile = () => {
       <section className="body profile">
         <div className="container">
           {/* LEFT COL - NAVIGATION */}
-          <ProfileLeftNav />
+          <StickyBox offsetTop={60} offsetBottom={10}>
+            <ProfileLeftNav />
+          </StickyBox>
 
           {/* RIGHT COL - PROFILE */}
           <ProfileHeader />
@@ -198,7 +201,9 @@ const ProfileBody = () => {
         {/* LEFT COL - PROFILE TIMELINE */}
         <ProfileBodyTimeline />
         {/* RIGHT COL - PROFILE INFO WIDGETS */}
-        <ProfileBodyWidgets />
+        <StickyBox offsetTop={70} offsetBottom={0}>
+          <ProfileBodyWidgets />
+        </StickyBox>
       </div>
     </>
   )
@@ -238,6 +243,17 @@ const ProfileBodyTimeline = () => {
             </div>
           </div>
         </div>
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
+        <TimelinePosts />
         <TimelinePosts />
       </div>
     </>
@@ -375,7 +391,7 @@ const TimelinePosts = () => {
         <div className="body">
           <div className="post-content">
             <span>
-              I wish I was better at coding vanilla JavaScript and React. 🤦🏼‍♂️ Then perhaps maybe I wouldn't feel like such a fucking dumb cunt 🤪
+              I wish I was better at coding JavaScript and React. 🤦🏼‍♂️ Then perhaps maybe I wouldn't feel like such a fucking dumb cunt 🤪
             </span>
           </div>
         </div>
@@ -428,12 +444,14 @@ const TimelinePosts = () => {
               <div className="comment-body">
                 <div className="comment-content">
                   <div className="author-name">
-                    <h3>fat bastard</h3> <span>posted a comment</span>
+                    <Link to="/">fat bastard</Link>
+                    <span>posted a comment</span>
                   </div>
-                  <span>comment body</span>
                 </div>
+                <div className="comment"> this is the comment body </div>
                 <div className="comment-actions">
-                  comment actions
+                  <span> like </span>
+                  <span> reply </span>
                 </div>
               </div>
 
