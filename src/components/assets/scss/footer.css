@@ -1,0 +1,47 @@
+section.footer.footer .container .unauthenticated {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 150px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+section.footer.footer .container .unauthenticated .container-footer-logo .footer-logo {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 36px !important;
+}
+
+section.footer.footer .container .unauthenticated .container-footer-logo .footer-logo .fiterr-logo {
+  max-height: 36px !important;
+}
+
+section.footer.footer .container .unauthenticated .footer-nav a.link-footer {
+  color: #ddd;
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-left: 15px;
+  min-height: 26px;
+  padding: 4px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+section.footer.footer .container .unauthenticated .footer-nav a.link-footer:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*# sourceMappingURL=footer.css.map */
