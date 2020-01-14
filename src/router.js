@@ -13,7 +13,8 @@ import Signup from './components/auth/Register';
 import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
-import Profile from './pages/Profile';
+import Profile from './pages/profile';
+import ProperProfile from './pages/properProfile';
 
 // this is the draft version of the real profile page
 import draftProfile from './pages/draftProfile';
@@ -47,7 +48,8 @@ const Router = () => {
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/contact' component={Contact} />
-            <Route path='/:username' component={Profile} />
+            {/* <Route path='/:username' component={Profile} /> */}
+            <Route path='/:username' component={ProperProfile} />
             <Route path='*' component={PageNotFound} />
           </Switch>
     </>

@@ -1,9 +1,12 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useContext} from 'react';
 import ProfileContext from './profileContext'
 import profileReducer from './profileReducer'
 import { SET_PROFILE, CLEAR_PROFILE } from '../types'
 
 import request from '../../utils/axios-config'
+
+// get the auth context
+import AuthContext from '../auth/authContext';
 
 const config = {
     headers: {
@@ -18,6 +21,12 @@ const ProfileState = props => {
     };
 
     const [state, dispatch] = useReducer(profileReducer, initialState);
+
+    // ------------------------
+    const authContext = useContext(AuthContext);
+    const { loadUser } = authContext;
+
+    // ------------------------
 
     const makeProfile = async (formData) => {
         const response = await request.post('/api/profiles/create', formData, config)
@@ -57,7 +66,15 @@ const ProfileState = props => {
 
     // this will be a mix of the getProfile method and the loadUser method
     const loadMyUserAndProfile = async() => {
-        const data = await request.get()
+        await loadUser();
+
+        const res = await request.get('/api/profiles/myprofile');
+
+        dispatch({
+            type: SET_PROFILE,
+            payload: res.data
+        })
+
     }
 
     return(
@@ -69,7 +86,8 @@ const ProfileState = props => {
                 getProfile,
                 clearProfile,
                 follow,
-                unfollow
+                unfollow,
+                loadMyUserAndProfile
             }}>
                 { props.children }
         </ProfileContext.Provider>

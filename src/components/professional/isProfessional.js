@@ -1,10 +1,11 @@
 import React, {useState, useContext, Fragment} from 'react'
-import authContext from '../../context/auth/authContext'
+import AuthContext from '../../context/auth/authContext'
 import { Link } from 'react-router-dom'
 
 const IsUserProfessional = (props) => {
-    const AuthContext = useContext(authContext)
-    const {isAuthenticated, user} = AuthContext
+    const authContext = useContext(AuthContext);
+    const { isAuthenticated, user } = authContext;
+    
     const scrollPage = () => {
         window.scrollTo(0, 0);
     }
@@ -17,12 +18,11 @@ const IsUserProfessional = (props) => {
         )
     }
 
-    if(isAuthenticated){
+    if(user){
         return(
             <Fragment>
                 {user.isProfessional ? null : notProfessional()}
             </Fragment>
-            
         )
     }
     else{

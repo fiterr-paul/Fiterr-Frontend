@@ -15,7 +15,7 @@ const config = {
 
 const PostState = props => {
     const initialState = {
-        myPosts: [],
+        myPosts: null,  // null or []?
         lastPost: null,
         followingPosts: null, // to use on newsfeed for getting array of date sorted posts
         viewingPosts: null,
@@ -32,12 +32,14 @@ const PostState = props => {
     const makePost = async (formData) => {
         // console.log(formData.get('postTitle'));  // <-- can use this to see is formData has a certain field
         const response = await request.post('/api/posts/create-post', formData, config);
-        console.log('This is the post:', response.data);
+        console.log('This is the new post:', response.data);
+
+        // the dispatch should update the post state on the frontend
         dispatch({
             type: UPDATE_LAST_POST,
             payload: response.data
         })
-        getUserPosts();
+        // getUserPosts();
     }
 
     const getUserPosts = async () => {

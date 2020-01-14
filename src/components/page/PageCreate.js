@@ -1,11 +1,11 @@
 import React, {useState, useContext} from 'react'
-import authContext from '../../context/auth/authContext'
+import AuthContext from '../../context/auth/authContext'
 import request from '../../utils/axios-config'
 
 
 
 const PageCreate = () => {
-    const AuthContext = useContext(AuthContext)
+    const authContext = useContext(AuthContext)
 
     const {user} = authContext
     const [page, setPage] = useState({

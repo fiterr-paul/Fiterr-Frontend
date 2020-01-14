@@ -32,6 +32,7 @@ const AuthState = props => {
     // get setAlert method from Alert Context
     const alertContext = useContext(AlertContext);
     const { setAlert } = alertContext;
+
    
     // Load user
     const loadUser = async () => {
@@ -137,7 +138,7 @@ const AuthState = props => {
             loadUser,
             login,
             logout,
-            clearErrors
+            clearErrors,
          }}>
             { props.children }
         </AuthContext.Provider>
