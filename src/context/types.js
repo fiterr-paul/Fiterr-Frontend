@@ -27,6 +27,7 @@ export const CLEAR_SEARCH_STATE = 'CLEAR_SEARCH_STATE';
 
 // Post Context
 export const UPDATE_LAST_POST = 'UPDATE_LAST_POST';
+export const UPDATE_POSTS = 'UPDATE_POSTS';
 export const SET_POSTS = 'SET_POSTS';
 export const FIND_FOLLOWING_POSTS = 'FIND_FOLLOWING_POSTS';
 export const GET_VIEWING_POSTS = 'GET_VIEWING_POSTS';

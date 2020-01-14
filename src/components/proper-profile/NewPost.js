@@ -32,16 +32,15 @@ const NewPost = () => {
 
   const [fileName, setFileName] = useState('');
 
-  const { postTitle, postDescription, image } = post
+  const { postDescription, image } = post
 
   const onChange = async (e) => {
-    setPost({...post, postDescription: e.target.value}) // i dont need to be setting the e.target.name because theres only one field now ( we arent going to be including a post title )
+    setPost({...post, postDescription: e.target.value})
   }
 
   const onFileChange = async (e) => {
     setPost({...post, [e.target.name]: e.target.files[0]})
     const fileName = e.target.value.split('\\').pop();
-    console.log(fileName);
     setFileName(fileName);
   }
 
@@ -49,12 +48,10 @@ const NewPost = () => {
     e.preventDefault(); // dont need this because onSubmit is not in the form element
 
     let body = new FormData();
-    body.append('postTitle', 'New Post Test')
     body.append('postDescription', postDescription)
     body.append('image', image);
 
     makePost(body);
-    // console.log('post desc', postDescription);
 
     setPost({
         postDescription: '',

@@ -1,5 +1,7 @@
 import React, { Fragment, useContext } from 'react'
 import { Link } from 'react-router-dom';
+import Moment from 'react-moment';
+
 import profileImgPaul from '../assets/media/paul-900x900.jpg';
 import stockIMG from '../assets/media/stockIMG.jpg';
 
@@ -7,15 +9,20 @@ import stockIMG from '../assets/media/stockIMG.jpg';
 // contexts
 import AuthContext from '../../context/auth/authContext';
 import ProfileContext from '../../context/profile/profileContext';
+import PostContext from '../../context/post/postContext';
 
 
-const TimelinePost = ({ post: { content } }) => {
+const TimelinePost = ({ post: { _id, content, date, comments, likes } }) => {
 
     const authContext = useContext(AuthContext);
     const profileContext = useContext(ProfileContext);
+    const postContext = useContext(PostContext);
 
-    const { user: { firstname, lastname } } = authContext;
-    const { profile: { displayImage } } = profileContext;
+    // const { user: { firstname, lastname } } = authContext;
+    const { profile: { displayImage, user: { firstname, lastname } } } = profileContext;  
+    // we can access the user info such as firstname and lastname because of the populate() call on the backend 
+
+    const { like } = postContext;
 
     return (
         <Fragment>
@@ -29,7 +36,7 @@ const TimelinePost = ({ post: { content } }) => {
                 <h3><Link to='/'>{`${firstname} ${lastname}`}</Link> <span>made a post</span></h3>
                 </div>
                 <div className="post-date">
-                  <span> december 22 </span>
+                  <span> <Moment format='DD/MM/YYYY hh:mm A'>{date}</Moment> </span>
                   <div className="post-options">
                     <button type="button" value="post-options">
                       <i className="fas fa-globe-americas"></i>
@@ -53,13 +60,13 @@ const TimelinePost = ({ post: { content } }) => {
                     <i className="far fa-thumbs-up"></i>
                   </div>
                   {/* <span>1 person likes this</span> */}
-                  <span>15 people like this</span>
+                  <span>{likes.length} people like this</span>
                 </div>
                 <div className="icon-wrapper comment">
                   <div className="icon-bgr">
                     <i className="far fa-comment-alt"></i>
                   </div>
-                  <span>2 comments</span>
+                  <span>{comments.length} comments</span>
                 </div>
                 <div className="icon-wrapper share">
                   <div className="icon-bgr">
@@ -71,7 +78,7 @@ const TimelinePost = ({ post: { content } }) => {
             </div>
             <div className="post-actions-wrapper">
               <div className="social-actions">
-                <button type="button" className="social-like" name="" value="social-like">
+                <button onClick={() => like(_id)} type="button" className="social-like" name="" value="social-like">
                   <i className="far fa-thumbs-up"></i>
                   <span>like</span>
                 </button>
