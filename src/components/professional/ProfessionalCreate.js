@@ -39,7 +39,9 @@ const ProfessionalCreate = (props) => {
             <form>
                 <label >Enter Your Contact Number Below</label>
                 <input type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={onChange}/>
-                <input type="submit" value="Submit"/>
+                <div className="submit-button">
+                    <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
+                </div>
             </form>
         </>
     )
