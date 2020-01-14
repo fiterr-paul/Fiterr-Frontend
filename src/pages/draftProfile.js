@@ -4,8 +4,10 @@ import { Link, useHistory } from 'react-router-dom';
 import AuthContext from '../context/auth/authContext';
 import './assets/scss/index.scss';
 import StickyBox from "react-sticky-box";
+import TextareaAutosize from 'react-autosize-textarea';
 
 import profileImgPaul from '../components/assets/media/paul-900x900.jpg';
+import profileImgFatBastard from '../components/assets/media/fatbastard-185x185.jpg';
 import pageImg1 from '../components/assets/media/logo-paul_meier_fitness-1080x1080.png';
 import pageImg2 from '../components/assets/media/logo-livefit_livelean-640x640.png';
 import pageImg3 from '../components/assets/media/logo-28_day_kickstart-1080x1080.png';
@@ -227,7 +229,7 @@ const ProfileBodyTimeline = () => {
               <img src={profileImgPaul} alt=""/>
             </div>
             <div className="post-input-field">
-              <textarea  type="textarea" name="post" rows="3" autoComplete="off" placeholder="Share something with your followers ..." required/>
+              <TextareaAutosize  type="textarea" name="post" autoComplete="off" placeholder="Share something with your followers ..." required/>
             </div>
           </div>
           <div className="post-box-actions">
@@ -378,7 +380,7 @@ const TimelinePosts = () => {
               <h3><Link to='/'>paul meier</Link> <span>made a post</span></h3>
             </div>
             <div className="post-date">
-              <span> december 22 </span>
+              <span> december 22, 2019 at 11:23am </span>
               <div className="post-options">
                 <button type="button" value="post-options">
                   <i className="fas fa-globe-americas"></i>
@@ -391,7 +393,7 @@ const TimelinePosts = () => {
         <div className="body">
           <div className="post-content">
             <span>
-              I wish I was better at coding JavaScript and React. 🤦🏼‍♂️ Then perhaps maybe I wouldn't feel like such a fucking dumb cunt 🤪
+              I wish I was better at coding JavaScript and React. 🤦🏼‍♂️ Then perhaps maybe I wouldn't feel like such a dumb-fuck! 🤪
             </span>
           </div>
         </div>
@@ -436,34 +438,100 @@ const TimelinePosts = () => {
         </div>
 
         <div className="post-comments-wrapper">
-          <div className="post-comment">
-            <div className="comment-wrapper">
-              <div className="comment-image">
+
+          <PostComment />
+
+          <div className="post-comment-form-wrapper">
+            <div className="post-comment-form">
+              <div className="form-image">
                 <img src={profileImgPaul} alt=""/>
               </div>
-              <div className="comment-body">
-                <div className="comment-content">
-                  <div className="author-name">
-                    <Link to="/">fat bastard</Link>
-                    <span>posted a comment</span>
-                  </div>
-                </div>
-                <div className="comment"> this is the comment body </div>
-                <div className="comment-actions">
-                  <span> like </span>
-                  <span> reply </span>
-                </div>
+              <div className="form-field">
+                <form>
+                  <TextareaAutosize type="textarea" autoComplete="off" className="comment-field" placeholder="Write a new comment ..." />
+                  <button type="submit" label="search" className="comment-btn"> post 
+                  </button>
+                </form>
               </div>
-
-              {/* <div className="reply">
-              this is a reply
-              </div> */}
             </div>
           </div>
         </div>
-
       </div>
     </>
+  )
+};
+
+const PostComment = () => {
+  return (
+    <div className="post-comment">
+      <div className="comment-wrapper">
+        <div className="comment-image">
+          <img src={profileImgFatBastard} alt=""/>
+        </div>
+        <div className="comment-body">
+          <div className="comment-content">
+            <div className="author-name">
+              <Link to="/">fat bastard</Link>
+              <span>posted a comment</span>
+            </div>
+            <div className="comment"> Don't worry Paul, you're just "mentally challenged"! Kind of like how I am horozontally challenged! </div>
+          </div>
+          <div className="comment-actions">
+            <span className="action"> like </span>
+            <span className="space-dot">&middot;</span>
+            <span className="action"> reply </span>
+          </div>
+
+          <PostReply />
+
+          <PostReplyForm />
+
+        </div>
+      </div>
+    </div>
+  )
+};
+
+const PostReply = () => {
+  return (
+    <div className="reply-wrapper">
+      <div className="reply-image">
+        <img src={profileImgPaul} alt=""/>
+      </div>
+      <div className="reply-body">
+        <div className="reply-content">
+          <div className="author-name">
+            <Link to="/">paul meier</Link>
+            <span>posted a reply</span>
+          </div>
+          <div className="comment"> Fuck you ... you bastard! </div>
+        </div>
+        <div className="reply-actions">
+          <span className="action"> like </span>
+          <span className="space-dot">&middot;</span>
+          <span className="action"> reply </span>
+        </div>
+      </div>
+    </div>
+  )
+};
+
+const PostReplyForm = () => {
+  return (
+    <div className="post-reply-form-wrapper">
+      <div className="post-reply-form">
+        <div className="form-image">
+          <img src={profileImgPaul} alt=""/>
+        </div>
+        <div className="form-field">
+          <form>
+            <TextareaAutosize type="textarea" autoComplete="off" className="comment-field" placeholder="Write a reply ..." />
+            <button type="submit" label="search" className="comment-btn"> reply 
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   )
 };
 
