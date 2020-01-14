@@ -22,9 +22,9 @@ function App() {
             <PostState>
               <div className="container-app">
                 <Navbar />
-                <IsUserProfessional />
+                {/* <IsUserProfessional /> */}
                 <Router />  
-                <FooterUnauthenticated />
+                <Footer />
               </div>
             </PostState>
           </ProfileState>
