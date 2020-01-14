@@ -359,20 +359,20 @@
               }
             }
             .post-box-body {
-              align-items: center;
+              align-items: flex-start;
               display: flex;
               flex-direction: row;
               flex-wrap: nowrap;
-              height: 100px;
               justify-content: space-between;
+              min-height: 100px;
               width: 100%;
               .profile-image {
                 align-items: flex-start;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
-                height: 100%;
                 justify-content:flex-start;
+                min-height: 100px;
                 padding: 10px;
                 width: 70px;
                 img {
@@ -389,8 +389,8 @@
                 flex-direction: row;
                 flex-grow: 1;
                 flex-wrap: nowrap;
-                height: 100%;
                 justify-content:flex-start;
+                min-height: 100px;
                 padding: 10px;
                 padding-left: 0;
                 textarea[type = textarea] {
@@ -398,7 +398,7 @@
                   border-radius: 3px;
                   color: #000;
                   font-size: 1.2em;
-                  height: 100%;
+                  // height: 100%;
                   line-height: 1.4em;
                   resize: none;
                   width: 100%;
@@ -954,7 +954,6 @@
               }
               .comment-body {
                 align-items: flex-start;
-                // background: rgba(0, 81, 255, 0.178); // FIXME: remove
                 display: flex;
                 flex-direction: column;
                 flex-grow: 1;
@@ -962,14 +961,17 @@
                 justify-content: flex-start;
                 margin-left: 10px;
                 min-height: 46px;
-                
                 .comment-content {
                   align-items: flex-start;
+                  background-color: #f8f8f8;
+                  border: 1px solid #f5f4f4;
+                  border-radius: 3px;
                   display: flex;
-                  flex-direction: row;
+                  flex-direction: column;
                   flex-wrap: nowrap;
                   justify-content: flex-start;
                   min-height: 20px;
+                  padding: 5px;
                   width: 100%;
                   .author-name {
                     align-items: flex-start;
@@ -999,26 +1001,331 @@
                       text-transform: lowercase;
                     }
                   }
-                }
-                .comment {
-                  color: #444;
-                  font-size: 0.9em;
-                  font-weight: 500;
-                  line-height: 1.2em;
+                  .comment {
+                    color: #444;
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 0.9em;
+                    font-weight: 400;
+                    line-height: 1.2em;
+                    margin: 2px 0px 2px 0;
+                    width: 100%;
+                  }
                 }
                 .comment-actions {
                   align-items: flex-start;
                   display: flex;
                   flex-direction: row;
                   flex-wrap: nowrap;
+                  font-size: 0.8em;
+                  padding-left: 4px;
+                  text-transform: capitalize;
                   justify-content: flex-start;
+                  margin-top: 5px;
                   width: 100%;
+                  .space-dot {
+                    color: #444;
+                    font-weight: 400;
+                    line-height: 1.2em;
+                    padding: 0 5px;
+                  }
+                  .action {
+                    color: #444;
+                    font-weight: 400;
+                    line-height: 1.2em;
+                    &:hover {
+                      color: $primaryOrangeHover;
+                      cursor: pointer;
+                      text-decoration: underline;
+                    }
+                  }
+                }
+                .reply-wrapper {
+                  align-items: flex-start;
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  justify-content: flex-start;
+                  margin-top: 6px;
+                  width: 100%;
+                  .reply-image {
+                    align-items: flex-start;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    height: 36px;
+                    justify-content:flex-start;
+                    padding: 0px;
+                    width: 36px;
+                    img {
+                      border: 1px solid #999;
+                      border-radius: 100%;
+                      display: flex;
+                      overflow: hidden;
+                      width: 36px;
+                    }
+                  }
+                  .reply-body {
+                    align-items: flex-start;
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    margin-left: 10px;
+                    min-height: 36px;
+                    .reply-content {
+                      align-items: flex-start;
+                      background-color: #f8f8f8;
+                      border: 1px solid #f5f4f4;
+                      border-radius: 3px;
+                      display: flex;
+                      flex-direction: column;
+                      flex-wrap: nowrap;
+                      justify-content: flex-start;
+                      min-height: 20px;
+                      padding: 5px;
+                      width: 100%;
+                      .author-name {
+                        align-items: flex-start;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: flex-start;
+                        min-height: 20px;
+                        width: 100%;
+                        a {
+                          color: $primaryOrange;
+                          font-size: 0.9em;
+                          font-weight: 500;
+                          line-height: 1.2em;
+                          text-transform: capitalize;
+                          &:hover {
+                            color: $primaryOrangeHover;
+                            text-decoration: underline;
+                          }
+                        }
+                        span {
+                          color: #444;
+                          font-size: 0.9em;
+                          font-weight: 400;
+                          line-height: 1.2em;
+                          margin-left: 5px;
+                          text-transform: lowercase;
+                        }
+                      }
+                      .comment {
+                        color: #444;
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 0.9em;
+                        font-weight: 400;
+                        line-height: 1.2em;
+                        margin: 2px 0px 2px 0;
+                        width: 100%;
+                      }
+                    }
+                    .reply-actions {
+                      align-items: flex-start;
+                      display: flex;
+                      flex-direction: row;
+                      flex-wrap: nowrap;
+                      font-size: 0.8em;
+                      margin-top: 5px;
+                      padding-left: 6px;
+                      text-transform: capitalize;
+                      justify-content: flex-start;
+                      width: 100%;
+                      .space-dot {
+                        color: #444;
+                        font-weight: 400;
+                        line-height: 1.2em;
+                        padding: 0 5px;
+                      }
+                      .action {
+                        color: #444;
+                        font-weight: 400;
+                        line-height: 1.2em;
+                        &:hover {
+                          color: $primaryOrangeHover;
+                          cursor: pointer;
+                          text-decoration: underline;
+                        }
+                      }
+                    }
+                  }
+                }
+                .post-reply-form-wrapper {
+                  align-items: center;
+                  display: flex;
+                  flex-direction: column;
+                  flex-wrap: nowrap;
+                  justify-content: flex-start;
+                  margin-top: 3px;
+                  width: 100%;
+                  .post-reply-form {
+                    align-items: flex-start;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    width: 100%;
+                    .form-image {
+                      align-items: center;
+                      display: flex;
+                      flex-direction: row;
+                      flex-wrap: nowrap;
+                      height: 36px;
+                      justify-content: center;
+                      padding: 0px;
+                      width: 36px;
+                      img {
+                        border: 1px solid #999;
+                        border-radius: 100%;
+                        display: flex;
+                        overflow: hidden;
+                        width: 36px;
+                      }
+                    }
+                    .form-field {
+                      align-items: flex-start;
+                      display: flex;
+                      flex-direction: column;
+                      flex-grow: 1;
+                      flex-wrap: nowrap;
+                      justify-content: center;
+                      margin-left: 10px;
+                      min-height: 36px;
+                      form {
+                        align-items: flex-end;
+                        display: flex;
+                        font-size: 0.8em;
+                        height: auto;
+                        width: 100%;
+                        textarea.comment-field {
+                          border-color:#dddfe2;
+                          border-radius: 3px;
+                          border-style: solid;
+                          border-width: 1px;
+                          color: #333;
+                          line-height: 1.4em;
+                          padding: 6px;
+                          padding-right: 58px;
+                          resize: none;
+                          width: 100%;
+                        }
+                        button.comment-btn {
+                          background-color: #f8f8f8;
+                          border-color:#dddfe2;
+                          border-radius: 3px;
+                          border-style: solid;
+                          border-width: 1px;
+                          color: #666;
+                          display: block;
+                          font-size: 1em;
+                          font-weight: 500;
+                          float: right;
+                          height: 23px;
+                          line-height: 1.2em;
+                          margin-bottom: 4px;
+                          margin-left: -54px;
+                          text-transform: capitalize;
+                          width: 50px;
+                          &:hover {
+                            background-color: $primaryOrange;
+                            border-color: $primaryOrange;
+                            color: #fff;
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
-              
-
-              .reply {
+            }
+          }
+        }
+        .post-comment-form-wrapper {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          width: 100%;
+          .post-comment-form {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            width: 100%;
+            .form-image {
+              align-items: center;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              height: 36px;
+              justify-content: center;
+              padding: 0px;
+              width: 46px;
+              img {
+                border: 1px solid #999;
+                border-radius: 100%;
                 display: flex;
+                overflow: hidden;
+                width: 36px;
+              }
+            }
+            .form-field {
+              align-items: flex-start;
+              display: flex;
+              flex-direction: column;
+              flex-grow: 1;
+              flex-wrap: nowrap;
+              justify-content: center;
+              margin-left: 10px;
+              min-height: 36px;
+              form {
+                align-items: flex-end;
+                display: flex;
+                font-size: 0.8em;
+                height: auto;
+                width: 100%;
+                textarea.comment-field {
+                  border-color:#dddfe2;
+                  border-radius: 3px;
+                  border-style: solid;
+                  border-width: 1px;
+                  color: #333;
+                  line-height: 1.4em;
+                  padding: 6px;
+                  padding-right: 58px;
+                  resize: none;
+                  width: 100%;
+                }
+                button.comment-btn {
+                  background-color: #f8f8f8;
+                  border-color:#dddfe2;
+                  border-radius: 3px;
+                  border-style: solid;
+                  border-width: 1px;
+                  color: #666;
+                  display: block;
+                  font-size: 1em;
+                  font-weight: 500;
+                  float: right;
+                  height: 23px;
+                  line-height: 1.2em;
+                  margin-bottom: 4px;
+                  margin-left: -54px;
+                  text-transform: capitalize;
+                  width: 50px;
+                  &:hover {
+                    background-color: $primaryOrange;
+                    border-color: $primaryOrange;
+                    color: #fff;
+                  }
+                }
               }
             }
           }
