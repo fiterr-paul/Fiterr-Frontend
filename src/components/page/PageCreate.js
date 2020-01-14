@@ -1,11 +1,13 @@
 import React, {useState, useContext} from 'react'
 import AuthContext from '../../context/auth/authContext'
 import request from '../../utils/axios-config'
+import { useHistory } from 'react-router-dom'
 
 
 
 const PageCreate = () => {
     const authContext = useContext(AuthContext)
+    const history = useHistory()
 
     const {user} = authContext
     const [page, setPage] = useState({
@@ -38,6 +40,9 @@ const PageCreate = () => {
                 <input type="text" name="pageTitle" id="pageTitle" value={pageTitle} onChange={onChange} />
                 <label>Tell us about your page!</label>
                 <input type="text" name="pageDescription" id="pageDescription" value={pageDescription} onChange={onChange}/>
+                <div className="submit-button">
+                    <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
+                </div>
             </form>
         </>
     )
