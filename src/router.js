@@ -13,7 +13,7 @@ import Signup from './components/auth/Register';
 import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
-import Profile from './pages/profile';
+import Profile from './pages/Profile';
 import ProperProfile from './pages/properProfile';
 
 // this is the draft version of the real profile page

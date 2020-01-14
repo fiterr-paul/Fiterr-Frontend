@@ -19,7 +19,8 @@ const PageCreate = () => {
     const onSubmit = async(e) => {
         e.preventDefault()
         let body = new FormData
-        body.append()
+        body.append('pageTitle', pageTitle)
+        body.append('pageDescription', pageDescription)
 
 
         const post = await request.post('/api/pages/create')
