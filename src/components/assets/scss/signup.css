@@ -1,0 +1,200 @@
+.container-app section.body.signup {
+  background-image: url("../media/girl-stretching.jpg");
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 60px);
+}
+
+.container-app section.body.signup .image-overlay {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(15, 15, 15, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container-app section.body.signup .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container-app section.body.signup .form-container {
+  background-color: rgba(255, 255, 255, 0.45);
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  color: #222;
+  padding: 20px;
+}
+
+.container-app section.body.signup .form-container h1 {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-size: 2.6em;
+  font-weight: 500;
+  line-height: 1em;
+  margin-bottom: 15px;
+  padding: 6px 12px;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.signup .form-container form.signup {
+  display: block;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.title {
+  width: 100%;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.title h3 {
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=text],
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=date],
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=email],
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=password] {
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  color: #000;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 6px;
+  width: 100%;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=text]::-webkit-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=date]::-webkit-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=email]::-webkit-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=password]::-webkit-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=text]:-ms-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=date]:-ms-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=email]:-ms-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=password]:-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=text]::-ms-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=date]::-ms-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=email]::-ms-input-placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=password]::-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=text]::placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=date]::placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=email]::placeholder,
+.container-app section.body.signup .form-container form.signup .field-row.input input[type=password]::placeholder {
+  color: #787878;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input.name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input.name .width-50 {
+  width: calc(50% - 5px);
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input.name .width-50 input[type=text] {
+  width: 100%;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input.gender {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input.gender .btn-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100px;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.input.gender .btn-radio input[type=radio] {
+  line-height: 1em;
+  height: 18px;
+  margin-top: -1px;
+  width: 22px;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.button button[type=submit] {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1em;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.container-app section.body.signup .form-container form.signup .field-row.button button[type=submit]:hover {
+  background-color: #ff8418;
+  border: solid 1px #ff8418;
+}
+/*# sourceMappingURL=signup.css.map */

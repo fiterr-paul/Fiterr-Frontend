@@ -16,16 +16,18 @@ const PageCreate = () => {
         pageDescription: ''
     })
 
-    const {pageTitle, pageDescription} = page
+    const {pageTitle, pageDescription, pageOwner} = page
 
     const onSubmit = async(e) => {
         e.preventDefault()
         let body = new FormData
+        body.append('pageOwner', pageOwner)
         body.append('pageTitle', pageTitle)
         body.append('pageDescription', pageDescription)
 
 
         const post = await request.post('/api/pages/create')
+        history.push(`/page/${pageTitle}`)
     }
 
     const onChange = (e) => {

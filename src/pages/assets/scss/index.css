@@ -1,0 +1,2278 @@
+.container-app section.body.error-page {
+  height: calc(100vh - 60px);
+}
+
+.container-app section.body.error-page .pagenotfound {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container-app section.body.error-page .pagenotfound .image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container-app section.body.error-page .pagenotfound .image img.error-image {
+  width: 300px;
+}
+
+.container-app section.body.error-page .pagenotfound .text {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.container-app section.body.error-page .pagenotfound .text span {
+  font-size: 1.6em;
+  line-height: 1.2em;
+}
+
+.container-app section.body.homepage {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow: hidden;
+}
+
+.container-app section.body.homepage .video-overlay:before {
+  content: '';
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: calc(100% - 60px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.container-app section.body.homepage video#video {
+  display: block;
+  width: 100%;
+  z-index: 0;
+}
+
+.container-app section.body.enthusiasts {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: calc(100vh - 60px);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.enthusiasts .head-banner {
+  background-image: url("../media/banner-barbell.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container-app section.body.enthusiasts .head-banner .image-overlay {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(15, 15, 15, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container-app section.body.enthusiasts .head-banner .image-overlay .title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container-app section.body.enthusiasts .head-banner .image-overlay .title h1 {
+  color: #fff;
+  font-size: 2.4em;
+  font-weight: 600;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.container-app section.body.enthusiasts .container {
+  margin: 50px 0;
+}
+
+.container-app section.body.professionals {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: calc(100vh - 60px);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.professionals .head-banner {
+  background-image: url("../media/banner-barbell.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container-app section.body.professionals .head-banner .image-overlay {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(15, 15, 15, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container-app section.body.professionals .head-banner .image-overlay .title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container-app section.body.professionals .head-banner .image-overlay .title h1 {
+  color: #fff;
+  font-size: 2.4em;
+  font-weight: 600;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.container-app section.body.professionals .container {
+  margin: 50px 0;
+}
+
+.container-app section.body.contact {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: calc(100% - 60px);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner {
+  background-image: url("../media/banner-barbell.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner .image-overlay {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(15, 15, 15, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner .image-overlay .title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner .image-overlay .title h1 {
+  color: #fff;
+  font-size: 2.4em;
+  font-weight: 600;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.container-app section.body.contact .container {
+  margin: 50px 0;
+}
+
+.container-app section.body.contact .container .form-container {
+  background-color: none;
+  border: none;
+  border-radius: none;
+  color: #222;
+  padding: 20px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact {
+  display: block;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.title {
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.title h3 {
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text],
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email],
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea] {
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  color: #000;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 6px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]::-webkit-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]::-webkit-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]::-webkit-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]:-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]:-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]:-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]::-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]::-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]::-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]::placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]::placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]::placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea] {
+  resize: none;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input.name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input.name .width-50 {
+  width: calc(50% - 5px);
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input.name .width-50 input[type=text] {
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.button button[type=submit] {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1em;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.button button[type=submit]:hover {
+  background-color: #ff8418;
+  border: solid 1px #ff8418;
+}
+
+.container-app section.body.profile {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.container-app section.body.profile .container {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 5px;
+}
+
+.container-app section.body.profile .container div.col-social-nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 5px;
+  width: 242px;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher {
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-image {
+  border: 1px solid #999;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 50px;
+  overflow: hidden;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-image img {
+  width: 48px;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 10px;
+  width: 160px;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .name,
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .title,
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .switcher {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .name span {
+  color: #fd7800;
+  font-size: 1em;
+  font-weight: 500;
+  height: 100%;
+  line-height: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .name span:hover {
+  color: #ff8418;
+  cursor: pointer;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .title span {
+  color: #525252;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1em;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .switcher span {
+  color: #fd7800;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1em;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.switcher .switcher-info .switcher span:hover {
+  color: #ff8418;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.section-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.section-title h3 {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn {
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 0px;
+  padding: 8px 10px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn i.fas {
+  margin-right: 6px;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn h3 {
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn:hover {
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group {
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-bottom: 0px;
+  padding: 8px 10px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group .page-image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #999;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 30px;
+  min-width: 30px;
+  overflow: hidden;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group .page-image .fa,
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group .page-image .far,
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group .page-image .fas {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group .page-image img {
+  width: 28px;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group h3 {
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 2em;
+  margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group:hover {
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group.create-new {
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 1px dashed #d4d4d4;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group.create-new .page-image {
+  border: 1px dashed #d4d4d4;
+}
+
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group.create-new:hover,
+.container-app section.body.profile .container div.col-social-nav .nav-item-wrapper .nav-item.menu-btn-page-group.create-new:hover .page-image {
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+}
+
+.container-app section.body.profile .container div.col-profile {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 5px;
+  width: 752px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container .cover-image-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 300px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container .cover-image-wrapper .cover-image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 0, 0, 0.486);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container .profile-nav-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container .profile-nav-container .profile-nav-wrapper {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container .profile-nav-container .profile-nav-wrapper .profile-nav {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container .profile-nav-container .profile-image-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #00ff0d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 50px;
+  overflow: visible;
+  padding-bottom: 25px;
+  width: 220px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-header-container .profile-nav-container .profile-image-wrapper .profile-image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ff00ea;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  height: 170px;
+  width: 170px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 500px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dddfe2;
+  border-radius: 3px 3px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 5px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-header .icon-bgr {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-header .icon-bgr .fa,
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-header .icon-bgr .far,
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-header .icon-bgr .fas {
+  color: #333;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-header h3 {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 2em;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .profile-image {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px;
+  width: 70px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .profile-image img {
+  border: 1px solid #999;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 50px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .post-input-field {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px;
+  padding-left: 0;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .post-input-field textarea[type=textarea] {
+  border: none;
+  border-radius: 3px;
+  color: #000;
+  font-size: 1.2em;
+  height: 100%;
+  line-height: 1.4em;
+  resize: none;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .post-input-field textarea[type=textarea]::-webkit-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .post-input-field textarea[type=textarea]:-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .post-input-field textarea[type=textarea]::-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body .post-input-field textarea[type=textarea]::placeholder {
+  color: #787878;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions {
+  background-color: #fff;
+  border-top: 1px solid #dddfe2;
+  border-radius: 0 0 3px 3px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button] {
+  background-color: #e8e8e8;
+  border: solid 1px #dedede;
+  border-radius: 3px;
+  color: #666;
+  font-size: 1em;
+  font-weight: 600;
+  height: 26px;
+  line-height: 1em;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button] span {
+  margin: 0 5px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button] .fa,
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button] .far,
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button] .fas {
+  color: #666;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button]:hover {
+  background-color: #dedede;
+  border: solid 1px #dedede;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button]:focus,
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button]:focus .fa,
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button]:focus .far,
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-options button[type=button]:focus .fas {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+  color: #fff;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: 10px;
+  width: 70px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-button button[type=submit] {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  height: 26px;
+  line-height: 1em;
+  padding: 0;
+  text-transform: capitalize;
+  width: 70px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-actions .post-button button[type=submit]:hover {
+  background-color: #ff8418;
+  border: solid 1px #ff8418;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 10px;
+  width: 242px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dddfe2;
+  border-radius: 3px 3px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 5px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .header .icon-bgr {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fd7800;
+  border: 1px solid #fd7800;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .header .icon-bgr .fa,
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .header .icon-bgr .far,
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .header .icon-bgr .fas {
+  color: #fff;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .header h3 {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 2em;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 100px;
+  padding: 5px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .body.no-info {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .body.no-info p {
+  color: #ccc;
+  font-size: 1em;
+  line-height: 1.2em;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .body.thumbnails {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .body.thumbnails .thumbnail-widget {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eeeeee;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 73.33px;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  width: calc(33.333333333% - 5px);
+}
+
+.container-app section.body.profile .container div.col-profile .profile-body-container .profile-info-wrapper .profile-info .widget-wrapper .body.thumbnails .thumbnail-widget i {
+  color: #cccccc;
+  font-size: 1.4em;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #dddfe2;
+  border-radius: 3px 3px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 60px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 5px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .profile-image {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0px;
+  width: 50px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .profile-image img {
+  border: 1px solid #999;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 50px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  margin-left: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-title {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-title h3 {
+  color: #444;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 1.3em;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-title h3 a {
+  color: #fd7800;
+  font-weight: 500;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-title h3 a:hover {
+  color: #ff8418;
+  text-decoration: underline;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-title h3 span {
+  text-transform: lowercase;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date span {
+  color: #444;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.4em;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  margin-left: 10px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button] {
+  background-color: #e8e8e8;
+  border: solid 1px #dedede;
+  border-radius: 3px;
+  color: #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1em;
+  font-weight: 600;
+  height: 18px;
+  line-height: 1em;
+  padding: 0 6px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button] .fa-caret-down {
+  margin-left: 4px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button] .fa,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button] .far,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button] .fas {
+  color: #666;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 0.74em;
+  font-weight: 900;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button]:hover {
+  background-color: #dedede;
+  border: solid 1px #dedede;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button]:focus,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button]:focus .fa,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button]:focus .far,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .header .post-info .post-date .post-options button[type=button]:focus .fas {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+  color: #fff;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .body .post-content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 40px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .body .post-content span {
+  color: #444;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info {
+  border-bottom: none;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions {
+  border-top: 1px solid #dddfe2;
+  border-bottom: 1px solid #dddfe2;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 33.33333%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper .icon-bgr {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #666;
+  border: 1px solid #666;
+  border-radius: 200px;
+  color: #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 0.9em;
+  font-weight: 500;
+  height: 22px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 22px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper .icon-bgr .fa,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper .icon-bgr .far,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper .icon-bgr .fas {
+  color: #fff;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 0.7em;
+  font-weight: 900;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper .icon-bgr .fa-thumbs-up,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper .icon-bgr .fa-share-square {
+  margin-top: -1px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper .icon-bgr .fa-comment-alt {
+  margin-bottom: -1px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .icon-wrapper span {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 2em;
+  margin-left: 5px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .like {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .comment {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper.post-actions-info .social-actions .share {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #dddfe2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 20px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions .social-comment {
+  margin: 0 4px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button] {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 1px rgba(255, 255, 255, 0);
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 6px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button] span {
+  color: #666;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button] .fa,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button] .far,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button] .fas {
+  color: #666;
+  font-family: "Font Awesome 5 Pro";
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1em;
+  margin-right: 5px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:hover {
+  background-color: #efefef;
+  border: solid 1px #efefef;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:hover span {
+  color: #666;
+  font-weight: 500;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:hover .fa,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:hover .far,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:hover .fas {
+  color: #666;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:active {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:active span {
+  color: #fff;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:active .fa,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:active .far,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-actions-wrapper .social-actions button[type=button]:active .fas {
+  color: #fff;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment {
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-image,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-image {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 46px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0px;
+  width: 46px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-image img,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-image img {
+  border: 1px solid #999;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 46px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 10px;
+  min-height: 46px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-content,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-content {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 20px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-content .author-name,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-content .author-name {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 20px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-content .author-name a,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-content .author-name a {
+  color: #fd7800;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1.2em;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-content .author-name a:hover,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-content .author-name a:hover {
+  color: #ff8418;
+  text-decoration: underline;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-content .author-name span,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-content .author-name span {
+  color: #444;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin-left: 5px;
+  text-transform: lowercase;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment {
+  color: #444;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-actions,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-actions {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .reply,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=index.css.map */
