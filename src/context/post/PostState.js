@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import PostContext from './postContext';
 import postReducer from './postReducer';
-import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_VIEWING_POSTS, CLEAR_POST_STATE, UPDATE_POSTS } from '../types'
+import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_VIEWING_POSTS, CLEAR_POST_STATE, UPDATE_POSTS, UPDATE_LIKES } from '../types'
 import AuthContext from '../auth/authContext';
 import ProfileContext from '../profile/profileContext'
 
@@ -42,7 +42,7 @@ const PostState = props => {
 
     const like = async (id) => {
         const res = await request.put(`/api/posts/like/${id}`);
-        console.log('The new likes array', response.data);
+        console.log('The new likes array', res.data);
 
         dispatch({
             type: UPDATE_LIKES,
