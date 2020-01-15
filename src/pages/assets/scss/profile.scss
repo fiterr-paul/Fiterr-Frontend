@@ -227,6 +227,10 @@
         width: 100%;
         .cover-image-wrapper {
           align-items: center;
+          background-color: #f3f3f3;
+          border: 1px solid #dddfe2;
+          border-bottom: none !important;
+          border-radius: 3px 3px 0px 0px;
           display: flex;
           flex-direction: column;
           flex-wrap: nowrap;
@@ -235,7 +239,6 @@
           width: 100%;
           .cover-image {
             align-items: center;
-            background-color: rgba(255, 0, 0, 0.486); // FIXME:
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
@@ -246,34 +249,18 @@
         }
         .profile-nav-container {
           align-items: center;
+          background-color: #fff;
+          border: 1px solid #dddfe2;
+          border-radius: 0px 0px 3px 3px;
+          border-top: none !important;
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
           justify-content: space-between;
           height: 50px;
           width: 100%;
-          .profile-nav-wrapper {
-            align-items: flex-start;
-            display: flex;
-            flex-direction: row;
-            flex-grow: 1;
-            flex-wrap: nowrap;
-            height: 100%;
-            justify-content: center;
-            .profile-nav {
-              align-items: flex-start;
-              background-color: rgb(255, 0, 0); // FIXME:
-              display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
-              height: 100%;
-              justify-content: center;
-              width: 100%;
-            }
-          }
           .profile-image-wrapper {
             align-items: center;
-            background-color: rgb(0, 255, 13); // FIXME:
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
@@ -282,16 +269,99 @@
             overflow: visible;
             padding-bottom: 25px;
             width: 220px;
-            .profile-image {
+            .profile-image-border {
               align-items: center;
-              background-color: rgb(255, 0, 234); // FIXME:
+              background-color: #fff;
+              border: 1px solid #dddfe2;
+              border-radius: 3px;
               display: flex;
               flex-direction: column;
               flex-wrap: nowrap;
               justify-content: center;
+              padding: 3px;
               position: absolute;
               height: 170px;
               width: 170px;
+              .profile-image {
+                align-items: center;
+                border-radius: 3px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                height: 100%;
+                justify-content: center;
+                overflow: hidden;
+                width: 100%;
+                img {
+                  display: flex;
+                  overflow: hidden;
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .profile-nav-wrapper {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            flex-wrap: nowrap;
+            height: 100%;
+            justify-content: center;
+            .profile-nav {
+              align-items: center;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              height: 100%;
+              justify-content: flex-start;
+              width: 100%;
+              .nav-item-wrapper {
+                align-items: center;
+                border-color: #e9eaed;
+                border-style: solid;
+                border-width: 0px 1px 0px 0px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                height: 100%;
+                justify-content: center;
+                padding: 0 14px;
+                .nav-item h3 {
+                  color: #333;
+                  font-size: 0.9em;
+                  font-weight: 500;
+                  line-height: 1.4em;
+                  text-transform: capitalize;
+                }
+                &:hover {
+                  background-color: #f6f7f8;
+                }
+              }
+              .nav-item-wrapper.caret {
+                position: relative;
+                &:before {
+                  content: '';
+                  position: absolute;
+                  bottom: -1px;
+                  left: auto;
+                  border-bottom: 8px solid #dddfe2;
+                  border-left: 8px solid transparent;
+                  border-right: 8px solid transparent;
+                }
+                &:after {
+                  content: '';
+                  position: absolute;
+                  left: auto;
+                  bottom: -1px;
+                  border-bottom: 7px solid #f0f0f0;
+                  border-left: 7px solid transparent;
+                  border-right: 7px solid transparent;
+                }
+              }
+              .nav-item-wrapper.stream {
+                border-left-width: 1px;
+              }
             }
           }
         }

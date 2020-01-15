@@ -180,11 +180,45 @@ const ProfileHeader = () => {
           </div>
           <div className="profile-nav-container">
             <div className="profile-image-wrapper">
-              <div className="profile-image">
+              <div className="profile-image-border">
+                <div className="profile-image">
+                  <img src={profileImgPaul} alt=""/>
+                </div>
               </div>
             </div>
             <div className="profile-nav-wrapper">
               <div className="profile-nav">
+                
+              <Link to='/' className="nav-item-wrapper caret stream">
+                <div className="nav-item">
+                  <h3> stream </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> about </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> services </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> followers </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> photos </h3>
+                </div>
+              </Link>
+
               </div>
             </div>
           </div>

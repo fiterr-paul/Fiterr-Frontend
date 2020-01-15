@@ -30,7 +30,8 @@ const Router = () => {
             <PrivateRoute exact path = '/newsfeed' component={Newsfeed}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <Route path='/enthusiasts' component={Enthusiasts} />
-            <Route path='/profile/:id' component={Profile} />
+            <Route path='/profile/:id' component={Profile} 
+            />
             <Route path='/draftprofile' component={draftProfile} />
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
