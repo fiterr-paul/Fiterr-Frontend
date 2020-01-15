@@ -1,0 +1,140 @@
+.container-app section.body.login {
+  background-image: url("../media/girl-running.jpg");
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 60px);
+}
+
+.container-app section.body.login .image-overlay {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(15, 15, 15, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container-app section.body.login .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container-app section.body.login .form-container {
+  background-color: rgba(255, 255, 255, 0.45);
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  color: #222;
+  padding: 20px;
+}
+
+.container-app section.body.login .form-container h1 {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-size: 2.6em;
+  font-weight: 500;
+  line-height: 1em;
+  margin-bottom: 15px;
+  padding: 6px 12px;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.container-app section.body.login .form-container form.login {
+  display: block;
+}
+
+.container-app section.body.login .form-container form.login .field-row.title {
+  width: 100%;
+}
+
+.container-app section.body.login .form-container form.login .field-row.title h3 {
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.container-app section.body.login .form-container form.login .field-row.input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-app section.body.login .form-container form.login .field-row.input input[type=email],
+.container-app section.body.login .form-container form.login .field-row.input input[type=password] {
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  color: #000;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 6px;
+  width: 100%;
+}
+
+.container-app section.body.login .form-container form.login .field-row.input input[type=email]::-webkit-input-placeholder,
+.container-app section.body.login .form-container form.login .field-row.input input[type=password]::-webkit-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.login .form-container form.login .field-row.input input[type=email]:-ms-input-placeholder,
+.container-app section.body.login .form-container form.login .field-row.input input[type=password]:-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.login .form-container form.login .field-row.input input[type=email]::-ms-input-placeholder,
+.container-app section.body.login .form-container form.login .field-row.input input[type=password]::-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.login .form-container form.login .field-row.input input[type=email]::placeholder,
+.container-app section.body.login .form-container form.login .field-row.input input[type=password]::placeholder {
+  color: #787878;
+}
+
+.container-app section.body.login .form-container form.login .field-row.button {
+  width: 100%;
+}
+
+.container-app section.body.login .form-container form.login .field-row.button button[type=submit] {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1em;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.container-app section.body.login .form-container form.login .field-row.button button[type=submit]:hover {
+  background-color: #ff8418;
+  border: solid 1px #ff8418;
+}
+/*# sourceMappingURL=login.css.map */

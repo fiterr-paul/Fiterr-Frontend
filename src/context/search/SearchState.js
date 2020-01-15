@@ -9,8 +9,10 @@ import request from '../../utils/axios-config';
 import {
     SEARCH_USERS,
     GET_VIEWING_USER,
-    SEARCHING_FOR_RESULTS
-  } from '../types';
+    SEARCHING_FOR_RESULTS,
+    CLEAR_VIEWING_USER,
+    CLEAR_SEARCH_STATE
+} from '../types';
 
 const SearchState = props => {
     const initialState = {
@@ -20,17 +22,18 @@ const SearchState = props => {
         searchTerm: '',
         error: null,
         viewingUser: null,
+        viewingProfile: null,
     };
 
     const [state, dispatch] = useReducer(searchReducer, initialState);
    
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
 
     const searchUsers = async(searchTerm) => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
 
         try {
             dispatch({
@@ -44,6 +47,7 @@ const SearchState = props => {
                 searchedUsers: res.data.searchedUsers,
                 // searchTerm: searchTerm.search
             }
+
             dispatch({
                 type: SEARCH_USERS,
                 payload: payload
@@ -59,16 +63,12 @@ const SearchState = props => {
         }   
     }
 
-    const getUser = async(id) => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-
+    // this method find another users User and Profile models - could combine this to get their posts too
+    const getViewingUserProfile = async(id) => {
+        console.log('getuser', id);
         try {
-            const res = await request.post('/api/users/get-user', id, config);
-            console.log(res.data);
+            const res = await request.post('/api/users/get-viewing-user-profile', id, config);
+            console.log(res.data);  // this is now going to be an object with the user and the profile
 
             dispatch({
                 type: GET_VIEWING_USER,
@@ -80,6 +80,19 @@ const SearchState = props => {
         }
     }
 
+    const clearViewingUser = () => {
+        dispatch({
+            type: CLEAR_VIEWING_USER
+        })
+    }
+
+    const clearSearchState = () => {
+        dispatch({
+            type: CLEAR_SEARCH_STATE
+        })
+    }
+
+
     return (
         <SearchContext.Provider
          value={{
@@ -87,9 +100,12 @@ const SearchState = props => {
             searching: state.searching,
             searched: state.searched,
             viewingUser: state.viewingUser,
+            viewingProfile: state.viewingProfile,
             searchTerm: state.searchTerm,
             searchUsers,
-            getUser,
+            getViewingUserProfile,
+            clearViewingUser,
+            clearSearchState
          }}>
             { props.children }
         </SearchContext.Provider>

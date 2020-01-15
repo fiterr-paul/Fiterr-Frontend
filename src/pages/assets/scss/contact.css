@@ -1,0 +1,197 @@
+.container-app section.body.contact {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: calc(100% - 60px);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner {
+  background-image: url("../media/banner-barbell.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner .image-overlay {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(15, 15, 15, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner .image-overlay .title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 50px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container-app section.body.contact .head-banner .image-overlay .title h1 {
+  color: #fff;
+  font-size: 2.4em;
+  font-weight: 600;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.container-app section.body.contact .container {
+  margin: 50px 0;
+}
+
+.container-app section.body.contact .container .form-container {
+  background-color: none;
+  border: none;
+  border-radius: none;
+  color: #222;
+  padding: 20px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact {
+  display: block;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.title {
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.title h3 {
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text],
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email],
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea] {
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  color: #000;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 6px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]::-webkit-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]::-webkit-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]::-webkit-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]:-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]:-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]:-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]::-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]::-ms-input-placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]::-ms-input-placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=text]::placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input input[type=email]::placeholder,
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea]::placeholder {
+  color: #787878;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input textarea[type=textarea] {
+  resize: none;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input.name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input.name .width-50 {
+  width: calc(50% - 5px);
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.input.name .width-50 input[type=text] {
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.button button[type=submit] {
+  background-color: #fd7800;
+  border: solid 1px #fd7800;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1em;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.container-app section.body.contact .container .form-container form.contact .field-row.button button[type=submit]:hover {
+  background-color: #ff8418;
+  border: solid 1px #ff8418;
+}
+/*# sourceMappingURL=contact.css.map */

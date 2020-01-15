@@ -2,26 +2,31 @@ import React, { useState, useContext, useEffect } from 'react';
 import '../assets/scss/login.scss';
 import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
+import ProfileContext from '../../context/profile/profileContext'
 
 
 const Login = (props) => {
 
-  const alertContext = useContext(AlertContext);
-  const authContext = useContext(AuthContext);
-
-  const { setAlert } = alertContext;
-  const { login, error, clearErrors, isAuthenticated, loadUser } = authContext;
+    const alertContext = useContext(AlertContext);
+    const authContext = useContext(AuthContext);
+    const profileContext = useContext(ProfileContext)
+    
+    const { setAlert } = alertContext;
+    const { login, error, clearErrors, isAuthenticated, loadUser } = authContext;
+    const { getProfile, profile, profileComplete } = profileContext
 
   useEffect(() => {
     
     if(isAuthenticated === null){
-      console.log('attempting to load the user');
+      // console.log('attempt to load the user');
       loadUser();
     }
     
     if(isAuthenticated){
       props.history.push('/newsfeed');
     }
+
+    // if you are authenticated (isAuthenticated === true) but havent complete your profile (profileComplete === false), then you need to be taken to the profile complete page
 
     // if(error === 'Invalid Credentials'){
     //     setAlert(error, 'danger');
