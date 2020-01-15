@@ -253,11 +253,17 @@ const ProfileBodyTimeline = () => {
       <div className="timeline-wrapper">
         <div className="post-box-wrapper">
           <div className="post-box-header">
+
             <div className="icon-bgr">
               <i className="fas fa-pencil-alt"></i>
             </div>
             <h3> create post </h3>
-          </div>
+        <div className="hr"></div>
+        <input type="file" name="image" id="image" className='inputfile' onChange={''}/>
+        <label htmlFor="image" className="input-file-label">
+            <i className="fas fa-camera"></i><span className='input-file-name'>upload photo/video</span>
+        </label>
+        </div>
           <div className="post-box-body">
             <div className="profile-image">
               <img src={profileImgPaul} alt=""/>

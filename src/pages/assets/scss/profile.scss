@@ -50,10 +50,12 @@
             border: 1px solid #999;
             border-radius: 3px;
             display: flex;
-            min-width: 50px;
+            height: 50px;
             overflow: hidden;
+            width: 50px;
             img {
-              width: 48px;
+              height: 100%;
+              width: 100%;
             }
           }
           .switcher-info {
@@ -178,7 +180,8 @@
               font-weight: 900;
             }
             img {
-              width: 28px;
+              max-height: 28px;
+              max-width: 28px;
             }
           }
           h3 {
@@ -288,12 +291,13 @@
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
-                height: 100%;
+                height: 162px;
                 justify-content: center;
                 overflow: hidden;
-                width: 100%;
+                width: 162px;
                 img {
                   display: flex;
+                  height: 100%;
                   overflow: hidden;
                   width: 100%;
                 }
@@ -404,6 +408,43 @@
               justify-content: flex-start;
               padding: 5px;
               width: 100%;
+              .hr {
+                align-items: center;
+                border-left: 1px solid rgba(0, 0, 0, 0.085);
+                display: flex;
+                flex-direction: row;
+                height: 26px;
+                justify-content: flex-start;
+                margin: 0px 10px 0px 8px;
+              }
+              .inputfile + label:active,
+              .inputfile + label:focus,
+              .inputfile + label:hover {
+                background-color: rgba(255, 255, 255, 0);
+              }
+              .inputfile:focus + label,
+              .inputfile + label:hover {
+                background-color: rgba(255, 255, 255, 0);
+              }
+              .input-file-label {
+                cursor: pointer;
+                padding: 0;
+                .fa,
+                .far,
+                .fas {
+                  color: #555;
+                  font-family: "Font Awesome 5 Pro";
+                  font-weight: 900;
+                  margin-right: -3px;
+                }
+                .input-file-name {
+                  color: #555;
+                  font-size: 0.9em;
+                  font-weight: 600;
+                  line-height: 2em;
+                  text-transform: capitalize;
+                }
+              }
               .icon-bgr {
                 align-items: center;
                 display: flex;
@@ -415,13 +456,13 @@
                 .fa,
                 .far,
                 .fas {
-                  color: #333;
+                  color: #555;
                   font-family: "Font Awesome 5 Pro";
                   font-weight: 900;
                 }
               }
               h3 {
-                color: #333;
+                color: #555;
                 font-size: 0.9em;
                 font-weight: 600;
                 line-height: 2em;
@@ -449,6 +490,7 @@
                   border: 1px solid #999;
                   border-radius: 100%;
                   display: flex;
+                  height: 50px;
                   overflow: hidden;
                   width: 50px;
                 }
@@ -468,7 +510,6 @@
                   border-radius: 3px;
                   color: #000;
                   font-size: 1.2em;
-                  // height: 100%;
                   line-height: 1.4em;
                   resize: none;
                   width: 100%;
@@ -509,6 +550,7 @@
                   line-height: 1em;
                   padding: 0 10px;
                   text-transform: capitalize;
+                  width: 132px;
                   span {
                     margin: 0 5px;
                   }
@@ -717,8 +759,9 @@
               border: 1px solid #999;
               border-radius: 100%;
               display: flex;
+              height: 100%;
               overflow: hidden;
-              width: 50px;
+              width: 100%;
             }
           }
           .post-info {
@@ -1018,6 +1061,7 @@
                   border: 1px solid #999;
                   border-radius: 100%;
                   display: flex;
+                  height: 46px;
                   overflow: hidden;
                   width: 46px;
                 }
@@ -1131,6 +1175,7 @@
                       border: 1px solid #999;
                       border-radius: 100%;
                       display: flex;
+                      height: 36px;
                       overflow: hidden;
                       width: 36px;
                     }
