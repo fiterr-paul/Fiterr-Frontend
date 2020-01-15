@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import PostContext from './postContext';
 import postReducer from './postReducer';
-import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_VIEWING_POSTS, CLEAR_POST_STATE } from '../types'
+import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_VIEWING_POSTS, CLEAR_POST_STATE, UPDATE_POSTS } from '../types'
 import AuthContext from '../auth/authContext';
 import ProfileContext from '../profile/profileContext'
 
@@ -34,12 +34,21 @@ const PostState = props => {
         const response = await request.post('/api/posts/create-post', formData, config);
         console.log('This is the new post:', response.data);
 
-        // the dispatch should update the post state on the frontend
         dispatch({
-            type: UPDATE_LAST_POST,
+            type: UPDATE_POSTS,
             payload: response.data
         })
-        // getUserPosts();
+    }
+
+    const like = async (id) => {
+        const res = await request.put(`/api/posts/like/${id}`);
+        console.log('The new likes array', response.data);
+
+        dispatch({
+            type: UPDATE_LIKES,
+            payload: { id, likes: res.data }
+        })
+        
     }
 
     const getUserPosts = async () => {

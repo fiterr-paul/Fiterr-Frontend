@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Spinner from '../layout/Spinner';
 
 // import profileImgPaul from '../assets/media/paul-900x900.jpg';
 import stockIMG from '../assets/media/stockIMG.jpg';

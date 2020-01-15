@@ -25,8 +25,6 @@ const ProperProfile = ({ match: { params: { username } } }) => {
       if(isAuthenticated && !profile){ getProfile(user._id) }
     }, [isAuthenticated, profile])
 
-    // console.log('HERE', user, profile)
-
     if(!isAuthenticated || !profile) {
       return (
           <Fragment>

@@ -37,7 +37,7 @@ const ProfileState = props => {
         });
     }
 
-    // get my profile
+    // is this to get my profile or another users?
     const getProfile = async (user) => {
         const response = await request.get(`/api/profiles?id=${user}`);
         // console.log('got it here', response.data);
