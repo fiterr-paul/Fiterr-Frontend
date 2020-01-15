@@ -42,8 +42,7 @@ const Router = () => {
             <PrivateRoute exact path = '/page-create' component={PageCreate} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
-            <Route path='/profile/:id' component={Profile} 
-            />
+
             <Route path='/draftprofile' component={draftProfile} />
             
             <Route path='/professionals' component={Professionals} />
