@@ -7,6 +7,7 @@ import StickyBox from "react-sticky-box";
 import TextareaAutosize from 'react-autosize-textarea';
 
 import profileImgPaul from '../components/assets/media/paul-900x900.jpg';
+import coverImage from '../components/assets/media/sports-bike.jpg';
 import profileImgFatBastard from '../components/assets/media/fatbastard-185x185.jpg';
 import pageImg1 from '../components/assets/media/logo-paul_meier_fitness-1080x1080.png';
 import pageImg2 from '../components/assets/media/logo-livefit_livelean-640x640.png';
@@ -176,15 +177,58 @@ const ProfileHeader = () => {
         <div className="profile-header-container">
           <div className="cover-image-wrapper">
             <div className="cover-image">
+              <div className="image-update">
+                <i className="fas fa-camera"></i>
+                <h3>update cover photo</h3>
+              </div>
+              <img src={coverImage} alt=""/>
             </div>
           </div>
           <div className="profile-nav-container">
             <div className="profile-image-wrapper">
-              <div className="profile-image">
+              <div className="profile-image-border">
+                <div className="profile-image">
+                  <img src={profileImgPaul} alt=""/>
+                  <div className="image-update">
+                    <i className="fas fa-camera"></i>
+                    <h3>update</h3>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="profile-nav-wrapper">
               <div className="profile-nav">
+                
+              <Link to='/' className="nav-item-wrapper caret stream">
+                <div className="nav-item">
+                  <h3> stream </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> about </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> services </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> followers </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="nav-item-wrapper">
+                <div className="nav-item">
+                  <h3> photos </h3>
+                </div>
+              </Link>
+
               </div>
             </div>
           </div>
@@ -219,11 +263,17 @@ const ProfileBodyTimeline = () => {
       <div className="timeline-wrapper">
         <div className="post-box-wrapper">
           <div className="post-box-header">
+
             <div className="icon-bgr">
               <i className="fas fa-pencil-alt"></i>
             </div>
             <h3> create post </h3>
-          </div>
+        <div className="hr"></div>
+        <input type="file" name="image" id="image" className='inputfile' />
+        <label htmlFor="image" className="input-file-label">
+            <i className="fas fa-camera"></i><span className='input-file-name'>upload photo/video</span>
+        </label>
+        </div>
           <div className="post-box-body">
             <div className="profile-image">
               <img src={profileImgPaul} alt=""/>
