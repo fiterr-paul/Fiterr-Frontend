@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import TimelinePost from './TimelinePost';
 
-const MyPosts = ({ profile, posts }) => {
+const Posts = ({ profile, posts }) => {
 
     console.log('here are the posts', posts, 'here is the profile', profile);
 
@@ -14,4 +14,4 @@ const MyPosts = ({ profile, posts }) => {
     )
 }
 
-export default MyPosts
+export default Posts
