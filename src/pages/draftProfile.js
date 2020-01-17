@@ -177,6 +177,27 @@ const ProfileHeader = () => {
         <div className="profile-header-container">
           <div className="cover-image-wrapper">
             <div className="cover-image">
+              <div className="cover-image-gradient">
+              </div>
+              <div className="name-actions">
+                <div className="profile-name">
+                  <h3>paul meier</h3>
+                  <h3 className="title">(enthusiast)</h3>
+                  {/* <h3 className="title">(professional)</h3> */}
+                  <div className="profile-badge">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                </div>
+                <div className="profile-actions">
+                  <button className="switcher" type="button" value="">
+                    <i className="fas fa-sync-alt"></i>
+                  </button>
+                  <button className="update-info" type="button" value="">
+                    <i className="fas fa-pencil-alt"></i>
+                    update info
+                  </button>
+                </div>
+              </div>
               <div className="image-update">
                 <i className="fas fa-camera"></i>
                 <h3>update cover photo</h3>
