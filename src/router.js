@@ -50,8 +50,8 @@ const Router = () => {
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/contact' component={Contact} />
-            {/* <Route path='/:username' component={Profile} /> */}
-            <Route path='/:username' component={ProperProfile} />
+            <Route path='/:username' component={Profile} />
+            {/* <Route path='/:username' component={ProperProfile} /> */}
             <Route path='*' component={PageNotFound} />
           </Switch>
     </>

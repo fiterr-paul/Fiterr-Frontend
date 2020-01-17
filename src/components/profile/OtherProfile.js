@@ -1,67 +1,52 @@
 import React, { useContext, useEffect, Fragment } from 'react';
+import { useParams } from 'react-router-dom';
+import StickyBox from "react-sticky-box";
+import ProfileLeftNav from '../profile/ProfileLeftNav'
+import ProfileHeader from '../profile/ProfileHeader';
+import Spinner from '../../components/layout/Spinner';
 
-import SearchContext from '../../context/search/searchContext';
 import ProfileContext from '../../context/profile/profileContext';
-import AuthContext from '../../context/auth/authContext';
 
-import Spinner from '../layout/Spinner';
-import Follow from './Follow';
-import OtherPosts from '../posts/OtherPosts';
+import '../../pages/assets/scss/index.scss'
 
-const OtherProfile = (props) => {
+const OtherProfile = () => {
 
-    const searchContext = useContext(SearchContext);
-    const { getViewingUserProfile, viewingUser, viewingProfile } = searchContext;
+    const { username } = useParams();
 
     const profileContext = useContext(ProfileContext);
-    const authContext = useContext(AuthContext)
-
-    const { profile, getProfile } = profileContext
-    const { user, isAuthenticated, loadUser } = authContext
-
-    const { username } = props; 
-
-    // console.log('Viewing username', username);
-    // console.log('Viewing user', viewingUser);
+    const { otherProfile, getOtherProfile } = profileContext;
 
     useEffect(() => {
-        getViewingUserProfile({ id: username });  // we supply the username as the unique id, this method stores the viewing user and profile in state
-    }, []);
+      console.log('hit the other profile use effect');
+      getOtherProfile(username);
+    }, [])
 
-
-    if(!viewingUser){
-        return (
-            <Fragment>
-                <h1>Fetching user details...</h1>
-                <Spinner />
-            </Fragment>
-        )
+    // might need to change the if logic here a bit
+    if (!otherProfile) {
+      return (
+        <Fragment>
+          <h1>Fetching the users profile...</h1>
+          <Spinner />
+        </Fragment>
+      )
     } else {
-
-        const { firstname, lastname, email, gender } = viewingUser;
-        const { aboutMe, fitnessInterests, displayImage } = viewingProfile;
-        const defaultPic = "https://image.shutterstock.com/z/stock-vector-man-avatar-profile-picture-vector-icon-153720509.jpg";
-
-        return (
-            <Fragment>
-                <div className="other-profile-container">
-                    <div className="other-profile-details">
-                        <img width="100px" src={displayImage ? displayImage : defaultPic }/>
-                        <h1>{firstname} {lastname}</h1>
-                        <h1>Email: {email}</h1>
-                        <h1>Gender: {gender}</h1>
-
-                        <br/>
-                        <p>About me: {aboutMe}</p>
-                        <p>Fitness interests: {fitnessInterests}</p>
-
-                        <Follow viewingProfileId={viewingProfile._id}/>
-                    </div>
+      return (
+          <Fragment>
+              <section className="body profile">
+                <div className="container">
+                  {/* LEFT COL - NAVIGATION */}
+                  <StickyBox offsetTop={60} offsetBottom={10}>
+                    <ProfileLeftNav/>
+                  </StickyBox>
+        
+                  {/* RIGHT COL - PROFILE */}
+                  <ProfileHeader profile={otherProfile} ourProfile={false}/>
                 </div>
-                <OtherPosts viewingUserId={viewingUser._id} />
-            </Fragment>
-        )
+              </section>
+          </Fragment>
+      )
     }
+
 }
 
 export default OtherProfile
