@@ -63,10 +63,11 @@ const SearchState = props => {
         }   
     }
 
-    // this method find another users User and Profile models - could combine this to get their posts too
+    // NEED TO DELETE THIS
     const getViewingUserProfile = async(id) => {
         console.log('getuser', id);
         try {
+            // this is a user id that is being used
             const res = await request.post('/api/users/get-viewing-user-profile', id, config);
             console.log(res.data);  // this is now going to be an object with the user and the profile
 
