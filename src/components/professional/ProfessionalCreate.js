@@ -13,18 +13,21 @@ const ProfessionalCreate = (props) => {
 
     const [professional, setProfessional] = useState({
         phoneNumber: '',
-        userID: user._id
+        userID: ''
     })
 
     const {phoneNumber, userID} = professional
-
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
     const onSubmit = async(e) => {
         e.preventDefault()
         let body = new FormData
         body.append('phoneNumber', phoneNumber)
-        body.append('userID', userID)
 
-        const post = await request.post('/api/users/professional-activate', body)
+        const post = await request.post('/api/users/professional-activate', body, config)
         history.push('/page-create')
     }
     const onChange = (e) => {

@@ -34,3 +34,9 @@ export const GET_VIEWING_POSTS = 'GET_VIEWING_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
 export const CLEAR_POST_STATE = 'CLEAR_POST_STATE';
 export const UPDATE_LIKES = 'UPDATE_LIKES';
+
+// Page Context 
+export const SET_PAGE = 'SET_PAGE';
+export const SET_CURRENT_PAGE_ROLE = 'SET_CURRENT_PAGE_ROLE'
+export const SET_MY_PAGE = 'SET_MY_PAGE';
+export const SET_MY_PAGE_FAIL = 'SET_MY_PAGE_FAIL'
