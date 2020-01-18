@@ -2,9 +2,10 @@ import React, {Fragment} from 'react'
 
 const BasePageView = (props) => {
     const currentPage = props.currentPage
-
+    const role = props.pageRole
     return(
         <Fragment>
+            <h1>You are acting as {role}</h1>
             <div className="pageTitle">
                 <h1>
                     TITLE:{currentPage.pageTitle}
