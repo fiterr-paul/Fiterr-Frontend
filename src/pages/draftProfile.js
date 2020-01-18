@@ -463,6 +463,9 @@ const TimelinePosts = () => {
               </div>
             </div>
           </div>
+          <div className="post-options">
+            <i className="fas fa-ellipsis-h"></i>
+          </div>
         </div>
         <div className="body">
           <div className="post-content">
@@ -559,6 +562,9 @@ const TimelinePostPhoto = () => {
               </div>
             </div>
           </div>
+          <div className="post-options">
+            <i className="fas fa-ellipsis-h"></i>
+          </div>
         </div>
         <div className="body">
           <div className="post-content">
@@ -642,12 +648,19 @@ const PostComment = () => {
           <img src={profileImgFatBastard} alt=""/>
         </div>
         <div className="comment-body">
-          <div className="comment-content">
-            <div className="author-name">
-              <Link to="/">fat bastard</Link>
-              <span>posted a comment</span>
+          <div className="comment-content-wrapper">
+            <div className="comment-content">
+              <div className="author-name">
+                <Link to="/">fat bastard</Link>
+                <span>posted a comment</span>
+              </div>
+              <div className="comment">
+                Don't worry Paul, you're just "mentally challenged"! Kind of like how I am horozontally challenged!
+              </div>
             </div>
-            <div className="comment"> Don't worry Paul, you're just "mentally challenged"! Kind of like how I am horozontally challenged! </div>
+            <div className="post-options">
+              <i className="fas fa-ellipsis-h"></i>
+            </div>
           </div>
           <div className="comment-actions">
             <span className="action"> like </span>
@@ -672,12 +685,19 @@ const PostReply = () => {
         <img src={profileImgPaul} alt=""/>
       </div>
       <div className="reply-body">
-        <div className="reply-content">
-          <div className="author-name">
-            <Link to="/">paul meier</Link>
-            <span>posted a reply</span>
+        <div className="reply-content-wrapper">
+          <div className="reply-content">
+            <div className="author-name">
+              <Link to="/">paul meier</Link>
+              <span>posted a reply</span>
+            </div>
+            <div className="comment">
+              Fuck you ... you bastard!
+            </div>
           </div>
-          <div className="comment"> Fuck you ... you bastard! </div>
+          <div className="post-options">
+            <i className="fas fa-ellipsis-h"></i>
+          </div>
         </div>
         <div className="reply-actions">
           <span className="action"> like </span>
