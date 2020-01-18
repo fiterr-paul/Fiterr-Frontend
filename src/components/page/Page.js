@@ -17,6 +17,7 @@ const Page = props => {
     useEffect(() => {
         if(!isAuthenticated){ loadUser() } 
         if(!currentPage){getPage(handle)}
+        if(!roleOnPage){findRole(handle)}
         // if(currentPage.pageHandle !== handle){
         //     getPage(handle) 
         //     findRole(handle)
@@ -34,7 +35,7 @@ const Page = props => {
         return(
             <Fragment>
                 {/* <PageController pageRole={roleOnPage}/> */}
-                <BasePageView currentPage={currentPage} />
+                <BasePageView currentPage={currentPage} pageRole={roleOnPage} />
                 
             </Fragment>
         )
