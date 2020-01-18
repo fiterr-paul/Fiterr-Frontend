@@ -11,7 +11,7 @@ const Newsfeed = (props) => {
     const profileContext = useContext(ProfileContext)
      
     const { loadUser, isAuthenticated, user } = authContext
-    const { profile, getProfile } = profileContext
+    const { profile, getMyProfile } = profileContext
 
     // on page reload, we need to put the profile and the user back into the state
     // if(!isAuthenticated){ loadUser() }
@@ -20,7 +20,7 @@ const Newsfeed = (props) => {
 
     useEffect(() => {
         if(!isAuthenticated){ loadUser() }
-        if(user && !profile){ getProfile(user._id) }
+        if(user && !profile){ getMyProfile(user._id) }
         console.log('Component reloaded')
     }, [isAuthenticated]);
 

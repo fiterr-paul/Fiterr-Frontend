@@ -16,7 +16,7 @@ const SearchItem = ({ user }) => {
         id = _id;
     }
 
-    console.log('We have the id:', id);
+    // console.log('We have the id:', id);
 
     return (
         <div>

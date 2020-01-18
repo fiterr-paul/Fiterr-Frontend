@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import ProfileContext from './profileContext'
 import profileReducer from './profileReducer'
-import { SET_PROFILE, CLEAR_PROFILE } from '../types'
+import { SET_PROFILE, CLEAR_PROFILE, SET_OTHER_PROFILE, FETCHING_PROFILE } from '../types'
 
 import request from '../../utils/axios-config'
 
@@ -17,7 +17,9 @@ const config = {
 const ProfileState = props => {
     const initialState = {
         profile: null,
-        profileComplete: false
+        profileComplete: false,
+        otherProfile: null,
+        fetchingProfile: true
     };
 
     const [state, dispatch] = useReducer(profileReducer, initialState);
@@ -37,15 +39,28 @@ const ProfileState = props => {
         });
     }
 
-    // is this to get my profile or another users?
-    const getProfile = async (user) => {
-        const response = await request.get(`/api/profiles?id=${user}`);
-        // console.log('got it here', response.data);
+    // is this to get my profile or another users? - gets mine, should rename to getMyProfile
+    const getMyProfile = async () => {
+        const response = await request.get(`/api/profiles/me`);
         dispatch({
             type: SET_PROFILE,
             payload: response.data
         })
     }
+
+    const getOtherProfile = async (username) => {
+        // dispatch({
+        //     type: FETCHING_PROFILE
+        // })
+
+        const res = await request.get(`/api/profiles/other-profile/${username}`)
+        // console.log('other profile', res.data);
+        dispatch({
+            type: SET_OTHER_PROFILE,
+            payload: res.data
+        })
+    }
+
 
     const clearProfile = async () => {
         // this will be a dispatch to clear the profile state out
@@ -82,8 +97,11 @@ const ProfileState = props => {
             value={{
                 profile: state.profile,
                 profileComplete: state.profileComplete,
+                otherProfile: state.otherProfile,
+                fetchingProfile: state.fetchingProfile,
                 makeProfile,
-                getProfile,
+                getMyProfile,
+                getOtherProfile,
                 clearProfile,
                 follow,
                 unfollow,

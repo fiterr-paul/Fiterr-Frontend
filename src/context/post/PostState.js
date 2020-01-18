@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import PostContext from './postContext';
 import postReducer from './postReducer';
-import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_VIEWING_POSTS, CLEAR_POST_STATE, UPDATE_POSTS, UPDATE_LIKES } from '../types'
+import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_OTHER_POSTS, CLEAR_POST_STATE, UPDATE_POSTS, UPDATE_LIKES, CLEAR_OTHER_POSTS } from '../types'
 import AuthContext from '../auth/authContext';
 import ProfileContext from '../profile/profileContext'
 
@@ -18,7 +18,7 @@ const PostState = props => {
         myPosts: null,  // null or []?
         lastPost: null,
         followingPosts: null, // to use on newsfeed for getting array of date sorted posts
-        viewingPosts: null,
+        otherPosts: null,
     }
     const [state, dispatch] = useReducer(postReducer, initialState);
 
@@ -51,9 +51,10 @@ const PostState = props => {
         
     }
 
-    const getUserPosts = async () => {
+    const getMyPosts = async () => {
         const response = await request.get(`/api/posts/my-posts`, config) // call after a makePost in order to include the lastest post last
-        console.log(response.data);
+        // console.log(response.data);
+        console.log('Getting my posts');
         dispatch({
             type: SET_POSTS,
             payload: response.data
@@ -96,13 +97,13 @@ const PostState = props => {
     }
 
     // get posts for the user profile that you are viewing
-    const getViewingUserPosts = async(id) => {
+    const getOtherPosts = async(id) => {
         try {
             const res = await request.get(`/api/posts/viewing-users-posts/${id}`);
             console.log(res.data)
 
             dispatch({
-                type: GET_VIEWING_POSTS,
+                type: GET_OTHER_POSTS,
                 payload: res.data
             })
             // console.log(res);
@@ -117,20 +118,28 @@ const PostState = props => {
         })
     }
 
+    const clearOtherPosts = () => {
+        console.log('clear posts was called');
+        dispatch({
+            type: CLEAR_OTHER_POSTS
+        })
+    }
+
     return(
         <PostContext.Provider
             value={{
                 myPosts: state.myPosts,
                 lastPost: state.lastPost,
                 followingPosts: state.followingPosts,
-                viewingPosts: state.viewingPosts,
+                otherPosts: state.otherPosts,
                 makePost,
                 getFollowingPosts,
-                getUserPosts,
+                getMyPosts,
                 removePost,
                 getNewsfeedPosts,
-                getViewingUserPosts,
-                clearPostState
+                getOtherPosts,
+                clearPostState,
+                clearOtherPosts
             }}>
                 { props.children }
         </PostContext.Provider>
