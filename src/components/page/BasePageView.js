@@ -56,13 +56,16 @@ const BasePageView = (props) => {
         body.append('pageAbout', pageAbout)
         body.append('pageHandle', handle)
         updateAbout(body)
-        
+        onAboutEditClick()
     }
     
 
     return(
         <Fragment>
             <h1>You are acting as {role}</h1>
+            <div className="displayImage">
+                <img src={currentPage.displayImage} alt="Display Image" width="100px"/>
+            </div>
             <div className="pageTitle">
                 <h1>
                     TITLE:{currentPage.pageTitle}
