@@ -440,6 +440,16 @@ const ProfileBodyWidgets = () => {
 
 
 const TimelinePosts = () => {
+  
+  const postOptionsDropdownHandler = () => {
+    const element = document.getElementById("post-options-dropdown");
+    if (element.style.display === "none") {
+      element.style.display = "flex";
+    } else {
+      element.style.display = "none";
+    }
+  };
+
   return (
     <>
       <div className="timeline-post-wrapper">
@@ -464,7 +474,15 @@ const TimelinePosts = () => {
             </div>
           </div>
           <div className="post-options">
-            <i className="fas fa-ellipsis-h"></i>
+            <i onClick={postOptionsDropdownHandler} className="fas fa-ellipsis-h"></i>
+            <div id="post-options-dropdown" className="options-dropdown-wrapper caret">
+              <div className="options-dropdown">
+                <ul>
+                  <li>edit post</li>
+                  <li>delete post</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div className="body">
