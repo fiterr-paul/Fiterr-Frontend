@@ -1,6 +1,7 @@
 import React from 'react';
 import './scss/app.scss';
 import './scss/jov.css';
+import './scss/jord.css'
 import Router from './router';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';

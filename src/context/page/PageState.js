@@ -64,6 +64,13 @@ const PageState = props => {
             payload: response.data
         })
     }
+    const updateAbout = async(body)=> {
+        const response = await request.put('/api/pages/about', body, config)
+        dispatch({
+            type: SET_PAGE,
+            payload: response.data
+        })
+    }
 
     return(
         <PageContext.Provider
@@ -72,7 +79,8 @@ const PageState = props => {
                 roleOnPage: state.roleOnPage,
                 getPage,
                 findRole,
-                createPage
+                createPage,
+                updateAbout
             }}>
                 {props.children}
         </PageContext.Provider>
