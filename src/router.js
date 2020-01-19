@@ -19,6 +19,7 @@ import ProperProfile from './pages/properProfile';
 
 // this is the draft version of the real profile page
 import draftProfile from './pages/draftProfile';
+import draftNewsfeed from './pages/draftNewsfeed';
 
 import ProfessionalCreate from './components/professional/ProfessionalCreate'
 import PageCreate from './components/page/PageCreate'
@@ -44,6 +45,7 @@ const Router = () => {
             <Route path='/enthusiasts' component={Enthusiasts} />
             
             <Route path='/draftprofile' component={draftProfile} />
+            <Route path='/draftnewsfeed' component={draftNewsfeed} />
             
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />

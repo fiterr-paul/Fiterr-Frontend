@@ -1,6 +1,7 @@
 @import "../../../scss/variables.scss";
 
 
+.container-app section.body.newsfeed,
 .container-app section.body.profile {
   align-items: center;
   display: flex;
@@ -538,6 +539,7 @@
           }
         }
       }
+      .newsfeed-body-container,
       .profile-body-container {
         align-items: flex-start;
         display: flex;
@@ -891,6 +893,9 @@
             }
           }
         }
+      }
+      .newsfeed-body-container {
+        margin-top: 0;
       }
       .timeline-post-wrapper {
         align-items: flex-start;
