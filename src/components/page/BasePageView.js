@@ -74,7 +74,7 @@ const BasePageView = (props) => {
                     <button type="button" id="formButton" onClick={onAboutEditClick}>Edit About</button>
                     <form id="editAbout">
                         <label className="pageAbout">EDIT ABOUT</label>
-                        <input type="text" id="pageAbout" name="pageAbout" onChange={onChange}></input>
+                        <input type="text" id="pageAbout" name="pageAbout" onChange={onChange} value={pageAbout}></input>
                         <button onClick={onAboutSubmit}>Apply Change</button>
                     </form>
                 </>

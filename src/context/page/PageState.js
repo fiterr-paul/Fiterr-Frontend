@@ -87,6 +87,13 @@ const PageState = props => {
             payload: response.data
         })
     }
+    const packagePriceChange = async(body) => {
+        const response = await request.put('/api/professional/package-price-update', body, config)
+        dispatch({
+            type: SET_CURRENT_PACKAGE,
+            payload: response.data
+        })
+    }
     return(
         <PageContext.Provider
             value={{
@@ -98,7 +105,8 @@ const PageState = props => {
                 createPage,
                 updateAbout,
                 createPackage,
-                getPackage
+                getPackage,
+                packagePriceChange
             }}>
                 {props.children}
         </PageContext.Provider>
