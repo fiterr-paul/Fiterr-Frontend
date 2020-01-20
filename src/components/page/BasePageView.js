@@ -59,6 +59,7 @@ const BasePageView = (props) => {
                     <p>{pack.description}</p>
                     <p>{pack.numberOfSessions}</p>
                     <p>{pack.price}</p>
+                    <a href={`/page/${handle}/package/${pack._id}`}>View Package</a>
                     <br/>
                 </div>
             )
