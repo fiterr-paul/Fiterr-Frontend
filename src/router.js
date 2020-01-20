@@ -15,16 +15,19 @@ import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
 import Profile from './pages/Profile';
 import ProperProfile from './pages/properProfile';
-// import Page from './pages/Page'
 
-// this is the draft version of the real pages
+import Page from './components/page/Page'
+import PackageCreate from './components/page/packages/PackageCreate'
+
+// this is the draft version of the real profile page
 import draftProfile from './pages/draftProfile';
 import draftNewsfeed from './pages/draftNewsfeed';
 import draftPage from './pages/draftPage';
 
 import ProfessionalCreate from './components/professional/ProfessionalCreate'
 import PageCreate from './components/page/PageCreate'
-
+import PackageShow from './components/page/packages/PackageShow'
+import Dashboard from './components/dashboard/Dashboard'
 
 // Private Routes
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -40,8 +43,11 @@ const Router = () => {
             <PrivateRoute exact path = '/newsfeed' component={Newsfeed}/>
             <PrivateRoute exact path = '/private' component={PrivatePage} />
             <PrivateRoute exact path = '/become-professional' component={ProfessionalCreate} />
-            {/* <PrivateRoute exact path = '/page/:title' component={Page} /> */}
+            <PrivateRoute exact path = '/page/:handle' component={Page} />
+            <PrivateRoute exact path = '/page/:handle/package-update' component={PackageCreate} />
             <PrivateRoute exact path = '/page-create' component={PageCreate} />
+            <PrivateRoute exact path = '/page/:handle/package/:id' component={PackageShow} />
+            <PrivateRoute exact path = '/dashboard' component={Dashboard} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             
@@ -54,8 +60,8 @@ const Router = () => {
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/contact' component={Contact} />
-            {/* <Route path='/:username' component={Profile} /> */}
-            <Route path='/:username' component={ProperProfile} />
+            <Route path='/:username' component={Profile} />
+            {/* <Route path='/:username' component={ProperProfile} /> */}
             <Route path='*' component={PageNotFound} />
           </Switch>
     </>

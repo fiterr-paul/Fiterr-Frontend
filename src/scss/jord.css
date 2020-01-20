@@ -1,0 +1,23 @@
+#editAbout {
+    padding: 15px;
+    border: 1px solid #666;
+    background: #fff;
+    display: none;
+}
+#formButton{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.package{
+    border: 2px red solid
+}
+#editPrice{
+    padding: 15px;
+    border: 1px solid #666;
+    background: #fff;
+    display: none;
+}
+.service {
+    border: 2px red solid
+}

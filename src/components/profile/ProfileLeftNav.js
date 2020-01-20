@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 // bring in our profile from the profile context
+import ProfileContext from '../../context/profile/profileContext';
 
 // import profileImgPaul from '../assets/media/paul-900x900.jpg';
 import stockIMG from '../assets/media/stockIMG.jpg';
@@ -10,8 +11,10 @@ import pageImg1 from '../assets/media/logo-paul_meier_fitness-1080x1080.png';
 import pageImg2 from '../assets/media/logo-livefit_livelean-640x640.png';
 import pageImg3 from '../assets/media/logo-28_day_kickstart-1080x1080.png';
 
-const ProfileLeftNav = ({ profile: { user: { firstname, lastname }, displayImage } }) => {
-  
+const ProfileLeftNav = () => {
+
+    const { profile: { user: { firstname, lastname }, displayImage } } = useContext(ProfileContext);
+
     return (
       <Fragment>
         <div className="col-social-nav">
