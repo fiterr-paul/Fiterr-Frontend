@@ -1,6 +1,7 @@
 @import "../../../scss/variables.scss";
 
 
+.container-app section.body.page,
 .container-app section.body.newsfeed,
 .container-app section.body.profile {
   align-items: center;
@@ -538,6 +539,64 @@
             }
           }
         }
+        .page-actions-container {
+          align-items: center;
+          background-color: #fff;
+          border: 1px solid #dddfe2;
+          border-radius: 0px 0px 3px 3px;
+          border-top: none !important;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          height: 50px;
+          width: 100%;
+          .page-actions-wrapper {
+            align-items: flex-end;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            flex-wrap: nowrap;
+            height: 100%;
+            justify-content: center;
+            padding: 0 8px;
+            button[type = button] {
+              background-color: #e8e8e8;
+              border: solid 1px #dedede;
+              border-radius: 3px;
+              color: #666;
+              font-size: 1em;
+              font-weight: 600;
+              height: 32px;
+              line-height: 1em;
+              padding: 0 10px;
+              text-transform: capitalize;
+              width: 132px;
+              span {
+                margin: 0 5px;
+              }
+              .fa,
+              .far,
+              .fas {
+              color: #666;
+              font-family: "Font Awesome 5 Pro";
+              font-weight: 900;
+            }
+              &:hover {
+                background-color: #dedede;
+                border: solid 1px #dedede;
+              }
+              &:focus,
+              &:focus .fa,
+              &:focus .far,
+              &:focus .fas {
+                background-color: #fd7800;
+                border: solid 1px #fd7800;
+                color: #fff;
+              }
+            }
+          }
+        }
       }
       .newsfeed-body-container,
       .profile-body-container {
@@ -889,7 +948,7 @@
                     font-size: 1.4em;
                   }
                 }
-                .thumbnail-widget.recomended-pages {
+                .thumbnail-widget.recomended {
                   align-items: center;
                   background-color: #f9f9f9;
                   border: solid 1px #f0f0f0;
