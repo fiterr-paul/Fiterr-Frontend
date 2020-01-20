@@ -71,6 +71,13 @@ const PageState = props => {
             payload: response.data
         })
     }
+    const createPackage = async(body) => {
+        const response = await request.post('/api/pages/package-create', body, config)
+        dispatch({
+            type: SET_PAGE,
+            payload: response.data
+        })
+    }
 
     return(
         <PageContext.Provider
@@ -80,7 +87,8 @@ const PageState = props => {
                 getPage,
                 findRole,
                 createPage,
-                updateAbout
+                updateAbout,
+                createPackage
             }}>
                 {props.children}
         </PageContext.Provider>
