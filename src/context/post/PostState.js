@@ -1,9 +1,23 @@
 import React, {useReducer, useContext} from 'react';
 import PostContext from './postContext';
 import postReducer from './postReducer';
-import { UPDATE_LAST_POST, SET_POSTS, FIND_FOLLOWING_POSTS, REMOVE_POST, GET_OTHER_POSTS, CLEAR_POST_STATE, UPDATE_POSTS, UPDATE_LIKES, CLEAR_OTHER_POSTS } from '../types'
-import AuthContext from '../auth/authContext';
-import ProfileContext from '../profile/profileContext'
+
+import { 
+    SET_POSTS,
+    REMOVE_POST, 
+    GET_OTHER_POSTS, 
+    CLEAR_POST_STATE, 
+    UPDATE_POSTS, 
+    UPDATE_LIKES, 
+    CLEAR_OTHER_POSTS, 
+    ADD_COMMENT, 
+    UPDATE_COMMENT_LIKES, 
+    REMOVE_COMMENT, 
+    GET_POSTS,
+    UPDATE_COMMENT_REPLY ,
+    UPDATE_COMMENT_REPLY_LIKES,
+    REMOVE_REPLY
+} from '../types'
 
 import request from '../../utils/axios-config'
 
@@ -13,22 +27,17 @@ const config = {
     }
 }
 
+
 const PostState = props => {
     const initialState = {
-        myPosts: null,  // null or []?
-        lastPost: null,
+        posts: null,
         followingPosts: null, // to use on newsfeed for getting array of date sorted posts
-        otherPosts: null,
+        loading: false
     }
+
     const [state, dispatch] = useReducer(postReducer, initialState);
 
-    const authContext = useContext(AuthContext) // in order to send userId as param to find posts by that user 
-    const {user} = authContext
-
-    const profileContext = useContext(ProfileContext)
-    const { profile } = profileContext
-
-
+    // WORKS
     const makePost = async (formData) => {
         // console.log(formData.get('postTitle'));  // <-- can use this to see is formData has a certain field
         const response = await request.post('/api/posts/create-post', formData, config);
@@ -40,73 +49,196 @@ const PostState = props => {
         })
     }
 
-    const like = async (id) => {
-        const res = await request.put(`/api/posts/like/${id}`);
+    // get posts gets the posts on either your page or another users page
+    // WORKS
+    const getPosts = async (id) => {
+        try {
+            const res = await request.get(`/api/posts/${id}`)   // this is the user id of the users page you are on
+
+            console.log('Posts', res.data);
+
+            dispatch({
+                type: GET_POSTS,
+                payload: res.data   // this will be the posts
+            })
+            
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    // YET TO BE TESTED
+    // similar to getFollowingPosts above
+    const getNewsfeedPosts = async() => {
+        const res = await request.get('/api/posts/newsfeed-posts');
+        // console.log('got dat data', res.data);
+        return res.data;
+    }
+
+    // WORKS
+    // remove your post 
+    const removePost = async (id) => {
+        const resp = await request.delete(`/api/posts/${id}`);
+
+        dispatch({
+            type: REMOVE_POST,
+            payload: id
+        })
+    }
+
+    // Like a post
+    // WORKS
+        const like = async (postId) => {
+        console.log('post Id', postId);
+        const res = await request.put(`/api/posts/like/${postId}`);
+
+        // we get from the back end a new array of likes (with our id now in it)
         console.log('The new likes array', res.data);
 
         dispatch({
             type: UPDATE_LIKES,
-            payload: { id, likes: res.data }
-        })
-        
-    }
-
-    const getMyPosts = async () => {
-        const response = await request.get(`/api/posts/my-posts`, config) // call after a makePost in order to include the lastest post last
-        // console.log(response.data);
-        console.log('Getting my posts');
-        dispatch({
-            type: SET_POSTS,
-            payload: response.data
-        })
-    }
-
-    const removePost = async (id) => {
-        const resp = await request.delete(`/api/posts/delete-post/${id}`);
-        const refreshedPosts = state.myPosts.filter(post => post._id !== id);
-        console.log(refreshedPosts);
-        dispatch({
-            type: REMOVE_POST,
-            payload: refreshedPosts
-        })
-    }
-
-
-    //-----------------------------------------------------------------------------------------
-    // jords
-    const getFollowingPosts = async() => {
-        console.log(profile)
-        console.log(profile.following) // its saying cant find property following of null but when i log profile it exists? 
-        const followingJSON = JSON.stringify(profile.following)
-        console.log('followingjson', followingJSON)
-        
-        const response  = await request.get(`/api/posts/following-posts?following=${followingJSON}`) //need profileID to access following users to find their posts
-        dispatch({
-            type: FIND_FOLLOWING_POSTS,
-            payload: response.data
+            payload: { postId, likes: res.data }
         })  
     }
-    //-----------------------------------------------------------------------------------------
 
+    // Unlike a post
+    // WORKS
+    const unlike = async (postId) => {
+        const res = await request.put(`/api/posts/unlike/${postId}`);
 
-    // similar to getFollowingPosts above
-    const getNewsfeedPosts = async() => {
-        const res = await request.get('/api/posts/newsfeed-posts');
-        console.log('got dat data', res.data);
-        return res.data;
+        // we also get from the back end a new array of likes (with our id now in it)
+        console.log('The new likes array', res.data);
+
+        dispatch({
+            type: UPDATE_LIKES,
+            payload: { postId, likes: res.data }
+        })  
     }
 
-    // get posts for the user profile that you are viewing
-    const getOtherPosts = async(id) => {
+    // Add comment
+    const addComment = async(postId, formData) => {
+
         try {
-            const res = await request.get(`/api/posts/viewing-users-posts/${id}`);
-            console.log(res.data)
+            const res = await request.post(`/api/posts/comment/${postId}`, formData, config);
+
+            console.log(res.data);  // this needs to come back with the new comment
 
             dispatch({
-                type: GET_OTHER_POSTS,
-                payload: res.data
+                type: ADD_COMMENT,
+                payload: { postId, comment: res.data }   //this will be the comment
             })
-            // console.log(res);
+
+            // dispatch(setAlert('Comment Added', 'success'));
+        } catch (err) {
+            // dispatch({
+            //     type: POST_ERROR,
+            //     payload: { msg: err.response.statusText, status: err.response.status }
+            // })
+        }
+    }
+
+    const removeComment = async(postId, commentId) => {
+        console.log('removing comment');
+        await request.delete(`/api/posts/remove-comment/${postId}/${commentId}`);
+
+        dispatch({
+            type: REMOVE_COMMENT,
+            payload: { postId, commentId }
+        })
+    }
+
+
+    const likeComment = async (postId, commentId) => {
+        console.log('do we like the comment?');
+        try {
+            const res = await request.put(`/api/posts/like-comment/${postId}/${commentId}`)
+
+            console.log(res.data); // this is the new 'comments' for the post
+
+            dispatch({
+                type: UPDATE_COMMENT_LIKES,
+                payload: { postId, comments: res.data }
+            })
+
+        } catch (err) {
+            
+        }
+    }
+
+    const unlikeComment = async (postId, commentId) => {
+        try {
+            const res = await request.put(`/api/posts/unlike-comment/${postId}/${commentId}`)
+
+            console.log(res.data); // this is the new 'comments' for the post
+
+            dispatch({
+                type: UPDATE_COMMENT_LIKES,
+                payload: { postId, comments: res.data }
+            })
+
+        } catch (err) {
+            
+        }
+    }
+
+    const addReply = async(postId, commentId, formData) => {
+        try {
+            // console.log('the ids made it', postId, commentId);
+
+            const res = await request.post(`/api/posts/add-reply/${postId}/${commentId}`, formData, config);
+
+            console.log('UPDATED COMMENTS WITH REPLY', res.data);
+            
+            dispatch({
+                type: UPDATE_COMMENT_REPLY,
+                payload: { postId, comments: res.data }
+            })
+
+        } catch (err) {
+            console.log(err);
+        }  
+    }
+
+    const removeReply = async(postId, commentId, replyId) => {
+        const res = await request.delete(`/api/posts/remove-reply/${postId}/${commentId}/${replyId}`);  // this will be the updated comments
+        
+        console.log('after the removal', res.data);  // this should be the updated comments 
+
+        dispatch({
+            type: REMOVE_REPLY,
+            payload: { postId, comments: res.data }
+        })
+    }
+
+    // maybe change this to one method only that covers both operations (like and unlike)
+
+    const likeReply = async(postId, commentId, replyId) => {
+        try {
+            // if i just use separate models, i can just supply the replyId and update its likes like that
+            const res = await request.put(`/api/posts/like-reply/${postId}/${commentId}/${replyId}`)
+
+            console.log('like reply', res.data);
+
+            dispatch({
+                type: UPDATE_COMMENT_REPLY_LIKES,
+                payload: { postId, comments: res.data }
+            })
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    const unlikeReply = async(postId, commentId, replyId) => {
+        try {
+            // if i just use separate models, i can just supply the replyId and update its likes like that
+            const res = await request.put(`/api/posts/unlike-reply/${postId}/${commentId}/${replyId}`)
+
+            dispatch({
+                type: UPDATE_COMMENT_REPLY_LIKES,
+                payload: { postId, comments: res.data }
+            })
+
         } catch (err) {
             console.log(err);
         }
@@ -118,28 +250,26 @@ const PostState = props => {
         })
     }
 
-    const clearOtherPosts = () => {
-        console.log('clear posts was called');
-        dispatch({
-            type: CLEAR_OTHER_POSTS
-        })
-    }
-
     return(
         <PostContext.Provider
             value={{
-                myPosts: state.myPosts,
-                lastPost: state.lastPost,
+                posts: state.posts,
                 followingPosts: state.followingPosts,
-                otherPosts: state.otherPosts,
                 makePost,
-                getFollowingPosts,
-                getMyPosts,
+                getPosts,
                 removePost,
                 getNewsfeedPosts,
-                getOtherPosts,
                 clearPostState,
-                clearOtherPosts
+                like,
+                unlike,
+                addComment,
+                removeComment,
+                likeComment,
+                unlikeComment,
+                addReply,
+                likeReply,
+                unlikeReply,
+                removeReply
             }}>
                 { props.children }
         </PostContext.Provider>

@@ -14,7 +14,7 @@ const FollowingPosts = () => {
     useEffect(() => {
         const fetchNewsfeed = async() => {
             let posts = await getNewsfeedPosts();
-            console.log('---', posts)
+            // console.log('---', posts)
             setNewsfeedPosts(posts);
         }
         fetchNewsfeed();

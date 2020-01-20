@@ -7,24 +7,22 @@ import { useParams } from 'react-router-dom';
 import PostContext from '../../context/post/postContext';
 
 
-const ProfileBodyTimeline = ({ profile, ourProfile }) => {
+const ProfileBodyTimeline = ({ profile }) => {
 
   const { user: { _id } } = profile;
   
   const postContext = useContext(PostContext);
-  const { myPosts, getMyPosts, otherPosts, getOtherPosts, clearPostState } = postContext;
+  const { posts, getPosts, clearPostState } = postContext;
   
   useEffect(() => {
-    console.log('useEffect');
-    if(ourProfile) { getMyPosts() } else { getOtherPosts(_id) };
-
+    getPosts(_id);
     return () => {
       console.log('unmounting of the PROFILE BODY TIMELINE component')
       clearPostState();
     }
   }, [])
 
-  if ((ourProfile && !myPosts) || (!ourProfile && !otherPosts)) {    
+  if(!posts) {
     return (
       <Fragment>
         <h1>Loading posts...</h1>
@@ -38,7 +36,7 @@ const ProfileBodyTimeline = ({ profile, ourProfile }) => {
       {/* LEFT COL - PROFILE TIMELINE */}
         <div className="timeline-wrapper">
           <NewPost />
-          <Posts profile={profile} posts={ourProfile ? myPosts : otherPosts} />
+          <Posts profile={profile} posts={posts} />
         </div>
       </Fragment>
     )

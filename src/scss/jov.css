@@ -126,6 +126,8 @@
 
 .remove-post {
     cursor: pointer;
+    /* background-color: #dedede;
+    border: 1px solid #dedede; */
 }
 
 .newsfeed-posts {
@@ -170,4 +172,9 @@
     cursor: pointer;
     /* align-items: center; */
 
+}
+
+
+.liked-true {
+    background-color: #FD7800;
 }
