@@ -1,6 +1,7 @@
-import React, {Fragment, useState, useContext} from 'react'
+import React, {Fragment, useState, useContext, useEffect, } from 'react'
 import {useParams} from 'react-router'
 import PageContext from '../../context/page/pageContext'
+import AuthContext from '../../context/auth/authContext'
 import $ from 'jquery'
 import request from '../../utils/axios-config'
 
@@ -10,9 +11,20 @@ const BasePageView = (props) => {
         pageAbout: ''
     })
     const pageContext = useContext(PageContext)
-    const {updateAbout} = pageContext
+    const {updateAbout, roleOnPage, getPage, findRole} = pageContext
+    const authContext = useContext(AuthContext)
+    const {isAuthenticated, loadUser} = authContext
     const currentPage = props.currentPage
     const role = props.pageRole
+    useEffect(() => {
+        if(!isAuthenticated){ loadUser() } 
+        if(!currentPage){getPage(handle)}
+        if(!roleOnPage){findRole(handle)}
+        // if(currentPage.pageHandle !== handle){
+        //     getPage(handle) 
+        //     findRole(handle)
+        // }
+    }, [isAuthenticated, currentPage ])
 
     const onChange = (e) => {
         setPage({...page, [e.target.name]: e.target.value})
@@ -22,10 +34,37 @@ const BasePageView = (props) => {
             'Content-Type': 'application/json',
         }
     }
+    if(!currentPage){
+        return null
+    }
     const onAboutEditClick = (e) => {
         $("#formButton").click(function() {
             $("#editAbout").toggle();
         });
+    }
+    const packageSetting = () => {
+        if(role=='Owner' || role=='Trainer'){
+            return(
+                <a href={`/page/${handle}/package-update`}>
+                    <h2>Add/Manage Offered Packages</h2>
+                </a>
+            )
+        }
+    }
+    const packageShow = () => {
+        const part= currentPage.packages.map((pack, index)=>{
+            return(
+                <div key={index} className="package">
+                    <h3>{pack.title}</h3>
+                    <p>{pack.description}</p>
+                    <p>{pack.numberOfSessions}</p>
+                    <p>{pack.price}</p>
+                    <br/>
+                </div>
+            )
+
+        })
+        return(part)
     }
     const contentEditor = () => {
         if(role =='Owner' || role == 'Content-Creator'){
@@ -81,7 +120,15 @@ const BasePageView = (props) => {
                 {contentEditor()}
                 
             </div>
+            <div> 
+                {packageSetting()}
+                <div className="packages">
+                    <h2>Packages:</h2>
+                    {packageShow()}
+                </div>
+            </div>
             <div className="posts">
+                <h2>Posts</h2>
                 {currentPage.posts.map((index, post)=>{
                     return(
                         <div key={index}>
