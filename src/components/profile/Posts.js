@@ -3,7 +3,8 @@ import TimelinePost from './TimelinePost';
 
 const Posts = ({ profile, posts }) => {
 
-    console.log('here are the posts', posts, 'here is the profile', profile);
+    // console.log('here are the posts', posts, 'here is the profile', profile);
+    // debugger
 
     return (
         <Fragment>

@@ -6,11 +6,11 @@ import ProfileBodyWidgets from './ProfileBodyWidgets';
 
 const ProfileBody = ({ profile, ourProfile }) => {
   
-    if(ourProfile) { 
-      console.log('our profile', profile) 
-    } else { 
-      console.log('not our profile', profile) 
-    }
+    // if(ourProfile) { 
+    //   console.log('our profile', profile) 
+    // } else { 
+    //   console.log('not our profile', profile) 
+    // }
 
     return (
       <Fragment>
