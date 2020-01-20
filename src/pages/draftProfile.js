@@ -441,14 +441,19 @@ const ProfileBodyWidgets = () => {
 
 const TimelinePosts = () => {
   
-  const postOptionsDropdownHandler = () => {
+  const postOptionsDropdownHandler = (e) => {
     const element = document.getElementById("post-options-dropdown");
     if (element.style.display === "none") {
       element.style.display = "flex";
-    } else {
+    } else if (element.style.display === "flex") {
       element.style.display = "none";
     }
   };
+
+  const postOptionsDropdownRemove = (e) => {
+    const menu = e.target.parentNode.childNodes[1]
+    menu.style.display = "none"
+  }
 
   return (
     <>
@@ -474,8 +479,10 @@ const TimelinePosts = () => {
             </div>
           </div>
           <div className="post-options">
-            <i onClick={postOptionsDropdownHandler} className="fas fa-ellipsis-h"></i>
-            <div id="post-options-dropdown" className="options-dropdown-wrapper caret">
+            <button type="button" className="btn-post-options" onClick={postOptionsDropdownHandler} onBlur={postOptionsDropdownRemove} >
+              <i className="fas fa-ellipsis-h"></i>
+            </button>
+            <div id="post-options-dropdown" style={{display: "none"}} className="options-dropdown-wrapper caret">
               <div className="options-dropdown">
                 <ul>
                   <li>edit post</li>
@@ -557,6 +564,21 @@ const TimelinePosts = () => {
 };
 
 const TimelinePostPhoto = () => {
+
+  const postOptionsDropdownHandler = (e) => {
+    const element = document.getElementById("post-options-dropdown");
+    if (element.style.display === "none") {
+      element.style.display = "flex";
+    } else if (element.style.display === "flex") {
+      element.style.display = "none";
+    }
+  };
+
+  const postOptionsDropdownRemove = (e) => {
+    const menu = e.target.parentNode.childNodes[1]
+    menu.style.display = "none"
+  }
+
   return (
     <>
       <div className="timeline-post-wrapper">
@@ -581,7 +603,17 @@ const TimelinePostPhoto = () => {
             </div>
           </div>
           <div className="post-options">
-            <i className="fas fa-ellipsis-h"></i>
+            <button type="button" className="btn-post-options" onClick={postOptionsDropdownHandler} onBlur={postOptionsDropdownRemove} >
+              <i className="fas fa-ellipsis-h"></i>
+            </button>
+            <div id="post-options-dropdown" style={{display: "none"}} className="options-dropdown-wrapper caret">
+              <div className="options-dropdown">
+                <ul>
+                  <li>edit post</li>
+                  <li>delete post</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div className="body">

@@ -265,10 +265,48 @@ const NewsfeedBodyWidgets = () => {
               <div className="icon-bgr">
                 <i className="fas fa-info-circle"></i>
               </div>
-              <h3> widget </h3>
+              <h3> recommended trainers </h3>
             </div>
-            <div className="body no-info">
+            {/* <div className="body no-info">
               <p>nothing to display</p>
+            </div> */}
+            <div className="body thumbnails">
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-user"></i>
+              </div>
             </div>
           </div>
           <div className="widget-wrapper">
@@ -276,42 +314,70 @@ const NewsfeedBodyWidgets = () => {
               <div className="icon-bgr">
                 <i className="fas fa-info-circle"></i>
               </div>
-              <h3> widget {/* <span> (169) </span> */} </h3>
+              <h3> recommended pages </h3>
             </div>
-            <div className="body no-info">
+            {/* <div className="body no-info">
               <p>nothing to display</p>
-            </div>
-            {/* <div className="body thumbnails">
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
             </div> */}
+            <div className="body thumbnails">
+              
+              <Link to='/' className="thumbnail-widget recomended-pages">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended-pages">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended-pages">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended-pages">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended-pages">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended-pages">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+              
+            </div>
           </div>
-          <div className="widget-wrapper">
+          {/* <div className="widget-wrapper">
             <div className="header">
               <div className="icon-bgr">
                 <i className="fas fa-info-circle"></i>
@@ -321,7 +387,7 @@ const NewsfeedBodyWidgets = () => {
             <div className="body no-info">
               <p>nothing to display</p>
             </div>
-            {/* <div className="body thumbnails">
+            <div className="body thumbnails">
               <div className="thumbnail-widget">
                 <i className="fas fa-camera"></i>
               </div>
@@ -349,8 +415,8 @@ const NewsfeedBodyWidgets = () => {
               <div className="thumbnail-widget">
                 <i className="fas fa-camera"></i>
               </div>
-            </div> */}
-          </div>
+            </div>
+          </div> */}
         </div>
       </div>
     </>
@@ -360,14 +426,19 @@ const NewsfeedBodyWidgets = () => {
 
 const TimelinePosts = () => {
   
-  const postOptionsDropdownHandler = () => {
+  const postOptionsDropdownHandler = (e) => {
     const element = document.getElementById("post-options-dropdown");
     if (element.style.display === "none") {
       element.style.display = "flex";
-    } else {
+    } else if (element.style.display === "flex") {
       element.style.display = "none";
     }
   };
+
+  const postOptionsDropdownRemove = (e) => {
+    const menu = e.target.parentNode.childNodes[1]
+    menu.style.display = "none"
+  }
 
   return (
     <>
@@ -385,7 +456,7 @@ const TimelinePosts = () => {
                 december 22, 2019 <span style={{textTransform: "lowercase"}}>at</span> 11:23am
                 </div>
               <div className="post-options">
-                <button type="button" value="post-options">
+                <button type="button" value="">
                   <i className="fas fa-globe-americas"></i>
                   <i className="fas fa-caret-down"></i>
                 </ button>
@@ -393,8 +464,10 @@ const TimelinePosts = () => {
             </div>
           </div>
           <div className="post-options">
-            <i onClick={postOptionsDropdownHandler} className="fas fa-ellipsis-h"></i>
-            <div id="post-options-dropdown" className="options-dropdown-wrapper caret">
+            <button type="button" className="btn-post-options" onClick={postOptionsDropdownHandler} onBlur={postOptionsDropdownRemove} >
+              <i className="fas fa-ellipsis-h"></i>
+            </button>
+            <div id="post-options-dropdown" style={{display: "none"}} className="options-dropdown-wrapper caret">
               <div className="options-dropdown">
                 <ul>
                   <li>edit post</li>
@@ -476,6 +549,21 @@ const TimelinePosts = () => {
 };
 
 const TimelinePostPhoto = () => {
+
+  const postOptionsDropdownHandler = (e) => {
+    const element = document.getElementById("post-options-dropdown");
+    if (element.style.display === "none") {
+      element.style.display = "flex";
+    } else if (element.style.display === "flex") {
+      element.style.display = "none";
+    }
+  };
+
+  const postOptionsDropdownRemove = (e) => {
+    const menu = e.target.parentNode.childNodes[1]
+    menu.style.display = "none"
+  }
+
   return (
     <>
       <div className="timeline-post-wrapper">
@@ -500,7 +588,17 @@ const TimelinePostPhoto = () => {
             </div>
           </div>
           <div className="post-options">
-            <i className="fas fa-ellipsis-h"></i>
+            <button type="button" className="btn-post-options" onClick={postOptionsDropdownHandler} onBlur={postOptionsDropdownRemove} >
+              <i className="fas fa-ellipsis-h"></i>
+            </button>
+            <div id="post-options-dropdown" style={{display: "none"}} className="options-dropdown-wrapper caret">
+              <div className="options-dropdown">
+                <ul>
+                  <li>edit post</li>
+                  <li>delete post</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div className="body">
