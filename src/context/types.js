@@ -17,6 +17,7 @@ export const SET_PROFILE = 'SET_PROFILE';
 export const CLEAR_PROFILE = 'CLEAR_PROFILE'
 export const SET_OTHER_PROFILE = 'SET_OTHER_PROFILE'
 export const FETCHING_PROFILE = 'FETCHING_PROFILE'
+export const SET_SERVICES = 'SET_SERVICES'
 
 
 // Search Context
@@ -45,4 +46,5 @@ export const SET_CURRENT_PAGE_ROLE = 'SET_CURRENT_PAGE_ROLE'
 export const SET_MY_PAGE = 'SET_MY_PAGE';
 export const SET_MY_PAGE_FAIL = 'SET_MY_PAGE_FAIL'
 export const SET_CURRENT_PACKAGE = 'SET_CURRENT_PACKAGE'
+export const SERVICE_BOUGHT = 'SERVICE_BOUGHT'
 
