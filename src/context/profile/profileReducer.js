@@ -2,7 +2,8 @@ import {
     SET_PROFILE,
     CLEAR_PROFILE,
     SET_OTHER_PROFILE,
-    FETCHING_PROFILE
+    FETCHING_PROFILE,
+    SET_SERVICES
 } from '../types'
 export default (state, action) => {
     switch(action.type){
@@ -29,6 +30,11 @@ export default (state, action) => {
                 ...state,
                 profile: null,
                 profileComplete: null
+            }
+        case SET_SERVICES:
+            return {
+                ...state,
+                services: action.payload
             }
         default:
             return state

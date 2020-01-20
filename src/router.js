@@ -24,6 +24,7 @@ import draftNewsfeed from './pages/draftNewsfeed';
 import ProfessionalCreate from './components/professional/ProfessionalCreate'
 import PageCreate from './components/page/PageCreate'
 import PackageShow from './components/page/packages/PackageShow'
+import Dashboard from './components/dashboard/Dashboard'
 
 // Private Routes
 import PrivateRoute from './components/routing/PrivateRoute';
@@ -43,6 +44,7 @@ const Router = () => {
             <PrivateRoute exact path = '/page/:handle/package-update' component={PackageCreate} />
             <PrivateRoute exact path = '/page-create' component={PageCreate} />
             <PrivateRoute exact path = '/page/:handle/package/:id' component={PackageShow} />
+            <PrivateRoute exact path = '/dashboard' component={Dashboard} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             

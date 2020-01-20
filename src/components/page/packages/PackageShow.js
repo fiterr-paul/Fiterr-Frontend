@@ -9,7 +9,7 @@ const PackageShow = () => {
     const pageContext = useContext(PageContext)
     const authContext = useContext(AuthContext)
     
-    const {currentPage, createPackage, getPage, roleOnPage, findRole, getPackage, currentPackage, packagePriceChange} = pageContext
+    const {currentPage, createPackage, getPage, roleOnPage, findRole, getPackage, currentPackage, packagePriceChange, buyPackage} = pageContext
     const {loadUser, isAuthenticated} = authContext
     const {handle, id} = useParams()
     const history = useHistory()
@@ -63,6 +63,20 @@ const PackageShow = () => {
         body.append('id', id)
         packagePriceChange(body)
     }
+    const submitPayment = async(e) =>{
+        e.preventDefault()
+        buyPackage(handle, id)
+        history.push(`/page/${handle}`)
+    }
+    const purchasePackageButton = () =>{
+        if(role=='Owner' || role=='Visitor'){
+            return(
+            <button onClick={submitPayment}>BUY NOW for ${currentPackage.price}</button>
+            )
+        }
+        else{return(null)}
+    }
+
     
     return(
         <>
@@ -70,9 +84,13 @@ const PackageShow = () => {
             <h2>Description: {currentPackage.description}</h2>
             <p>Number Of Sessions: {currentPackage.numberOfSessions}</p>
             <p>Price: ${currentPackage.price}</p>
+            <div>
+                {purchasePackageButton()}
+            </div>
            <div>
                {updateIfPermission()}
            </div>
+           
         </>
     )
 }
