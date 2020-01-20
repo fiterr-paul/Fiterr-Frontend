@@ -214,6 +214,74 @@
           }
         }
       }
+      .page-image-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        height: 242px;
+        width: 242px;
+        .page-image-border {
+          align-items: center;
+          background-color: #fff;
+          border: 1px solid #dddfe2;
+          border-radius: 3px;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: center;
+          padding: 0;
+          height: 242px;
+          width: 242px;
+          .page-image {
+            align-items: center;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: 232px;
+            justify-content: flex-end;
+            overflow: hidden;
+            position: relative;
+            width: 232px;
+            &:hover .image-update {
+              display: flex;
+            }
+            img {
+              display: flex;
+              height: 100%;
+              overflow: hidden;
+              width: 100%;
+            }
+            .image-update {
+              align-items: center;
+              background-color: rgba(0, 0, 0, 0.35);
+              border-top: 1px solid rgba(255, 255, 255, 0.4);
+              border-radius: 0;
+              color: rgba(255, 255, 255, 0.7);
+              cursor: pointer;
+              display: none;
+              height: 25%;
+              justify-content: center;
+              position: absolute;
+              width: 100%;
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.6);
+                border-top: 1px solid rgba(255, 255, 255, 0.7);
+                color: rgba(255, 255, 255, 1);
+              }
+              h3 {
+                font-size: 1em;
+                font-weight: 500;
+                line-height: 1em;
+                margin-left: 4px;
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+      }
     }
     div.col-profile {
       align-items: center;

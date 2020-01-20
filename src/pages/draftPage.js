@@ -38,6 +38,19 @@ const PageLeftNav = () => {
   return (
     <>
       <div className="col-social-nav">
+
+        <div className="page-image-wrapper">
+          <div className="page-image-border">
+            <div className="page-image">
+              <img src={profileImgPaul} alt=""/>
+              <div className="image-update">
+                <i className="fas fa-camera"></i>
+                <h3>update</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* SECTION - USER SWITCHER */}
         {/* <div className="nav-item-wrapper">
           <div className="nav-item switcher">
