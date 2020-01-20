@@ -15,11 +15,14 @@ import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
 import Profile from './pages/Profile';
 import ProperProfile from './pages/properProfile';
+
 import Page from './components/page/Page'
 import PackageCreate from './components/page/packages/PackageCreate'
+
 // this is the draft version of the real profile page
 import draftProfile from './pages/draftProfile';
 import draftNewsfeed from './pages/draftNewsfeed';
+import draftPage from './pages/draftPage';
 
 import ProfessionalCreate from './components/professional/ProfessionalCreate'
 import PageCreate from './components/page/PageCreate'
@@ -50,6 +53,7 @@ const Router = () => {
             
             <Route path='/draftprofile' component={draftProfile} />
             <Route path='/draftnewsfeed' component={draftNewsfeed} />
+            <Route path='/draftpage' component={draftPage} />
             
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />

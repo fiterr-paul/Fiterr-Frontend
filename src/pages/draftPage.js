@@ -15,18 +15,18 @@ import pageImg2 from '../components/assets/media/logo-livefit_livelean-640x640.p
 import pageImg3 from '../components/assets/media/logo-28_day_kickstart-1080x1080.png';
 
 
-const draftNewsfeed = () => {
+const draftPage = () => {
   return (
     <>
-      <section className="body newsfeed">
+      <section className="body page">
         <div className="container">
           {/* LEFT COL - NAVIGATION */}
           <StickyBox offsetTop={60} offsetBottom={10}>
-            <ProfileLeftNav />
+            <PageLeftNav />
           </StickyBox>
 
           {/* RIGHT COL - PROFILE */}
-          <Newsfeed />
+          <PageHeader />
         </div>
       </section>
     </>
@@ -34,12 +34,25 @@ const draftNewsfeed = () => {
 };
 
 
-const ProfileLeftNav = () => {
+const PageLeftNav = () => {
   return (
     <>
       <div className="col-social-nav">
+
+        <div className="page-image-wrapper">
+          <div className="page-image-border">
+            <div className="page-image">
+              <img src={profileImgPaul} alt=""/>
+              <div className="image-update">
+                <i className="fas fa-camera"></i>
+                <h3>update</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* SECTION - USER SWITCHER */}
-        <div className="nav-item-wrapper">
+        {/* <div className="nav-item-wrapper">
           <div className="nav-item switcher">
             <div className="switcher-image">
               <img src={profileImgPaul} alt=""/>
@@ -56,7 +69,7 @@ const ProfileLeftNav = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* SECTION - NAV SHORTCUTS */}
         <div style={{marginTop: '10px'}} className="nav-item-wrapper">
           <div className="nav-item section-title">
@@ -89,7 +102,7 @@ const ProfileLeftNav = () => {
           </div>
         </Link>
         {/* SECTION - BUSINESS PAGES */}
-        <div style={{marginTop: '20px'}} className="nav-item-wrapper">
+        {/* <div style={{marginTop: '20px'}} className="nav-item-wrapper">
           <div className="nav-item section-title">
             <h3> business pages </h3>
           </div>
@@ -125,11 +138,11 @@ const ProfileLeftNav = () => {
             </div>
             <h3> create a new business </h3>
           </div>
-        </Link>
+        </Link> */}
         {/* SECTION - GROUPS */}
         <div style={{marginTop: '20px'}} className="nav-item-wrapper">
           <div className="nav-item section-title">
-            <h3> groups </h3>
+            <h3> page groups </h3>
           </div>
         </div>
         <Link to='/' className="nav-item-wrapper">
@@ -170,26 +183,49 @@ const ProfileLeftNav = () => {
 };
 
 
-const Newsfeed = () => {
+const PageHeader = () => {
   return (
     <>
       <div className="col-profile">
-        <NewsfeedBody />
+
+        <div className="profile-header-container">
+          <div className="cover-image-wrapper">
+            <div className="cover-image">
+              <div className="cover-image-gradient">
+              </div>
+              <div className="image-update">
+                <i className="fas fa-camera"></i>
+                <h3>update cover photo</h3>
+              </div>
+              <img src={coverImage} alt=""/>
+            </div>
+          </div>
+          <div className="page-actions-container">
+            <div className="page-actions-wrapper">
+              <button type="button" value="post-options">
+                <i className="fas fa-rss"></i>
+                <span> follow </span>
+                <i className="fas fa-caret-down"></i>
+              </ button>
+            </div>
+          </div>
+        </div>
+        <PageBody />
       </div>
     </>
   )
 };
 
 
-const NewsfeedBody = () => {
+const PageBody = () => {
   return (
     <>
-      <div className="newsfeed-body-container">
+      <div className="profile-body-container">
         {/* LEFT COL - PROFILE TIMELINE */}
-        <NewsfeedBodyTimeline />
+        <PageBodyTimeline />
         {/* RIGHT COL - PROFILE INFO WIDGETS */}
         <StickyBox offsetTop={70} offsetBottom={0}>
-          <NewsfeedBodyWidgets />
+          <PageBodyWidgets />
         </StickyBox>
       </div>
     </>
@@ -197,10 +233,10 @@ const NewsfeedBody = () => {
 };
 
 
-const NewsfeedBodyTimeline = () => {
+const PageBodyTimeline = () => {
   return(
     <>
-    {/* LEFT COL - NEWSFEED TIMELINE */}
+    {/* LEFT COL - PROFILE TIMELINE */}
       <div className="timeline-wrapper">
         <div className="post-box-wrapper">
           <div className="post-box-header">
@@ -220,7 +256,7 @@ const NewsfeedBodyTimeline = () => {
               <img src={profileImgPaul} alt=""/>
             </div>
             <div className="post-input-field">
-              <TextareaAutosize  type="textarea" name="post" autoComplete="off" placeholder="Share something with your followers ..." required/>
+              <TextareaAutosize  type="textarea" name="post" autoComplete="off" placeholder="Share something on your page ..." required/>
             </div>
           </div>
           <div className="post-box-actions">
@@ -254,10 +290,10 @@ const NewsfeedBodyTimeline = () => {
 };
 
 
-const NewsfeedBodyWidgets = () => {
+const PageBodyWidgets = () => {
   return (
     <>
-      {/* RIGHT COL - NEWSFEED WIDGETS */}
+      {/* RIGHT COL - PROFILE INFO WIDGETS */}
       <div className="profile-info-wrapper">
         <div className="profile-info">
           <div className="widget-wrapper">
@@ -265,21 +301,91 @@ const NewsfeedBodyWidgets = () => {
               <div className="icon-bgr">
                 <i className="fas fa-info-circle"></i>
               </div>
-              <h3> recommended trainers </h3>
+              <h3> about </h3>
+            </div>
+            <div className="body no-info">
+              <p>nothing to display</p>
+            </div>
+          </div>
+          <div className="widget-wrapper">
+            <div className="header">
+              <div className="icon-bgr">
+                <i className="fas fa-info-circle"></i>
+              </div>
+              <h3> our personal trainers </h3>
             </div>
             {/* <div className="body no-info">
               <p>nothing to display</p>
             </div> */}
             <div className="body thumbnails">
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
+              
+              <Link to='/' className="thumbnail-widget recomended">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+
+              <Link to='/' className="thumbnail-widget recomended">
+                <div className="page-image">
+                  <img src={pageImg1} alt=""/>
+                </div>
+                <div className="page-name">
+                  <h3> paul meier fitness </h3>
+                </div>
+              </Link>
+              
+            </div>
+          </div>
+          <div className="widget-wrapper">
+            <div className="header">
+              <div className="icon-bgr">
+                <i className="fas fa-user-friends"></i>
               </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-user"></i>
-              </div>
+              <h3> followers <span> (169) </span> </h3>
+            </div>
+            {/* <div className="body no-info">
+              <p>nothing to display</p>
+            </div> */}
+            <div className="body thumbnails">
               <div className="thumbnail-widget">
                 <i className="fas fa-user"></i>
               </div>
@@ -312,111 +418,43 @@ const NewsfeedBodyWidgets = () => {
           <div className="widget-wrapper">
             <div className="header">
               <div className="icon-bgr">
-                <i className="fas fa-info-circle"></i>
+                <i className="fas fa-camera"></i>
               </div>
-              <h3> recommended pages </h3>
+              <h3> photos </h3>
             </div>
             {/* <div className="body no-info">
               <p>nothing to display</p>
             </div> */}
             <div className="body thumbnails">
-              
-              <Link to='/' className="thumbnail-widget recomended">
-                <div className="page-image">
-                  <img src={pageImg1} alt=""/>
-                </div>
-                <div className="page-name">
-                  <h3> paul meier fitness </h3>
-                </div>
-              </Link>
-
-              <Link to='/' className="thumbnail-widget recomended">
-                <div className="page-image">
-                  <img src={pageImg1} alt=""/>
-                </div>
-                <div className="page-name">
-                  <h3> paul meier fitness </h3>
-                </div>
-              </Link>
-
-              <Link to='/' className="thumbnail-widget recomended">
-                <div className="page-image">
-                  <img src={pageImg1} alt=""/>
-                </div>
-                <div className="page-name">
-                  <h3> paul meier fitness </h3>
-                </div>
-              </Link>
-
-              <Link to='/' className="thumbnail-widget recomended">
-                <div className="page-image">
-                  <img src={pageImg1} alt=""/>
-                </div>
-                <div className="page-name">
-                  <h3> paul meier fitness </h3>
-                </div>
-              </Link>
-
-              <Link to='/' className="thumbnail-widget recomended">
-                <div className="page-image">
-                  <img src={pageImg1} alt=""/>
-                </div>
-                <div className="page-name">
-                  <h3> paul meier fitness </h3>
-                </div>
-              </Link>
-
-              <Link to='/' className="thumbnail-widget recomended">
-                <div className="page-image">
-                  <img src={pageImg1} alt=""/>
-                </div>
-                <div className="page-name">
-                  <h3> paul meier fitness </h3>
-                </div>
-              </Link>
-              
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
+              <div className="thumbnail-widget">
+                <i className="fas fa-camera"></i>
+              </div>
             </div>
           </div>
-          {/* <div className="widget-wrapper">
-            <div className="header">
-              <div className="icon-bgr">
-                <i className="fas fa-info-circle"></i>
-              </div>
-              <h3> widget </h3>
-            </div>
-            <div className="body no-info">
-              <p>nothing to display</p>
-            </div>
-            <div className="body thumbnails">
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-              <div className="thumbnail-widget">
-                <i className="fas fa-camera"></i>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </>
@@ -456,7 +494,7 @@ const TimelinePosts = () => {
                 december 22, 2019 <span style={{textTransform: "lowercase"}}>at</span> 11:23am
                 </div>
               <div className="post-options">
-                <button type="button" value="">
+                <button type="button" value="post-options">
                   <i className="fas fa-globe-americas"></i>
                   <i className="fas fa-caret-down"></i>
                 </ button>
@@ -764,4 +802,12 @@ const PostReplyForm = () => {
 };
 
 
-export default draftNewsfeed;
+const NewComponent = () => {
+  return (
+    <>
+    </>
+  )
+};
+
+
+export default draftPage;
