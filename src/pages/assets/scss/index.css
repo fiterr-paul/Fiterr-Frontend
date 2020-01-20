@@ -1129,9 +1129,9 @@
 }
 
 .container-app section.body.profile .container div.col-profile .profile-body-container .timeline-wrapper .post-box-wrapper .post-box-body {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1141,10 +1141,10 @@
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 100px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-height: 100px;
   width: 100%;
 }
 
@@ -1161,10 +1161,10 @@
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 100%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  min-height: 100px;
   padding: 10px;
   width: 70px;
 }
@@ -1195,10 +1195,10 @@
           flex-grow: 1;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 100%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  min-height: 100px;
   padding: 10px;
   padding-left: 0;
 }
@@ -1208,7 +1208,6 @@
   border-radius: 3px;
   color: #000;
   font-size: 1.2em;
-  height: 100%;
   line-height: 1.4em;
   resize: none;
   width: 100%;
@@ -2179,19 +2178,23 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  background-color: #f8f8f8;
+  border: 1px solid #f5f4f4;
+  border-radius: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   min-height: 20px;
+  padding: 5px;
   width: 100%;
 }
 
@@ -2241,16 +2244,304 @@
   text-transform: lowercase;
 }
 
-.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment,
-.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment {
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-content .comment,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-content .comment {
   color: #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   font-size: 0.9em;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2em;
+  margin: 2px 0px 2px 0;
+  width: 100%;
 }
 
 .container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-actions,
 .container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-actions {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 0.8em;
+  padding-left: 4px;
+  text-transform: capitalize;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-actions .space-dot,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-actions .space-dot {
+  color: #444;
+  font-weight: 400;
+  line-height: 1.2em;
+  padding: 0 5px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-actions .action,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-actions .action {
+  color: #444;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .comment-actions .action:hover,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .comment-actions .action:hover {
+  color: #ff8418;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-image,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-image {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 36px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0px;
+  width: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-image img,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-image img {
+  border: 1px solid #999;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 10px;
+  min-height: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #f8f8f8;
+  border: 1px solid #f5f4f4;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 20px;
+  padding: 5px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 20px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name a,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name a {
+  color: #fd7800;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1.2em;
+  text-transform: capitalize;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name a:hover,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name a:hover {
+  color: #ff8418;
+  text-decoration: underline;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name span,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .author-name span {
+  color: #444;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin-left: 5px;
+  text-transform: lowercase;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .comment,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-content .comment {
+  color: #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 2px 0px 2px 0;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 0.8em;
+  margin-top: 5px;
+  padding-left: 6px;
+  text-transform: capitalize;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions .space-dot,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions .space-dot {
+  color: #444;
+  font-weight: 400;
+  line-height: 1.2em;
+  padding: 0 5px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions .action,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions .action {
+  color: #444;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions .action:hover,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .reply-wrapper .reply-body .reply-actions .action:hover {
+  color: #ff8418;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 3px;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -2269,10 +2560,256 @@
   width: 100%;
 }
 
-.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .reply,
-.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .reply {
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-image,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 36px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px;
+  width: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-image img,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-image img {
+  border: 1px solid #999;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 10px;
+  min-height: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.8em;
+  height: auto;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form textarea.comment-field,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form textarea.comment-field {
+  border-color: #dddfe2;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #333;
+  line-height: 1.4em;
+  padding: 6px;
+  padding-right: 58px;
+  resize: none;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form button.comment-btn,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form button.comment-btn {
+  background-color: #f8f8f8;
+  border-color: #dddfe2;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #666;
+  display: block;
+  font-size: 1em;
+  font-weight: 500;
+  float: right;
+  height: 23px;
+  line-height: 1.2em;
+  margin-bottom: 4px;
+  margin-left: -54px;
+  text-transform: capitalize;
+  width: 50px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comments-wrapper .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form button.comment-btn:hover,
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment .post-comment .comment-wrapper .comment-body .post-reply-form-wrapper .post-reply-form .form-field form button.comment-btn:hover {
+  background-color: #fd7800;
+  border-color: #fd7800;
+  color: #fff;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form .form-image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 36px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0px;
+  width: 46px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form .form-image img {
+  border: 1px solid #999;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form .form-field {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 10px;
+  min-height: 36px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form .form-field form {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.8em;
+  height: auto;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form .form-field form textarea.comment-field {
+  border-color: #dddfe2;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #333;
+  line-height: 1.4em;
+  padding: 6px;
+  padding-right: 58px;
+  resize: none;
+  width: 100%;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form .form-field form button.comment-btn {
+  background-color: #f8f8f8;
+  border-color: #dddfe2;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #666;
+  display: block;
+  font-size: 1em;
+  font-weight: 500;
+  float: right;
+  height: 23px;
+  line-height: 1.2em;
+  margin-bottom: 4px;
+  margin-left: -54px;
+  text-transform: capitalize;
+  width: 50px;
+}
+
+.container-app section.body.profile .container div.col-profile .timeline-post-wrapper .post-comment-form-wrapper .post-comment-form .form-field form button.comment-btn:hover {
+  background-color: #fd7800;
+  border-color: #fd7800;
+  color: #fff;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import ProfileContext from './profileContext'
 import profileReducer from './profileReducer'
-import { SET_PROFILE, CLEAR_PROFILE, SET_OTHER_PROFILE, FETCHING_PROFILE } from '../types'
+import { SET_PROFILE, CLEAR_PROFILE, SET_OTHER_PROFILE, FETCHING_PROFILE, SET_SERVICES } from '../types'
 
 import request from '../../utils/axios-config'
 
@@ -19,7 +19,8 @@ const ProfileState = props => {
         profile: null,
         profileComplete: false,
         otherProfile: null,
-        fetchingProfile: true
+        fetchingProfile: true,
+        services: null
     };
 
     const [state, dispatch] = useReducer(profileReducer, initialState);
@@ -41,7 +42,7 @@ const ProfileState = props => {
 
     // is this to get my profile or another users? - gets mine, should rename to getMyProfile
     const getMyProfile = async () => {
-        const response = await request.get(`/api/profiles/me`);
+        const response = await request.get(`/api/profiles/myprofile`);
         dispatch({
             type: SET_PROFILE,
             payload: response.data
@@ -91,6 +92,13 @@ const ProfileState = props => {
         })
 
     }
+    const populateServices = async() => {
+        const response = await request.get('/api/profiles/services')
+        dispatch({
+            type: SET_SERVICES,
+            payload: response.data
+        })
+    }
 
     return(
         <ProfileContext.Provider
@@ -105,7 +113,9 @@ const ProfileState = props => {
                 clearProfile,
                 follow,
                 unfollow,
-                loadMyUserAndProfile
+                loadMyUserAndProfile,
+                populateServices,
+                services: state.services
             }}>
                 { props.children }
         </ProfileContext.Provider>
