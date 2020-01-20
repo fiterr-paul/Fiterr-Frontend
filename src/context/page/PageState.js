@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import PageContext from './pageContext';
 import pageReducer from './pageReducer';
-import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL } from '../types'
+import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE } from '../types'
 import request from '../../utils/axios-config'
 import AuthContext from '../auth/authContext';
 import AlertContext from '../alert/alertContext'
@@ -19,7 +19,8 @@ const PageState = props => {
     const initialState = {
         currentPage: null,
         roleOnPage: null,
-        myPage: null
+        myPage: null,
+        currentPackage: null
     }
 
     const [state, dispatch] = useReducer(pageReducer, initialState)
@@ -79,16 +80,25 @@ const PageState = props => {
         })
     }
 
+    const getPackage = async(pageID, packageID) => {
+        const response = await request.get(`/api/professional/${pageID}/${packageID}`, config)
+        dispatch({
+            type: SET_CURRENT_PACKAGE,
+            payload: response.data
+        })
+    }
     return(
         <PageContext.Provider
             value={{
                 currentPage: state.currentPage,
                 roleOnPage: state.roleOnPage,
+                currentPackage: state.currentPackage,
                 getPage,
                 findRole,
                 createPage,
                 updateAbout,
-                createPackage
+                createPackage,
+                getPackage
             }}>
                 {props.children}
         </PageContext.Provider>

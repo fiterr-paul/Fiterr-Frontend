@@ -44,4 +44,5 @@ export const SET_PAGE = 'SET_PAGE';
 export const SET_CURRENT_PAGE_ROLE = 'SET_CURRENT_PAGE_ROLE'
 export const SET_MY_PAGE = 'SET_MY_PAGE';
 export const SET_MY_PAGE_FAIL = 'SET_MY_PAGE_FAIL'
+export const SET_CURRENT_PACKAGE = 'SET_CURRENT_PACKAGE'
 
