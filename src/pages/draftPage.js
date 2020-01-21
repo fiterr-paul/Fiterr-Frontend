@@ -102,7 +102,7 @@ const PageHeader = () => {
         </div>
         <div className="page-actions-container">
           <div className="page-actions-wrapper">
-            <button type="button" value="post-options">
+            <button type="button" value="">
               <i className="fas fa-rss"></i>
               <span> follow </span>
               <i className="fas fa-caret-down"></i>
@@ -679,7 +679,7 @@ const PostReplyForm = () => {
 };
 
 
-const PageBodyAbout = () => {
+const PageBodyServices = () => {
   return (
     <>
     </>
