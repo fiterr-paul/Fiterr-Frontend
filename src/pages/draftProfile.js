@@ -196,7 +196,7 @@ const ProfileHeader = () => {
                   <button className="update-info" type="button" value="">
                     <i className="fas fa-pencil-alt"></i>
                     update info
-                  </button> */}
+                  </button> */} 
                   <button className="follow" type="button" value="">
                     <i className="fas fa-rss"></i>
                     <span> follow </span>

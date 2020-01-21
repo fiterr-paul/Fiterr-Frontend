@@ -110,7 +110,11 @@ const PageHeader = () => {
           </div>
         </div>
       </div>
-      <PageBody />
+      {/* <PageBodyTimeline /> */}
+      {/* <PageBodyAbout /> */}
+      <PageBodyServices />
+      {/* <PageBodyTrainers /> */}
+      {/* <PageBodyPhotos /> */}
     </div>
   )
 };
@@ -120,7 +124,7 @@ const PageBody = () => {
   return (
     <div className="profile-body-container">
       {/* LEFT COL - PROFILE TIMELINE */}
-      <PageBodyTimeline />
+      <PageBodyTimelineColumn />
       {/* RIGHT COL - PROFILE INFO WIDGETS */}
       <StickyBox offsetTop={70} offsetBottom={0}>
         <PageBodyWidgets />
@@ -130,7 +134,7 @@ const PageBody = () => {
 };
 
 
-const PageBodyTimeline = () => {
+const PageBodyTimelineColumn = () => {
   return(
     <>
     {/* LEFT COL - PROFILE TIMELINE */}
@@ -679,10 +683,123 @@ const PostReplyForm = () => {
 };
 
 
+const PageBodyAbout = () => {
+  return (
+    <div className="page-container services">
+      <div className="container-wrapper">
+        <div className="header">
+          <div className="icon-bgr">
+            <i className="fas fa-info-circle"></i>
+          </div>
+          <h3> about </h3>
+        </div>
+        <div className="body">
+          <span>nothing to display</span>
+        </div>
+      </div>
+    </div>
+  )
+};
+
+
 const PageBodyServices = () => {
   return (
-    <>
-    </>
+    <div className="page-container services">
+      <div className="container-wrapper">
+        <div className="header">
+          <div className="icon">  
+            <div className="icon-bgr">
+              <i className="fas fa-info-circle"></i>
+            </div>
+            <h3> services and packages </h3>
+          </div>
+          <div className="post-button">
+            <button type="button" value=""> create package </button>
+          </div>
+        </div>
+        <div className="body services">
+
+
+          <div className="card">
+            <div className="purchase">
+            <button type="button" value=""> purchase </button>
+            </div>
+            <div className="row">
+              <div className="col-left">
+                <p>package title:</p>
+              </div>
+              <div className="col-right">
+              <p>10 personal training sessions</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-left">
+                <p>description:</p>
+              </div>
+              <div className="col-right">
+              <p>10 one-on-one appointments / personal training sessions</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-left">
+                <p># of sessions:</p>
+              </div>
+              <div className="col-right">
+              <p>10</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-left">
+                <p>price:</p>
+              </div>
+              <div className="col-right">
+              <p>$ 900.00</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  )
+};
+
+
+const PageBodyTrainers = () => {
+  return (
+    <div className="page-container services">
+      <div className="container-wrapper">
+        <div className="header">
+          <div className="icon-bgr">
+            <i className="fas fa-info-circle"></i>
+          </div>
+          <h3> Personal Trainers / Coaches </h3>
+        </div>
+        <div className="body">
+          <span>nothing to display</span>
+        </div>
+      </div>
+    </div>
+  )
+};
+
+
+const PageBodyPhotos = () => {
+  return (
+    <div className="page-container services">
+      <div className="container-wrapper">
+        <div className="header">
+          <div className="icon-bgr">
+            <i className="fas fa-info-circle"></i>
+          </div>
+          <h3> Photos </h3>
+        </div>
+        <div className="body">
+          <span>nothing to display</span>
+        </div>
+      </div>
+    </div>
   )
 };
 
