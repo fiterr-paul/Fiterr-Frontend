@@ -96,7 +96,7 @@ const PageState = props => {
         })
     }
     const buyPackage = async(handle, id, body) => {
-        const response = await request.post(`/api/professional/${handle}/${id}`, body, config)
+        const response = await request.post(`/api/packages/${handle}/${id}`, body, config)
         dispatch({
             type: SERVICE_BOUGHT,
             payload: response.data
