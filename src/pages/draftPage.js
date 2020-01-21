@@ -679,6 +679,14 @@ const PostReplyForm = () => {
 };
 
 
+const PageBodyAbout = () => {
+  return (
+    <>
+    </>
+  )
+};
+
+
 const NewComponent = () => {
   return (
     <>
