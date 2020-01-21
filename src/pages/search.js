@@ -24,8 +24,7 @@ const Search = (props) => {
   }
 
   useEffect(() => {
-    console.log('searching', searching);
-    console.log('component reloaded')
+    // console.log('searching', searching);
   }, [searchedUsers])
 
 

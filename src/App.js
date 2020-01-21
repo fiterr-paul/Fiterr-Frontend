@@ -11,6 +11,7 @@ import AlertState from './context/alert/AlertState';
 import ProfileState from './context/profile/ProfileState'
 import SearchState from './context/search/SearchState'
 import PostState from './context/post/PostState';
+import PageState from './context/page/PageState';
 import IsUserProfessional from './components/professional/isProfessional'
 
 function App() {
@@ -19,14 +20,16 @@ function App() {
       <AuthState>
         <SearchState>
           <ProfileState>
-            <PostState>
-              <div className="container-app">
-                <Navbar />
-                {/* <IsUserProfessional /> */}
-                <Router />  
-                <Footer />
-              </div>
-            </PostState>
+            <PageState>
+              <PostState>
+                <div className="container-app">
+                  <Navbar />
+                  <IsUserProfessional />
+                  <Router />  
+                  <Footer />
+                </div>
+              </PostState>
+            </PageState>
           </ProfileState>
         </SearchState>
       </AuthState>

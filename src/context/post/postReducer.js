@@ -3,10 +3,11 @@ import {
     SET_POSTS, 
     FIND_FOLLOWING_POSTS, 
     REMOVE_POST, 
-    GET_VIEWING_POSTS, 
+    GET_OTHER_POSTS, 
     CLEAR_POST_STATE, 
     UPDATE_POSTS, 
-    UPDATE_LIKES 
+    UPDATE_LIKES ,
+    CLEAR_OTHER_POSTS
 } from '../types'
 
 export default (state, action) => {
@@ -29,7 +30,8 @@ export default (state, action) => {
         case SET_POSTS:
             return{
                 ...state,
-                myPosts: action.payload
+                myPosts: action.payload,
+                // otherPosts: null
             }
         case REMOVE_POST: 
             return {
@@ -42,17 +44,22 @@ export default (state, action) => {
                 ...state,
                 followingPosts: action.payload
             }
-        case GET_VIEWING_POSTS:
+        case GET_OTHER_POSTS:
             return {
                 ...state,
-                viewingPosts: action.payload
+                otherPosts: action.payload
             }
         case CLEAR_POST_STATE:
             return {
-                myPosts: [],
+                myPosts: null,
                 lastPost: null,
                 followingPosts: null,
-                viewingPosts: null
+                otherPosts: null
+            }
+        case CLEAR_OTHER_POSTS:
+            return {
+                ...state,
+                otherPosts: null
             }
         default:
             return state

@@ -70,15 +70,10 @@ const NewPost = () => {
   return (
       <div className="post-box-wrapper">
         <div className="post-box-header">
-        <div className="icon-bgr">
-          <i className="fas fa-pencil-alt"></i>
-        </div>
-        <h3> create post </h3>
-        <div className="hr"></div>
-        <input type="file" name="image" id="image" className='inputfile' onChange={onFileChange}/>
-        <label htmlFor="image" className="input-file-label">
-            <i className="fas fa-camera"></i><span className='input-file-name'>{ fileName ? fileName : 'upload photo/video' }</span>
-        </label>
+          <div className="icon-bgr">
+            <i className="fas fa-pencil-alt"></i>
+          </div>
+          <h3> create post </h3>
         </div>
         <div className="post-box-body">
           <div className="profile-image">
@@ -91,10 +86,10 @@ const NewPost = () => {
         <div className="post-box-actions">
           <div className="post-options">
             <div className="new-post-field">
-              {/* <input type="file" name="image" id="image" className='inputfile' onChange={onFileChange}/>
+              <input type="file" name="image" id="image" className='inputfile' onChange={onFileChange}/>
               <label htmlFor="image" className="input-file-label">
                   <i className="fas fa-file-upload"></i><span className='input-file-name'>{ fileName ? fileName : 'Choose a file' }</span>
-              </label> */}
+              </label>
             </div>
             <button type="button" value="post-options">
               <i className="fas fa-users"></i>
