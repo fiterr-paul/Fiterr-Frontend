@@ -23,10 +23,11 @@ const PageCreate = () => {
         pageOwner: '',
         pageHandle: '',
         pageTitle: '',
-        pageAbout: ''
+        pageAbout: '',
+        image: null
     })
 
-    const {pageTitle, pageAbout, pageOwner, pageHandle} = page
+    const {pageTitle, pageAbout, pageOwner, pageHandle, image} = page
 
     const onSubmit = async(e) => {
         e.preventDefault()
@@ -35,6 +36,7 @@ const PageCreate = () => {
         body.append('pageHandle', pageHandle)
         body.append('pageTitle', pageTitle)
         body.append('pageAbout', pageAbout)
+        body.append('image', image)
         
 
         createPage(body)
@@ -43,6 +45,9 @@ const PageCreate = () => {
 
     const onChange = (e) => {
         setPage({...page, [e.target.name]: e.target.value})
+    }
+    const onFileChange = (e) => {
+        setPage({...page, [e.target.name]: e.target.files[0]})
     }
     
     return(
@@ -56,6 +61,7 @@ const PageCreate = () => {
                 <input type="text" name="pageTitle" id="pageTitle" value={pageTitle} onChange={onChange} />
                 <label>Tell us about your page!</label>
                 <input type="text" name="pageAbout" id="pageAbout" value={pageAbout} onChange={onChange}/>
+                <input type="file" name="image" id="image" onChange={onFileChange}/>
                 <div className="submit-button">
                     <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
                 </div>
