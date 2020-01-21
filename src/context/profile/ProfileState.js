@@ -42,7 +42,7 @@ const ProfileState = props => {
 
     // is this to get my profile or another users? - gets mine, should rename to getMyProfile
     const getMyProfile = async () => {
-        const response = await request.get(`/api/profiles/myprofile`);
+        const response = await request.get(`/api/profiles/me`);
         dispatch({
             type: SET_PROFILE,
             payload: response.data

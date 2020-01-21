@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import StickyBox from "react-sticky-box";
+
 import ProfileBodyTimeline from './ProfileBodyTimeline';
 import ProfileBodyWidgets from './ProfileBodyWidgets';
 

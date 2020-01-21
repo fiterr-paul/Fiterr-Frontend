@@ -11,12 +11,8 @@ import OtherProfile from '../components/profile/OtherProfile';
 const Profile = () => {
 
     const { username } = useParams();
-
-    const authContext = useContext(AuthContext);
-    const profileContext = useContext(ProfileContext);
-
-    const { user, isAuthenticated, loadUser } = authContext;
-    const { profile, getMyProfile } = profileContext;
+    const { user, isAuthenticated, loadUser } = useContext(AuthContext);
+    const { profile, getMyProfile } = useContext(ProfileContext);
 
     // Reload your user on a page refresh
     useEffect(() => {
