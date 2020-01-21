@@ -50,131 +50,38 @@ const PageLeftNav = () => {
             </div>
           </div>
         </div>
-
-        {/* SECTION - USER SWITCHER */}
-        {/* <div className="nav-item-wrapper">
-          <div className="nav-item switcher">
-            <div className="switcher-image">
-              <img src={profileImgPaul} alt=""/>
-            </div>
-            <div className="switcher-info">
-              <Link to='/' className="name">
-                <span> paul anthony meier </span>
-              </Link>
-              <div className="title">
-                <span> fitness enthusiast </span>
-              </div>
-              <Link to='/' className="switcher">
-                <span> switch to professional </span>
-              </Link>
-            </div>
-          </div>
-        </div> */}
         {/* SECTION - NAV SHORTCUTS */}
-        <div style={{marginTop: '10px'}} className="nav-item-wrapper">
-          <div className="nav-item section-title">
-            <h3> shortcuts </h3>
+        <div className="nav-item-wrapper page-title-handle">
+          <div className="nav-item page-title">
+            <h1> paul meier fitness </h1>
+          </div>
+          <div className="nav-item page-handle">
+            <h3> @fitpaulm </h3>
           </div>
         </div>
-        <Link to='/dashboard' className="nav-item-wrapper">
+        <Link to='/dashboard' className="page-nav-item-wrapper">
           <div className="nav-item menu-btn">
-            <i className="fas fa-tachometer-alt"></i><h3> dashboard </h3>
+            <h3> home </h3>
           </div>
         </Link>
-        <Link to='/' className="nav-item-wrapper">
+        <Link to='/' className="page-nav-item-wrapper">
           <div className="nav-item menu-btn">
-            <i className="fas fa-newspaper"></i><h3> newsfeed </h3>
+            <h3> about </h3>
           </div>
         </Link>
-        <Link to='/' className="nav-item-wrapper">
+        <Link to='/' className="page-nav-item-wrapper">
           <div className="nav-item menu-btn">
-            <i className="fas fa-user"></i><h3> profile </h3>
+            <h3> services </h3>
           </div>
         </Link>
-        <Link to='/messages' className="nav-item-wrapper">
+        <Link to='/' className="page-nav-item-wrapper">
           <div className="nav-item menu-btn">
-          <i className="fas fa-comment-dots"></i><h3> messages </h3>
+            <h3> trainers </h3>
           </div>
         </Link>
-        <Link to='/groups' className="nav-item-wrapper">
+        <Link to='/' className="page-nav-item-wrapper">
           <div className="nav-item menu-btn">
-            <i className="fas fa-users"></i><h3> groups </h3>
-          </div>
-        </Link>
-        {/* SECTION - BUSINESS PAGES */}
-        {/* <div style={{marginTop: '20px'}} className="nav-item-wrapper">
-          <div className="nav-item section-title">
-            <h3> business pages </h3>
-          </div>
-        </div>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group">
-            <div className="page-image">
-              <img src={pageImg1} alt=""/>
-            </div>
-            <h3> paul meier fitness </h3>
-          </div>
-        </Link>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group">
-            <div className="page-image">
-              <img src={pageImg2} alt=""/>
-            </div>
-            <h3> live fit - live lean </h3>
-          </div>
-        </Link>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group">
-            <div className="page-image">
-              <img src={pageImg3} alt=""/>
-            </div>
-            <h3> 28 day fat loss kickstart challenge </h3>
-          </div>
-        </Link>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group create-new">
-            <div className="page-image">
-              <i className="fas fa-briefcase"></i>
-            </div>
-            <h3> create a new business </h3>
-          </div>
-        </Link> */}
-        {/* SECTION - GROUPS */}
-        <div style={{marginTop: '20px'}} className="nav-item-wrapper">
-          <div className="nav-item section-title">
-            <h3> page groups </h3>
-          </div>
-        </div>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group">
-            <div className="page-image">
-              <img src={pageImg1} alt=""/>
-            </div>
-            <h3> PMF 1:1 clients </h3>
-          </div>
-        </Link>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group">
-            <div className="page-image">
-              <img src={pageImg2} alt=""/>
-            </div>
-            <h3> PMF online clients </h3>
-          </div>
-        </Link>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group">
-            <div className="page-image">
-              <img src={pageImg3} alt=""/>
-            </div>
-            <h3> 28 day fat loss members </h3>
-          </div>
-        </Link>
-        <Link to='/' className="nav-item-wrapper">
-          <div className="nav-item menu-btn-page-group create-new">
-            <div className="page-image">
-              <i className="fas fa-users"></i>
-            </div>
-            <h3> create a new group </h3>
+            <h3> photos </h3>
           </div>
         </Link>
       </div>
