@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import PageContext from '../../../context/page/pageContext'
 import AuthContext from '../../../context/auth/authContext'
 import {useParams} from 'react-router'
@@ -63,15 +63,22 @@ const PackageShow = () => {
         body.append('id', id)
         packagePriceChange(body)
     }
-    const submitPayment = async(e) =>{
-        e.preventDefault()
-        buyPackage(handle, id)
-        history.push(`/page/${handle}`)
-    }
+    // const submitPayment = async(e) =>{
+    //     e.preventDefault()
+    //     // buyPackage(handle, id)
+    //     <Redirect 
+    //         to={
+    //             pathname: "/checkout",
+    //             state: {package: currentPackage}
+    //     }/>
+    // }
     const purchasePackageButton = () =>{
         if(role=='Owner' || role=='Visitor'){
             return(
-            <button onClick={submitPayment}>BUY NOW for ${currentPackage.price}</button>
+            <Link to={{ 
+                pathname:'/checkout',
+                state: {pack: currentPackage, handle: handle, packageID: id}
+            }}> <button>Buy Now</button> </Link> 
             )
         }
         else{return(null)}

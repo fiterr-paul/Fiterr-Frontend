@@ -20,7 +20,8 @@ const PageState = props => {
         currentPage: null,
         roleOnPage: null,
         myPage: null,
-        currentPackage: null
+        currentPackage: null,
+        lastCharge: null
     }
 
     const [state, dispatch] = useReducer(pageReducer, initialState)
@@ -94,8 +95,8 @@ const PageState = props => {
             payload: response.data
         })
     }
-    const buyPackage = async(handle, id) => {
-        const response = await request.post(`/api/professional/${handle}/${id}`)
+    const buyPackage = async(handle, id, body) => {
+        const response = await request.post(`/api/professional/${handle}/${id}`, body, config)
         dispatch({
             type: SERVICE_BOUGHT,
             payload: response.data
@@ -114,7 +115,8 @@ const PageState = props => {
                 createPackage,
                 getPackage,
                 packagePriceChange,
-                buyPackage
+                buyPackage,
+                lastCharge: state.lastCharge
             }}>
                 {props.children}
         </PageContext.Provider>

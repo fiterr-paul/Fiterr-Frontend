@@ -32,6 +32,7 @@ import Dashboard from './components/dashboard/Dashboard'
 
 // Private Routes
 import PrivateRoute from './components/routing/PrivateRoute';
+import Checkout from './components/stripe/Checkout';
 
 
 const Router = () => {
@@ -49,6 +50,7 @@ const Router = () => {
             <PrivateRoute exact path = '/page-create' component={PageCreate} />
             <PrivateRoute exact path = '/page/:handle/package/:id' component={PackageShow} />
             <PrivateRoute exact path = '/dashboard' component={Dashboard} />
+            <PrivateRoute exact path = '/checkout' component={Checkout} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             

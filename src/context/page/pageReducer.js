@@ -26,6 +26,10 @@ export default (state, action) => {
                 currentPackage: action.payload
             }
         case SERVICE_BOUGHT:
+            return{
+                ...state,
+                lastCharge: action.payload
+            }
         default:
             return state
     }
