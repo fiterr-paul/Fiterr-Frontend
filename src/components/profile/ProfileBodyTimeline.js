@@ -41,7 +41,7 @@ const ProfileBodyTimeline = ({ profile }) => {
       {/* LEFT COL - PROFILE TIMELINE */}
         <div className="timeline-wrapper">
           <NewPost />
-          <Posts profile={profile} posts={posts} />
+          <Posts posts={posts} />
         </div>
       </Fragment>
     )

@@ -11,8 +11,8 @@ import ProfileLeftNav from '../components/profile/ProfileLeftNav';
 import NewsfeedMain from '../components/newsfeed/NewsfeedMain';
 
 
-const Newsfeed = (props) => {
-    const { loadUser, isAuthenticated, user } = useContext(AuthContext)
+const Newsfeed = () => {
+    const { loadUser, isAuthenticated } = useContext(AuthContext)
     const { profile, getMyProfile } = useContext(ProfileContext)
      
     useEffect(() => {

@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import ProfileContext from './profileContext'
 import profileReducer from './profileReducer'
-import { SET_PROFILE, CLEAR_PROFILE, SET_OTHER_PROFILE, FETCHING_PROFILE, SET_SERVICES } from '../types'
+import { SET_PROFILE, CLEAR_PROFILE, SET_OTHER_PROFILE, FETCHING_PROFILE, SET_SERVICES, FOLLOW_USER, UNFOLLOW_USER } from '../types'
 
 import request from '../../utils/axios-config'
 
@@ -70,14 +70,26 @@ const ProfileState = props => {
         })
     }
 
+    // what is the id that is coming here?
     const follow = async(id) => {
-        console.log(id);
-        await request.get(`/api/profiles/follow/${id}`); 
-        // should we also dispatch to put their profile id into our following field for our profile state, or get updated profile from backend?
+        const res = await request.get(`/api/profiles/follow/${id}`);    // should get back the new following array
+
+        // put the updated
+        dispatch({
+            type: FOLLOW_USER,
+            payload: { following: res.data }
+        })
     }
 
     const unfollow = async(id) => {
-        await request.get(`/api/profiles/unfollow/${id}`); 
+        const res = await request.get(`/api/profiles/unfollow/${id}`); 
+
+        // the id is the userid of the other profile
+
+        dispatch({
+            type: UNFOLLOW_USER,
+            payload: { following: res.data }
+        })
     }
 
     // this will be a mix of the getProfile method and the loadUser method

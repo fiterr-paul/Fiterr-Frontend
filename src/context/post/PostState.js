@@ -3,20 +3,18 @@ import PostContext from './postContext';
 import postReducer from './postReducer';
 
 import { 
-    SET_POSTS,
+    GET_POSTS,
+    GET_NEWSFEED,
     REMOVE_POST, 
-    GET_OTHER_POSTS, 
-    CLEAR_POST_STATE, 
     UPDATE_POSTS, 
     UPDATE_LIKES, 
-    CLEAR_OTHER_POSTS, 
     ADD_COMMENT, 
-    UPDATE_COMMENT_LIKES, 
     REMOVE_COMMENT, 
-    GET_POSTS,
+    UPDATE_COMMENT_LIKES, 
     UPDATE_COMMENT_REPLY ,
     UPDATE_COMMENT_REPLY_LIKES,
-    REMOVE_REPLY
+    REMOVE_REPLY,
+    CLEAR_POST_STATE, 
 } from '../types'
 
 import request from '../../utils/axios-config'
@@ -68,15 +66,16 @@ const PostState = props => {
         }
     }
 
-    // YET TO BE TESTED
-    const getNewsfeed = async() => {
+    const fetchNewsfeed = async() => {
+        console.log('fetching the newsfeed');
+        const res = await request.get('/api/posts/newsfeed');
 
-        console.log('getting the newsfeed');
+        console.log('the newsfeed has arrived!', res.data);
 
-        // const res = await request.get('/api/posts/newsfeed-posts');
-        // console.log('got dat data', res.data);
-
-        // return res.data;
+        dispatch({
+            type: GET_NEWSFEED,
+            payload: res.data
+        })
     }
 
     // WORKS
@@ -261,7 +260,6 @@ const PostState = props => {
                 makePost,
                 getPosts,
                 removePost,
-                getNewsfeed,
                 clearPostState,
                 like,
                 unlike,
@@ -272,7 +270,8 @@ const PostState = props => {
                 addReply,
                 likeReply,
                 unlikeReply,
-                removeReply
+                removeReply,
+                fetchNewsfeed
             }}>
                 { props.children }
         </PostContext.Provider>

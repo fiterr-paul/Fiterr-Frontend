@@ -15,18 +15,19 @@ import PostContext from '../../context/post/postContext';
 
 const NewsfeedBodyTimeline = () => {
 
-    const { posts, getNewsfeed, clearPostState } = useContext(PostContext);
+    const { posts, fetchNewsfeed, clearPostState } = useContext(PostContext);
 
     useEffect(() => {
-      getNewsfeed();
+      fetchNewsfeed();
 
       return () => {
         clearPostState();
       }
-    })
+    }, [])
 
 
     if(!posts) {
+      debugger
       return (
         <Fragment>
           <h1>Loading posts...</h1>
@@ -34,30 +35,29 @@ const NewsfeedBodyTimeline = () => {
         </Fragment>
       )
     } else {
+      return(
+        <>
+        {/* LEFT COL - NEWSFEED TIMELINE */}
+          <div className="timeline-wrapper">
+            <NewPost />
 
-    return(
-      <>
-      {/* LEFT COL - NEWSFEED TIMELINE */}
-        <div className="timeline-wrapper">
-          <NewPost />
+            <Posts posts={posts} />
 
-          {/* <Posts posts={posts} /> */}
-
-          <TimelinePostPhoto />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-          <TimelinePosts />
-        </div>
-      </>
-    )
+            {/* <TimelinePostPhoto />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts />
+            <TimelinePosts /> */}
+          </div>
+        </>
+      )
     }
 };
 

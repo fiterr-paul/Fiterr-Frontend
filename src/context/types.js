@@ -18,6 +18,8 @@ export const CLEAR_PROFILE = 'CLEAR_PROFILE'
 export const SET_OTHER_PROFILE = 'SET_OTHER_PROFILE'
 export const FETCHING_PROFILE = 'FETCHING_PROFILE'
 export const SET_SERVICES = 'SET_SERVICES'
+export const FOLLOW_USER = 'FOLLOW_USER'
+export const UNFOLLOW_USER  = 'UNFOLLOW_USER'
 
 
 // Search Context
@@ -32,6 +34,7 @@ export const UPDATE_LAST_POST = 'UPDATE_LAST_POST';
 export const UPDATE_POSTS = 'UPDATE_POSTS';
 export const SET_POSTS = 'SET_POSTS';
 export const FIND_FOLLOWING_POSTS = 'FIND_FOLLOWING_POSTS';
+export const GET_NEWSFEED = 'GET_NEWSFEED';
 export const GET_OTHER_POSTS = 'GET_OTHER_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
 export const CLEAR_POST_STATE = 'CLEAR_POST_STATE';

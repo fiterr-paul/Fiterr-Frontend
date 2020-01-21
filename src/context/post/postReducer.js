@@ -1,13 +1,10 @@
 import { 
-    UPDATE_LAST_POST, 
-    SET_POSTS, 
     FIND_FOLLOWING_POSTS, 
+    GET_NEWSFEED,
     REMOVE_POST, 
-    GET_OTHER_POSTS, 
     CLEAR_POST_STATE, 
     UPDATE_POSTS, 
     UPDATE_LIKES ,
-    CLEAR_OTHER_POSTS,
     ADD_COMMENT,
     REMOVE_COMMENT,
     UPDATE_COMMENT_LIKES,
@@ -71,7 +68,14 @@ export default (state, action) => {
                 ...state,
                 posts: state.posts.map(post => post._id === action.payload.postId ? { ...post, comments: action.payload.comments} : post)
             }        
-               
+            
+        
+        case GET_NEWSFEED:
+            console.log('we get to the dipatch yeah?', action.payload);
+            return {
+                ...state,
+                posts: action.payload
+            }
 
         
         case FIND_FOLLOWING_POSTS:
