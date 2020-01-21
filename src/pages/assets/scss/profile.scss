@@ -282,6 +282,78 @@
           }
         }
       }
+      .nav-item-wrapper.page-title-handle {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        .nav-item.page-title {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 0px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+          width: 100%;
+          h1 {
+            color: #333;
+            font-size: 1.4em;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-left: 10px;
+            text-transform: capitalize;
+          }
+        }
+        .nav-item.page-handle {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 0px;
+          padding-left: 0px;
+          padding-top: 0px;
+          width: 100%;
+          h3 {
+            color: #555;
+            font-size: 0.9em;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-left: 10px;
+            text-transform: lowercase;
+          }
+        }
+      }
+      .page-nav-item-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin-bottom: 5px;
+        width: 100%;
+        .nav-item.menu-btn {
+          border: 1px solid rgba(255, 255, 255, 0);
+          border-radius: 3px;
+          color: #333;
+          cursor: pointer;
+          display: flex;
+          font-size: 0.9em;
+          font-weight: 600;
+          margin-bottom: 0px;
+          padding: 8px 10px;
+          text-transform: capitalize;
+          width: 100%;
+          i.fas {
+            margin-right: 6px;
+          }
+          h3 {
+            font-size: 1.1em;
+            font-weight: 500;
+            line-height: 1.4em;
+          }
+          &:hover {
+            background-color: #fff;
+            border: 1px solid #dddfe2;
+          }
+        }
+      }
     }
     div.col-profile {
       align-items: center;
@@ -1538,7 +1610,7 @@
                 .comment-content-wrapper {
                   align-items: flex-start;
                   background-color: #f8f8f8;
-                  border: 1px solid #f5f4f4;
+                  border: 1px solid  #f5f4f4;
                   border-radius: 3px;
                   display: flex;
                   flex-direction: row;
