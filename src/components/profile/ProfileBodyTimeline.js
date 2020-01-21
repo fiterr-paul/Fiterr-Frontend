@@ -1,6 +1,9 @@
 import React, { Fragment, useContext, useState, useEffect } from 'react';
-import NewPost from './NewPost';
-import Posts from './Posts';
+
+// newPost and Posts needs to come from the posts folder
+import NewPost from '../posts/NewPost';
+import Posts from '../posts/Posts';
+
 import Spinner from '../layout/Spinner';
 
 import { useParams } from 'react-router-dom';
@@ -8,6 +11,8 @@ import PostContext from '../../context/post/postContext';
 
 
 const ProfileBodyTimeline = ({ profile }) => {
+
+  // debugger;
 
   const { user: { _id } } = profile;
   

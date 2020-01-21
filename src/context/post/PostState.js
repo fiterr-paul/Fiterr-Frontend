@@ -31,7 +31,6 @@ const config = {
 const PostState = props => {
     const initialState = {
         posts: null,
-        followingPosts: null, // to use on newsfeed for getting array of date sorted posts
         loading: false
     }
 
@@ -53,6 +52,8 @@ const PostState = props => {
     // WORKS
     const getPosts = async (id) => {
         try {
+            console.log('we get the id', id);
+
             const res = await request.get(`/api/posts/${id}`)   // this is the user id of the users page you are on
 
             console.log('Posts', res.data);
@@ -68,11 +69,14 @@ const PostState = props => {
     }
 
     // YET TO BE TESTED
-    // similar to getFollowingPosts above
-    const getNewsfeedPosts = async() => {
-        const res = await request.get('/api/posts/newsfeed-posts');
+    const getNewsfeed = async() => {
+
+        console.log('getting the newsfeed');
+
+        // const res = await request.get('/api/posts/newsfeed-posts');
         // console.log('got dat data', res.data);
-        return res.data;
+
+        // return res.data;
     }
 
     // WORKS
@@ -254,11 +258,10 @@ const PostState = props => {
         <PostContext.Provider
             value={{
                 posts: state.posts,
-                followingPosts: state.followingPosts,
                 makePost,
                 getPosts,
                 removePost,
-                getNewsfeedPosts,
+                getNewsfeed,
                 clearPostState,
                 like,
                 unlike,

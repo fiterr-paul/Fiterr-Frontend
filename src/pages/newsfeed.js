@@ -1,31 +1,27 @@
 import React, { useState, useContext, useEffect, Fragment } from 'react'
-import NewPost from '../components/posts/NewPost'
-import NewsfeedPosts from '../components/posts/NewsfeedPosts'
+
 import AuthContext from '../context/auth/authContext'
 import ProfileContext from '../context/profile/profileContext'
 
+import StickyBox from "react-sticky-box";
+
+// Components
 import Spinner from '../components/layout/Spinner';
+import ProfileLeftNav from '../components/profile/ProfileLeftNav';
+import NewsfeedMain from '../components/newsfeed/NewsfeedMain';
+
 
 const Newsfeed = (props) => {
-    const authContext = useContext(AuthContext)
-    const profileContext = useContext(ProfileContext)
+    const { loadUser, isAuthenticated, user } = useContext(AuthContext)
+    const { profile, getMyProfile } = useContext(ProfileContext)
      
-    const { loadUser, isAuthenticated, user } = authContext
-    const { profile, getMyProfile } = profileContext
-
-    // on page reload, we need to put the profile and the user back into the state
-    // if(!isAuthenticated){ loadUser() }
-    // if(user && !profile){ getProfile(user._id) }
-    // console.log('reload', isAuthenticated, user, profile);
-
     useEffect(() => {
         if(!isAuthenticated){ loadUser() }
-        if(user && !profile){ getMyProfile(user._id) }
-        console.log('Component reloaded')
+        else if(isAuthenticated && !profile){ getMyProfile() }
     }, [isAuthenticated]);
 
 
-    if(!isAuthenticated && !profile){
+    if(!isAuthenticated || !profile){
         return (
             <Fragment>
                 <h1>Loading user...</h1>
@@ -35,15 +31,15 @@ const Newsfeed = (props) => {
     } else {
         return (
             <Fragment>
-                <section className="body">
+                <section className="body newsfeed">
                     <div className="container">
-                        <h1>Newsfeed</h1>
-                        <div>
-                            <NewPost />
-                        </div>
-                        <div className="followingPosts">
-                            <NewsfeedPosts/>
-                        </div>
+                    {/* LEFT COL - NAVIGATION */}
+                    <StickyBox offsetTop={60} offsetBottom={10}>
+                        <ProfileLeftNav />
+                    </StickyBox>
+
+                    {/* RIGHT COL - PROFILE */}
+                    <NewsfeedMain />
                     </div>
                 </section>
             </Fragment>
