@@ -1,40 +1,50 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, Fragment } from 'react';
 
 import { findIsFollowing } from '../../utils/Utils';
 
 import ProfileContext from '../../context/profile/profileContext';
 
-const Follow = (props) => {
+const Follow = ({ userId }) => {
 
-    const profileContext = useContext(ProfileContext);
-    const { profile, follow, unfollow } = profileContext;
-    // console.log('We have access to our loaded profile from parent component', profile)
+    console.log('the user Id is: ', userId);
 
-    const { viewingProfileId } = props;
+    const { profile, follow, unfollow } = useContext(ProfileContext);
+    const { following } = profile;
+    // console.log('the following array is', following);
+    console.log('the profile', profile)
+    const [isFollowing, setIsFollowing] = useState(following && following.includes(userId)); 
 
-    const [isFollowing, setIsFollowing] = useState(findIsFollowing(profile.following, viewingProfileId)); 
-
-    // we access the viewinguserId from the prop, but can also use context to get it
     console.log('isFollowing', isFollowing);
 
-    // NOTE: even though the button changes, there is a slight delay until the back end is updated with the right following/follower id
     const onClick = () => {
         if(!isFollowing) {
             console.log('follow');
-            follow(viewingProfileId); 
+            follow(userId); 
             setIsFollowing(true);
         } else {
             console.log('unfollow');
-            unfollow(viewingProfileId);
+            unfollow(userId);
             setIsFollowing(false);
         }
     }
 
     return (
-        <div onClick={onClick} className="follow-btn">
-            <p>{ isFollowing ? 'following' : 'follow' }</p>
-            { isFollowing ? (<i className="fas fa-check"></i>) : (<i className="fas fa-plus"></i>) }
-        </div>
+        <Fragment>
+            <button onClick={onClick} className="follow" type="button" value="">
+                { isFollowing ? (
+                    <Fragment>
+                        <i className="fas fa-check"></i>
+                        <span> following </span>
+                    </Fragment>
+                ) :
+                (
+                    <Fragment>
+                        <i className="fas fa-rss"></i>
+                        <span> follow </span>
+                    </Fragment>
+                )}
+            </ button>
+        </Fragment>
     )
 }
 

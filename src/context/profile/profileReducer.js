@@ -3,7 +3,9 @@ import {
     CLEAR_PROFILE,
     SET_OTHER_PROFILE,
     FETCHING_PROFILE,
-    SET_SERVICES
+    SET_SERVICES,
+    FOLLOW_USER, 
+    UNFOLLOW_USER 
 } from '../types'
 export default (state, action) => {
     switch(action.type){
@@ -24,6 +26,12 @@ export default (state, action) => {
                 ...state,
                 otherProfile: action.payload,
                 fetchingProfile: false
+            }
+        case FOLLOW_USER:
+        case UNFOLLOW_USER:
+            return {
+                ...state,
+                profile: {...state.profile, following: action.payload.following}
             }
         case CLEAR_PROFILE:
             return {

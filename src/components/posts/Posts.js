@@ -9,7 +9,7 @@ const Posts = ({ profile, posts }) => {
     return (
         <Fragment>
           {posts.map((post, index) => (
-            <TimelinePost key={index} post={post} profile={profile} />
+            <TimelinePost key={index} post={post} />
           ))}
         </Fragment>
     )

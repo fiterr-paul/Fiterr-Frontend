@@ -5,6 +5,8 @@ import ProfileBody from './ProfileBody';
 import coverImage from '../../components/assets/media/sports-bike.jpg';
 import profileImgPaul from '../../components/assets/media/paul-900x900.jpg';
 
+import Follow from './Follow';
+
 const ProfileHeader = ({ profile, ourProfile }) => {
 
   const { displayImage, user: { firstname, lastname }} = profile;
@@ -27,14 +29,20 @@ const ProfileHeader = ({ profile, ourProfile }) => {
                     <i className="fas fa-check-circle"></i>
                   </div>
                 </div>
-                <div className="profile-actions">
-                  <button className="switcher" type="button" value="">
-                    <i className="fas fa-sync-alt"></i>
-                  </button>
-                  <button className="update-info" type="button" value="">
-                    <i className="fas fa-pencil-alt"></i>
-                    update info
-                  </button>
+                <div className="profile-actions"> 
+                  { ourProfile ? (
+                    <Fragment>
+                      <button className="switcher" type="button" value="">
+                        <i className="fas fa-sync-alt"></i>
+                      </button>
+                      <button className="update-info" type="button" value="">
+                        <i className="fas fa-pencil-alt"></i>
+                        update info
+                      </button> 
+                    </Fragment>
+                  ) : (
+                    <Follow userId={profile.user._id}/>
+                  )}
                 </div>
               </div>
               <div className="image-update">

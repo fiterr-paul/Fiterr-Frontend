@@ -7,7 +7,9 @@ import postContext from '../../context/post/postContext';
 import ProfileContext from '../../context/profile/profileContext';
 
 
-const PostReply = ({ reply: { _id, text, likes, user: { _id: userId, firstname, lastname, profile: { displayImage }}}, postId, commentId }) => {
+const PostReply = ({ reply: { _id, text, likes, user }, postId, commentId }) => {
+
+    const { _id: userId, firstname, lastname, profile: { displayImage }} = user;
 
 
     const { likeReply, removeReply, unlikeReply } = useContext(postContext);

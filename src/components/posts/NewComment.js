@@ -2,11 +2,14 @@ import React, { useState, useContext } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 
 import PostContext from '../../context/post/postContext';
+import ProfileContext from '../../context/profile/profileContext';
 
 
-const NewComment = ({ profile: { displayImage }, postId }) => {
+const NewComment = ({ postId }) => {
 
     const { addComment } = useContext(PostContext);
+    const { profile: { displayImage } } = useContext(ProfileContext);
+    
 
     const [text, setText] = useState('');
 

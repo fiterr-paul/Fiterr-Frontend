@@ -18,13 +18,12 @@ import PostContext from '../../context/post/postContext';
 import { likesText } from '../../utils/Utils';
 
 
-const TimelinePost = ({ post: { _id, content, date, comments, likes }, profile: { displayImage, user: { _id: userId, firstname, lastname } } }) => {
+const TimelinePost = ({ post: { _id, content, date, comments, likes, postOwnerUser }}) => {
 
-    const postContext = useContext(PostContext);
-    const { like, unlike, removePost } = postContext;
+    const { _id: userId, firstname, lastname, profile: { displayImage }} = postOwnerUser;
 
-    const profileContext = useContext(ProfileContext);
-    const { profile: myprofile } = profileContext;
+    const { like, unlike, removePost } = useContext(PostContext);
+    const { profile: myprofile } = useContext(ProfileContext);
 
     // check if we have liked it or not
     const [liked, setLiked] = useState(likes.map(like => like.user).includes(myprofile.user._id));
@@ -44,6 +43,24 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes }, profile: 
       }
     }
 
+    const clickclick = () => {
+      console.log('been clicked');
+    }
+
+    const postOptionsDropdownHandler = (e) => {
+      const element = document.getElementById("post-options-dropdown");
+      if (element.style.display === "none") {
+        element.style.display = "flex";
+      } else if (element.style.display === "flex") {
+        element.style.display = "none";
+      }
+    };
+  
+    const postOptionsDropdownRemove = (e) => {
+      const menu = e.target.parentNode.childNodes[1]
+      menu.style.display = "none"
+    }
+
     return (
       <>
         <div className="timeline-post-wrapper">
@@ -56,22 +73,31 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes }, profile: 
                 <h3><Link to='/'>{`${firstname} ${lastname}`}</Link> <span>made a post</span></h3>
               </div>
               <div className="post-date">
-                <span> <Moment format='DD/MM/YYYY hh:mm A'>{date}</Moment> </span>
+                <div className="date">
+                  <span> <Moment format='MMMM DD, YYYY [at] hh:mm A'>{date}</Moment> </span>
+                </div>
                 <div className="post-options">
                   <button type="button" value="post-options">
                     <i className="fas fa-globe-americas"></i>
                     <i className="fas fa-caret-down"></i>
                   </ button>
                 </div>
-                { myprofile.user._id === userId && 
-                (<div className="post-options">
-                  <button onClick={() => removePost(_id)} type="button">
-                    <i className="fas fa-trash"></i>
-                    <span>remove post {' '}</span>
-                  </button>
-                </div>)}
               </div>
             </div>
+              { myprofile.user._id === userId && 
+              (<div className="post-options">
+                <button type="button" className="btn-post-options" onClick={postOptionsDropdownHandler} onBlur={postOptionsDropdownRemove} >
+                  <i className="fas fa-ellipsis-h"></i>
+                </button>
+                <div id="post-options-dropdown" style={{display: "none"}} className="options-dropdown-wrapper caret">
+                  <div className="options-dropdown">
+                    <ul>
+                      <li>edit post</li>
+                      <li onClick={() => removePost(_id)}>delete post</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>)}
           </div>
           <div className="body">
             <div className="post-content">
@@ -86,9 +112,7 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes }, profile: 
                 <div className="icon-bgr">
                   <i className="far fa-thumbs-up"></i>
                 </div>
-                {/* <span>1 person likes this</span> */}
                 <span>{likesText(likes.length)}</span>
-                {/* <span>{likes.length} people like this</span> */}
               </div>
               <div className="icon-wrapper comment">
                 <div className="icon-bgr">
@@ -128,9 +152,12 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes }, profile: 
               <PostComment key={comment._id} comment={comment} postId={_id} />
             ))}
 
+
             {/* <PostComment postId={_id}/> */}
   
-            <NewComment profile={myprofile} postId={_id} />
+
+
+            <NewComment postId={_id} />
 
           </div>
         </div>
