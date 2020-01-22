@@ -138,8 +138,13 @@ const SubHeaderAuthenticated = () => {
         <Link onClick={scrollPage} className="link-submenu" to='/training'> Training Appointments </Link>
       )
     }
-    
-    
+  }
+  const clients = () => {
+    if(user.isProfessional){
+      return(
+        <Link onClick={scrollPage} className="link-submenu" to='/clients'> Clients </Link>
+      )
+    }
   }
 
   const scrollPage = () => {
@@ -153,9 +158,8 @@ const SubHeaderAuthenticated = () => {
           <div className="submenu">
             <div className="col-left">
               <Link onClick={scrollPage} className="link-submenu" to='/dashboard'> dashboard </Link>
-              <Link onClick={scrollPage} className="link-submenu" to='/clients'> clients </Link>
+              {clients()}
               <Link onClick={scrollPage} className="link-submenu" to='/bookings'> bookings </Link>
-              <Link onClick={scrollPage} className="link-submenu" to='/finances'> finances </Link>
               {trainingSessions()}
             </div>
             <div className="col-right">
