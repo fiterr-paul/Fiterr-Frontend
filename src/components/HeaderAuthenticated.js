@@ -79,12 +79,12 @@ const HeaderAuthenticated = () => {
             <div className="container-header-nav">
               <div className="header-nav profile">
               
-                <Link onClick={scrollPage} className="link-dashboard" to='/'>
+                {/* <Link onClick={scrollPage} className="link-dashboard" to='/'>
                   <i className="fas fa-tachometer-alt"></i>
                   <div className="dashboard-text">
                     <span>dashboard</span>
                   </div>
-                </Link>
+                </Link> */}
                 <div className="top-nav-vr"></div>
                 <Link onClick={scrollPage} className="link-newsfeed" to='/newsfeed'>
                   <i className="fas fa-newspaper"></i>
@@ -158,7 +158,6 @@ const SubHeaderAuthenticated = () => {
         <div className="container">
           <div className="submenu">
             <div className="col-left">
-              <Link onClick={scrollPage} className="link-submenu" to='/dashboard'> dashboard </Link>
               <IsUserProfessional />
               {clients()}
               <Link onClick={scrollPage} className="link-submenu" to='/bookings'> bookings </Link>

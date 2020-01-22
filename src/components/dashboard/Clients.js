@@ -21,7 +21,7 @@ const Clients = () => {
         const show = clients.map((client, index) => {
             return(
                 <div key={index}>
-                    <a href={`/${client.username}`}>{client.firstname} {client.lastname}</a>
+                    <a href={`/${client.username}`}> {client.firstname} {client.lastname}'s Profile</a>
                 </div>
             )   
         })
@@ -32,8 +32,11 @@ const Clients = () => {
     else{
         return(
             <>
-                <h1>CLIENTS</h1>
-                {showClients()}
+                <div className="clientDiv"> 
+                    <h1>CLIENTS</h1>
+                    {showClients()}
+                </div>
+                
             </>
         )
     }

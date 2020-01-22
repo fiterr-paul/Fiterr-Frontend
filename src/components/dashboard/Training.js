@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import request from '../../utils/axios-config'
 import './styles/session.scss'
+import Moment from 'react-moment'
 
 const Training = () => {
     const config = {
@@ -46,9 +47,9 @@ const Training = () => {
         const show = pending.map((sesh, index)=>{
             return(
                 <div key={index}>
-                    <h1>{sesh.time}</h1>
-                    <p>{sesh.date}</p>
-                    <p>{sesh.location}</p>
+                    <h1>Time: {sesh.time}</h1>
+                    <p>Date: <Moment format='MMMM DD, YYYY [at] hh:mm A'>{sesh.date}</Moment></p>
+                    <p>Location: {sesh.location}</p>
                     <button onClick={onApproval} value={sesh._id}>Approve</button>
                 </div>
             )
@@ -59,9 +60,9 @@ const Training = () => {
     const upcomingSessions = ()=> {
         const show = upcoming.map((sesh,index)=>{
             return(
-                <div key={index}>
+                <div key={index} className="upSession">
                     <h1>Time {sesh.time}</h1>
-                    <p>Date: {sesh.date}</p>
+                    <p>Date: <Moment format='MMMM DD, YYYY [at] hh:mm A'>{sesh.date}</Moment></p>
                     <p>Location: {sesh.location}</p>
                 </div>
             )
@@ -75,13 +76,19 @@ const Training = () => {
             <div className="sessionApproval">
                 <div>
                     <h1>Sessions To Approve</h1>
-                    {pendingSessionShow()}
+                    <div className="seshs">
+                        {pendingSessionShow()}
+                    </div>
+                    
                 </div>
                 
 
                 <div>
                     <h1>Upcoming Sessions</h1>
-                    {upcomingSessions()}
+                    <div className="seshs">
+                        {upcomingSessions()}
+                    </div>
+                    
                 </div>
                 
             </div>
