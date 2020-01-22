@@ -5,6 +5,8 @@ import AuthContext from '../context/auth/authContext';
 import './assets/scss/index.scss';
 import StickyBox from "react-sticky-box";
 import TextareaAutosize from 'react-autosize-textarea';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 
 import profileImgPaul from '../components/assets/media/paul-900x900.jpg';
 import nyePaul from '../components/assets/media/nye.jpg';
@@ -703,6 +705,30 @@ const PageBodyAbout = () => {
 
 
 const PageBodyServices = () => {
+
+  Modal.setAppElement(document.getElementById('root'));
+
+  const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
+
   return (
     <div className="page-container services">
       <div className="container-wrapper">
@@ -714,51 +740,121 @@ const PageBodyServices = () => {
             <h3> services and packages </h3>
           </div>
           <div className="post-button">
-            <button type="button" value=""> create package </button>
+            <button onClick={openModal} type="button" value=""> create package </button>
           </div>
         </div>
         <div className="body services">
+          <PackageCard />
+          <ModalCreatePackage id="modal-create-package" open={modalIsOpen} close={closeModal} customStyles={customStyles} />
+        </div>
+      </div>
+    </div>
+  )
+};
 
+const ModalCreatePackage = (props) => {
 
-          <div className="card">
-            <div className="purchase">
-            <button type="button" value=""> purchase </button>
+  const {open, close, customStyles} = props;
+  
+  return (
+    <>
+      <Modal id="modal-create-package"
+        isOpen={open}
+        onRequestClose={close}
+        style={customStyles}
+        contentLabel="Example Modal"
+        >
+          <div className="create-package">
+            <div className="title">
+              <h3>create a new training package</h3>
             </div>
-            <div className="row">
-              <div className="col-left">
-                <p>package title:</p>
+            <form>
+              <div className="row">
+                <div className="col-left">
+                  <p>package title:</p>
+                </div>
+                <div className="col-right">
+                  <input type="text" autoComplete="off" placeholder="Enter a title for this package ..." required/>
+                </div>
               </div>
-              <div className="col-right">
-              <p>10 personal training sessions</p>
+              <div className="row description">
+                <div className="col-left">
+                  <p style={{marginTop: "6px"}}>description:</p>
+                </div>
+                <div className="col-right">
+                  <TextareaAutosize  type="textarea" autoComplete="off" placeholder="Enter a description for this package ..." required/>
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-left">
-                <p>description:</p>
+              <div className="row">
+                <div className="col-left">
+                  <p># of sessions:</p>
+                </div>
+                <div className="col-right">
+                <input type="number" autoComplete="off" placeholder="ie: 10" required/>
+                </div>
               </div>
-              <div className="col-right">
-              <p>10 one-on-one appointments / personal training sessions</p>
+              <div className="row">
+                <div className="col-left">
+                  <p>price:</p>
+                </div>
+                <div className="col-right">
+                <input type="number" autoComplete="off" placeholder="$ 0.00" required/>
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-left">
-                <p># of sessions:</p>
+
+              <div className="row actions">
+                <div className="col-left">
+                  <button type="button" className="delete">delete</button>
+                </div>
+                <div className="col-right">
+                <button type="button" className="cancel" onClick={close}>cancel</button>
+                  <button type="button" className="submit" >save &amp; close</button>
+                </div>
               </div>
-              <div className="col-right">
-              <p>10</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-left">
-                <p>price:</p>
-              </div>
-              <div className="col-right">
-              <p>$ 900.00</p>
-              </div>
-            </div>
+              
+            </form>
           </div>
+      </Modal>
+    </>
+  )
+};
 
-
+const PackageCard = () => {
+  return (
+    <div className="card">
+      <div className="purchase">
+      <button type="button" value=""> purchase </button>
+      </div>
+      <div className="row">
+        <div className="col-left">
+          <p>package title:</p>
+        </div>
+        <div className="col-right">
+        <p>10 personal training sessions</p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-left">
+          <p>description:</p>
+        </div>
+        <div className="col-right">
+        <p>10 one-on-one appointments / personal training sessions</p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-left">
+          <p># of sessions:</p>
+        </div>
+        <div className="col-right">
+        <p>10</p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-left">
+          <p>price:</p>
+        </div>
+        <div className="col-right">
+        <p>$ 900.00</p>
         </div>
       </div>
     </div>
