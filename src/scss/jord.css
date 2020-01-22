@@ -48,3 +48,10 @@
 .display-none {
     display: none;
 }
+
+.page-create-container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+}

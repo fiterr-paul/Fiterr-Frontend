@@ -53,19 +53,44 @@ const ProfileSetup = (props) => {
 
     return(
         <>
-            <h1>Customize your profile!</h1>
-            <form encType="multipart/form-data" name="file-upload" onSubmit={onSubmit}>
-                <div>
-                    <label >About You!(Hobbies, interests, etc.)</label>
-                    <input type="text" name="aboutMe" id="aboutMe" value={aboutMe} onChange={onChange}/>
-                    <label >Fitness Interests</label>
-                    <input type="text" name="fitnessInterests" id="fitnessInterests" value={fitnessInterests} onChange={onChange}/>
-                    <label >Upload an Image</label>
-                    <input type="file" name="image" id="image" onChange={onFileChange}/>
-                    <input type="submit" value="Submit"/>
+            <section className="body login">
+                <div className="image-overlay">
+                    <div className="container">
+                        <div className="form-container">
+                            <h1>Customize your profile!</h1>
+                            <form className="signup" encType="multipart/form-data" name="file-upload" onSubmit={onSubmit}>
+                                <div>
+                                    {/* <label >About You!(Hobbies, interests, etc.)</label> */}
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <input type="text" name="aboutMe" id="aboutMe" value={aboutMe} onChange={onChange} placeholder="About You"/>
+                                        </div>
+                                    </div>
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <input type="textarea" name="fitnessInterests" id="fitnessInterests" value={fitnessInterests} onChange={onChange} placeholder="Fitness Interests"/>
+                                        </div>
+                                    </div>
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <label >Upload an Image</label>
+                                            <input type="file" name="image" id="image" onChange={onFileChange}/>
+                                        </div>
+                                    </div>
+                                 
+                                    
+                                    <div className="field-row button">
+                                        <button type="submit" value="Submit">Submit</button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
                 </div>
-            </form>
-            <a href=""></a>
+            </section>
         </>
     )
 }
