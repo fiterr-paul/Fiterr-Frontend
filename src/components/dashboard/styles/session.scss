@@ -39,3 +39,19 @@
     padding: 10px;
     margin: 10px
 }
+.sessionApproval{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    padding: 10px;
+}
+.upSession{
+    text-align: center;
+    border: 1px solid orange;
+    width: 25%;
+    height: 100px;
+}
+.clientDiv{
+    text-align: center;
+}

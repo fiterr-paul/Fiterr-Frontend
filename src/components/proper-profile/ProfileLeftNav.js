@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useContext } from 'react';
 import { Link } from 'react-router-dom';
+import PageContext from '../../context/page/pageContext'
 
 // bring in our profile from the profile context
 
@@ -71,6 +72,7 @@ const ProfileLeftNav = ({ profile: { user: { firstname, lastname }, displayImage
               <h3> business pages </h3>
             </div>
           </div>
+
           <Link to='/' className="nav-item-wrapper">
             <div className="nav-item menu-btn-page-group">
               <div className="page-image">

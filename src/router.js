@@ -28,7 +28,6 @@ import draftPage from './pages/draftPage';
 import ProfessionalCreate from './components/professional/ProfessionalCreate'
 import PageCreate from './components/page/PageCreate'
 import PackageShow from './components/page/packages/PackageShow'
-import Dashboard from './components/dashboard/Dashboard'
 import BookingsManager from './components/dashboard/BookingsManager'
 import Clients from  './components/dashboard/Clients'
 // Private Routes
@@ -51,7 +50,6 @@ const Router = () => {
             <PrivateRoute exact path = '/page/:handle/package-update' component={PackageCreate} />
             <PrivateRoute exact path = '/page-create' component={PageCreate} />
             <PrivateRoute exact path = '/page/:handle/package/:id' component={PackageShow} />
-            <PrivateRoute exact path = '/dashboard' component={Dashboard} />
             <PrivateRoute exact path = '/bookings' component={BookingsManager} />
             <PrivateRoute exact path = '/checkout' component={Checkout} />
             <PrivateRoute exact path = '/training' component={Training} />
