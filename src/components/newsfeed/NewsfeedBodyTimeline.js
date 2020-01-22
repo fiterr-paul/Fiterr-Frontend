@@ -27,7 +27,6 @@ const NewsfeedBodyTimeline = () => {
 
 
     if(!posts) {
-      debugger
       return (
         <Fragment>
           <h1>Loading posts...</h1>

@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+console.log(process.env.REACT_APP_BACKEND_URL)
+
 const request = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: process.env.REACT_APP_BACKEND_URL,
   withCredentials: true
 })
 

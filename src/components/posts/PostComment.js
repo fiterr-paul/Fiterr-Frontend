@@ -42,14 +42,26 @@ const PostComment = ({ comment: { _id, likes, text, replies, user }, postId }) =
             <img src={displayImage && displayImage} alt=""/>
           </div>
           <div className="comment-body">
+            <div className="comment-content-wrapper">
 
-            <div className="comment-content">
-              <div className="author-name">
-                <Link to="/">{`${firstname} ${lastname}`}</Link>
+              <div className="comment-content">
+                <div className="author-name">
+                  <Link to="/">{`${firstname} ${lastname}`}</Link>
+                </div>
+                <div className="comment"> { text } </div>
               </div>
-              <div className="comment"> { text } </div>
-            </div>
 
+              {/* { userId === myprofile.user._id && (
+                  <Fragment>
+                    <span className="space-dot">&middot;</span>
+                    <span onClick={() => removeComment(postId, _id)} className="action"> remove comment </span>
+                  </Fragment>
+                )} */}
+
+              <div className="post-options">
+                <i className="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
             
             <div className="comment-actions">
               <span onClick={onCommentLike} className="action">{ liked ? 'liked' : 'like' }</span>
@@ -57,14 +69,6 @@ const PostComment = ({ comment: { _id, likes, text, replies, user }, postId }) =
               <span onClick={toggleReply} className="action"> reply </span>
               <span className="space-dot">&middot;</span>
               <span className="action">{ likes.length } likes </span>
-
-
-              { userId === myprofile.user._id && (
-                <Fragment>
-                  <span className="space-dot">&middot;</span>
-                  <span onClick={() => removeComment(postId, _id)} className="action"> remove comment </span>
-                </Fragment>
-              )}
             </div>
   
             {replies.map(reply => (
