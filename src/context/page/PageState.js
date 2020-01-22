@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import PageContext from './pageContext';
 import pageReducer from './pageReducer';
-import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT } from '../types'
+import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT, SET_TRAINERS } from '../types'
 import request from '../../utils/axios-config'
 import AuthContext from '../auth/authContext';
 import AlertContext from '../alert/alertContext'
@@ -21,7 +21,8 @@ const PageState = props => {
         roleOnPage: null,
         myPage: null,
         currentPackage: null,
-        lastCharge: null
+        lastCharge: null,
+        trainers: null
     }
 
     const [state, dispatch] = useReducer(pageReducer, initialState)
@@ -102,6 +103,13 @@ const PageState = props => {
             payload: response.data
         })
     }
+    const getTrainers = async(id) => {
+        const response = await request.get(`/api/pages/trainers/${id}`)
+        dispatch({
+            type: SET_TRAINERS,
+            payload: response.data
+        })
+    }
     return(
         <PageContext.Provider
             value={{
@@ -116,7 +124,9 @@ const PageState = props => {
                 getPackage,
                 packagePriceChange,
                 buyPackage,
-                lastCharge: state.lastCharge
+                lastCharge: state.lastCharge,
+                trainers: state.trainers,
+                getTrainers
             }}>
                 {props.children}
         </PageContext.Provider>

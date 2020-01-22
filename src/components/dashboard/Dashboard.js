@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import AuthContext from '../../context/auth/authContext'
 import ProfileContext from '../../context/profile/profileContext'
 import {useParams} from 'react-router'
+import { Link } from 'react-router-dom';
 
 
 const Dashboard = () => {
@@ -13,7 +14,7 @@ const Dashboard = () => {
     const {user, loadUser, isAuthenticated} = authContext
     const {profile, getMyProfile, populateServices, services} = profileContext
 
-    
+    console.log(services)
     useEffect(() => {
         if(!isAuthenticated){ loadUser() } 
         if(!profile){getMyProfile()}
@@ -21,26 +22,15 @@ const Dashboard = () => {
         
     }, [isAuthenticated, profile ])
 
-    const showServices = () => {
-        const collection = services.map((service, index) => {
-            return(
-                <div key={index} className="service">
-                    <h1>DATE OF PURCHASE {service.DatePurchased}</h1>
-                    <p>QUANTITY REMAINING {service.quantityRemaining}</p>
-                </div>
-            )
-        })
-        return(collection)
-        
-        
-    }
+   
+
+    
     if(!user || !profile || !services){return(null)}
 
     else{
         return(
             <>
-                <h1>Services</h1>
-                {showServices()}
+                <Link to={'/bookings'}> Manage Your Bookings</Link>
             </>
         )
     }
