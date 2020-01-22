@@ -25,7 +25,6 @@ const NewsfeedBodyTimeline = () => {
       }
     }, [])
 
-
     if(!posts) {
       return (
         <Fragment>
@@ -43,17 +42,8 @@ const NewsfeedBodyTimeline = () => {
             <Posts posts={posts} />
 
             {/* <TimelinePostPhoto />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
-            <TimelinePosts />
             <TimelinePosts /> */}
+
           </div>
         </>
       )

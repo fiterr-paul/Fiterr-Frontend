@@ -110,9 +110,9 @@ const PageHeader = () => {
           </div>
         </div>
       </div>
-      {/* <PageBodyTimeline /> */}
+      <PageBody />
       {/* <PageBodyAbout /> */}
-      <PageBodyServices />
+      {/* <PageBodyServices /> */}
       {/* <PageBodyTrainers /> */}
       {/* <PageBodyPhotos /> */}
     </div>
