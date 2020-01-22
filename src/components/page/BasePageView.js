@@ -1,5 +1,6 @@
 import React, {Fragment, useState, useContext, useEffect, } from 'react'
 import {useParams} from 'react-router'
+import {useHistory, Link} from 'react-router-dom'
 import PageContext from '../../context/page/pageContext'
 import AuthContext from '../../context/auth/authContext'
 import $ from 'jquery'
@@ -10,8 +11,9 @@ const BasePageView = (props) => {
     const [page, setPage] = useState({
         pageAbout: ''
     })
+    let history = useHistory()
     const pageContext = useContext(PageContext)
-    const {updateAbout, roleOnPage, getPage, findRole} = pageContext
+    const {updateAbout, roleOnPage, getPage, findRole, currentPackage, getPackage} = pageContext
     const authContext = useContext(AuthContext)
     const {isAuthenticated, loadUser} = authContext
     const currentPage = props.currentPage
@@ -34,9 +36,7 @@ const BasePageView = (props) => {
             'Content-Type': 'application/json',
         }
     }
-    if(!currentPage){
-        return null
-    }
+    
     const onAboutEditClick = (e) => {
         $("#formButton").click(function() {
             $("#editAbout").toggle();
@@ -51,8 +51,18 @@ const BasePageView = (props) => {
             )
         }
     }
+    
+    const buyButton = (pack) => {
+        // getPackage(handle, packID)
+        return(
+            <Link to={{ 
+                pathname:'/checkout',
+                state: {pack: pack, handle: handle}
+            }}> <button>Buy Now</button> </Link>
+        )
+    }
     const packageShow = () => {
-        const part= currentPage.packages.map((pack, index)=>{
+        const part = currentPage.packages.map((pack, index)=>{
             return(
                 <div key={index} className="package">
                     <h3>{pack.title}</h3>
@@ -60,10 +70,10 @@ const BasePageView = (props) => {
                     <p>{pack.numberOfSessions}</p>
                     <p>{pack.price}</p>
                     <a href={`/page/${handle}/package/${pack._id}`}>View Package</a>
+                    {role=='Owner' || role=='Visitor' ? buyButton(pack) : null}
                     <br/>
                 </div>
             )
-
         })
         return(part)
     }

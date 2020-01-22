@@ -12,12 +12,11 @@ const IsUserProfessional = (props) => {
     
     const notProfessional = () => {
         return(
-            <div className="notPro">
-                <Link onClick={scrollPage} className="link-become-pro" to='/become-professional'><h3>Click Here to Become Professional Today!</h3></Link>
+            <div className="link-submenu">
+                <Link onClick={scrollPage} className="link-become-pro" to='/become-professional'><h3>Become A Professional</h3></Link>
             </div>
         )
     }
-
     if(user){
         return(
             <Fragment>

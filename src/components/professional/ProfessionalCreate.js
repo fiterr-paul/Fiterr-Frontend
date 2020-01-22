@@ -38,14 +38,27 @@ const ProfessionalCreate = (props) => {
 
     return(
         <>
-            <h1>Please Enter Your Number for Professional Verificaiton</h1>
-            <form>
-                <label >Enter Your Contact Number Below</label>
-                <input type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={onChange}/>
-                <div className="submit-button">
-                    <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
+            <section className="body login">
+                <div className="image-overlay">
+                    <div className="container">
+                        <div className="form-container">
+                            <h1>Professional Verificaiton</h1>
+                            <form className="signup">
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <input type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={onChange} placeholder="Enter Phone Number"/>
+                                        </div>
+                                    </div>
+                                <div className="field-row button">
+                                    <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </form>
+                
+            </section>    
+            
         </>
     )
 }

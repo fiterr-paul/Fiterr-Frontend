@@ -3,6 +3,7 @@ import './assets/scss/header-nav.scss';
 import { withRouter } from 'react-router';
 import { Link, useHistory } from 'react-router-dom'
 import Logo from './assets/media/icn-fiterr-white-500x500.png';
+import IsUserProfessional from '../components/professional/isProfessional'
 
 import profileImgPaul from './assets/media/paul-900x900.jpg';
 
@@ -130,6 +131,22 @@ const HeaderAuthenticated = () => {
 };
 
 const SubHeaderAuthenticated = () => {
+  const authContext = useContext(AuthContext);
+  const {user} = authContext
+  const trainingSessions = () => {
+    if(user.isProfessional){
+      return(
+        <Link onClick={scrollPage} className="link-submenu" to='/training'> Training Appointments </Link>
+      )
+    }
+  }
+  const clients = () => {
+    if(user.isProfessional){
+      return(
+        <Link onClick={scrollPage} className="link-submenu" to='/clients'> Clients </Link>
+      )
+    }
+  }
 
   const scrollPage = () => {
     window.scrollTo(0, 0);
@@ -142,9 +159,10 @@ const SubHeaderAuthenticated = () => {
           <div className="submenu">
             <div className="col-left">
               <Link onClick={scrollPage} className="link-submenu" to='/dashboard'> dashboard </Link>
-              <Link onClick={scrollPage} className="link-submenu" to='/clients'> clients </Link>
+              <IsUserProfessional />
+              {clients()}
               <Link onClick={scrollPage} className="link-submenu" to='/bookings'> bookings </Link>
-              <Link onClick={scrollPage} className="link-submenu" to='/finances'> finances </Link>
+              {trainingSessions()}
             </div>
             <div className="col-right">
               <Link onClick={scrollPage} className="link-submenu" to='/settings'> settings </Link>

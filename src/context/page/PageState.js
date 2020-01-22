@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import PageContext from './pageContext';
 import pageReducer from './pageReducer';
-import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT } from '../types'
+import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT, SET_TRAINERS } from '../types'
 import request from '../../utils/axios-config'
 import AuthContext from '../auth/authContext';
 import AlertContext from '../alert/alertContext'
@@ -20,7 +20,9 @@ const PageState = props => {
         currentPage: null,
         roleOnPage: null,
         myPage: null,
-        currentPackage: null
+        currentPackage: null,
+        lastCharge: null,
+        trainers: null
     }
 
     const [state, dispatch] = useReducer(pageReducer, initialState)
@@ -73,31 +75,38 @@ const PageState = props => {
         })
     }
     const createPackage = async(body) => {
-        const response = await request.post('/api/pages/package-create', body, config)
+        const response = await request.post('/api/packages/package-register', body, config)
         dispatch({
             type: SET_PAGE,
             payload: response.data
         })
     }
 
-    const getPackage = async(pageID, packageID) => {
-        const response = await request.get(`/api/professional/${pageID}/${packageID}`, config)
+    const getPackage = async(pageHandle, packageID) => {
+        const response = await request.get(`/api/packages/${pageHandle}/${packageID}`, config)
         dispatch({
             type: SET_CURRENT_PACKAGE,
             payload: response.data
         })
     }
     const packagePriceChange = async(body) => {
-        const response = await request.put('/api/professional/package-price-update', body, config)
+        const response = await request.put('/api/packages/update-package-price', body, config)
         dispatch({
             type: SET_CURRENT_PACKAGE,
             payload: response.data
         })
     }
-    const buyPackage = async(handle, id) => {
-        const response = await request.post(`/api/professional/${handle}/${id}`)
+    const buyPackage = async(handle, id, body) => {
+        const response = await request.post(`/api/packages/${handle}/${id}`, body, config)
         dispatch({
             type: SERVICE_BOUGHT,
+            payload: response.data
+        })
+    }
+    const getTrainers = async(id) => {
+        const response = await request.get(`/api/pages/trainers/${id}`)
+        dispatch({
+            type: SET_TRAINERS,
             payload: response.data
         })
     }
@@ -114,7 +123,10 @@ const PageState = props => {
                 createPackage,
                 getPackage,
                 packagePriceChange,
-                buyPackage
+                buyPackage,
+                lastCharge: state.lastCharge,
+                trainers: state.trainers,
+                getTrainers
             }}>
                 {props.children}
         </PageContext.Provider>

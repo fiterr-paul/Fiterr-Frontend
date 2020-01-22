@@ -25,7 +25,6 @@ function App() {
               <PostState>
                 <div className="container-app">
                   <Navbar />
-                  <IsUserProfessional />
                   <Router />  
                   <Footer />
                 </div>
