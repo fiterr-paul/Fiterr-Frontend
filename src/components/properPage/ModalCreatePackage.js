@@ -1,0 +1,126 @@
+import React, {useState, useEffect, useContext} from 'react'
+import TextareaAutosize from 'react-autosize-textarea';
+import Modal from 'react-modal';
+import { useHistory } from 'react-router-dom'
+import PageContext from '../../context/page/pageContext'
+import AuthContext from '../../context/auth/authContext'
+import {useParams} from 'react-router'
+import profileImgPaul from '../../components/assets/media/paul-900x900.jpg';
+import nyePaul from '../../components/assets/media/nye.jpg';
+import coverImage from '../../components/assets/media/sports-bike.jpg';
+import profileImgFatBastard from '../../components/assets/media/fatbastard-185x185.jpg';
+import pageImg1 from '../../components/assets/media/logo-paul_meier_fitness-1080x1080.png';
+import pageImg2 from '../../components/assets/media/logo-livefit_livelean-640x640.png';
+import pageImg3 from '../../components/assets/media/logo-28_day_kickstart-1080x1080.png';
+
+const ModalCreatePackage = (props) => {
+    const pageContext = useContext(PageContext)
+    const authContext = useContext(AuthContext)
+    
+    const {currentPage, createPackage, getPage, roleOnPage, findRole} = pageContext
+    const {loadUser, isAuthenticated} = authContext
+    const {handle} = useParams()
+    const history = useHistory()
+    useEffect(() => {
+      if(!isAuthenticated){ loadUser() } 
+      if(!currentPage){getPage(handle)}
+      if(!roleOnPage){findRole(handle)}
+      // if(currentPage.pageHandle !== handle){
+      //     getPage(handle) 
+      //     findRole(handle)
+      // }
+    }, [isAuthenticated, currentPage ])
+
+    const [thisPackage, setPackage] = useState({
+      pageID: '',
+      title: '',
+      description: '',
+      numberOfSessions: '',
+      price: ''
+  })
+  const {pageID, title, description, numberOfSessions, price} = thisPackage
+  const onChange = (e) => {
+      setPackage({...thisPackage, [e.target.name]: e.target.value})
+  }
+  const onSubmit = (e)=>{
+      e.preventDefault()
+      let body = new FormData
+      body.append('pageID', currentPage._id)
+      body.append('title', title)
+      body.append('description', description)
+      body.append('numberOfSessions', numberOfSessions)
+      body.append('price', price)
+
+      createPackage(body)
+      history.push(`/page/${currentPage.pageHandle}`)
+  }
+
+    const {open, close, customStyles} = props;
+
+    if(!currentPage){
+      return(null)
+    }
+    
+    return (
+      <>
+        <Modal id="modal-create-package"
+          isOpen={open}
+          onRequestClose={close}
+          style={customStyles}
+          contentLabel="Example Modal"
+          >
+            <div className="create-package">
+              <div className="title">
+                <h3>create a new training package</h3>
+              </div>
+              <form>
+                <div className="row">
+                  <div className="col-left">
+                    <p>package title:</p>
+                  </div>
+                  <div className="col-right">
+                    <input type="text" autoComplete="off" placeholder="Enter a title for this package ..." required value={title} onChange={onChange}/>
+                  </div>
+                </div>
+                <div className="row description">
+                  <div className="col-left">
+                    <p style={{marginTop: "6px"}}>description:</p>
+                  </div>
+                  <div className="col-right">
+                    <TextareaAutosize  type="textarea" autoComplete="off" placeholder="Enter a description for this package ..." required value={description} onChange={onChange}/>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-left">
+                    <p># of sessions:</p>
+                  </div>
+                  <div className="col-right">
+                  <input type="number" autoComplete="off" placeholder="ie: 10" required/>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-left">
+                    <p>price:</p>
+                  </div>
+                  <div className="col-right">
+                  <input type="number" autoComplete="off" placeholder="$ 0.00" required/>
+                  </div>
+                </div>
+  
+                <div className="row actions">
+                  <div className="col-left">
+                    <button type="button" className="delete">delete</button>
+                  </div>
+                  <div className="col-right">
+                  <button type="button" className="cancel" onClick={close}>cancel</button>
+                    <button type="button" className="submit" >save &amp; close</button>
+                  </div>
+                </div>
+                
+              </form>
+            </div>
+        </Modal>
+      </>
+    )
+};
+export default ModalCreatePackage

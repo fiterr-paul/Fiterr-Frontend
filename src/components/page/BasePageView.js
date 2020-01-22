@@ -36,9 +36,7 @@ const BasePageView = (props) => {
             'Content-Type': 'application/json',
         }
     }
-    if(!currentPage){
-        return null
-    }
+    
     const onAboutEditClick = (e) => {
         $("#formButton").click(function() {
             $("#editAbout").toggle();

@@ -17,7 +17,7 @@ import Messages from './pages/messages';
 import Profile from './pages/Profile';
 import ProperProfile from './pages/properProfile';
 
-import Page from './components/page/Page'
+import Page from './components/properPage/Page'
 import PackageCreate from './components/page/packages/PackageCreate'
 
 // this is the draft version of the real profile page
