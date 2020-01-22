@@ -22,7 +22,7 @@ const Page = props => {
         //     getPage(handle) 
         //     findRole(handle)
         // }
-    }, [isAuthenticated, currentPage ])
+    }, [isAuthenticated, currentPage, roleOnPage ])
 
     if(!isAuthenticated || !currentPage) {
         return (
