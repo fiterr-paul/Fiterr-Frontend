@@ -39,9 +39,9 @@ const PageHeader = (props) => {
             </div>
           </div>
         </div>
-        <PageBodyTimeline />
+        {/* <PageBodyTimeline /> */}
         {/* <PageBodyAbout /> */}
-        {/* <PageBodyServices currentPage={currentPage} pageRole={pageRole}/> */}
+        <PageBodyServices currentPage={currentPage} pageRole={pageRole}/>
         {/* <PageBodyTrainers /> */}
         {/* <PageBodyPhotos /> */}
       </div>

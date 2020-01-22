@@ -36,7 +36,7 @@ const CardSection = (props) => {
         body.append('amount', amount)
         body.append('source', source)
         body.append('receipt_email', receipt_email)
-        
+        console.log(body)
 
         buyPackage(handle, pack._id, body)
   }
