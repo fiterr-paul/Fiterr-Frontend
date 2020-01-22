@@ -30,7 +30,7 @@ import PageCreate from './components/page/PageCreate'
 import PackageShow from './components/page/packages/PackageShow'
 import Dashboard from './components/dashboard/Dashboard'
 import BookingsManager from './components/dashboard/BookingsManager'
-
+import Clients from  './components/dashboard/Clients'
 // Private Routes
 import PrivateRoute from './components/routing/PrivateRoute';
 import Checkout from './components/stripe/Checkout';
@@ -55,6 +55,7 @@ const Router = () => {
             <PrivateRoute exact path = '/bookings' component={BookingsManager} />
             <PrivateRoute exact path = '/checkout' component={Checkout} />
             <PrivateRoute exact path = '/training' component={Training} />
+            <PrivateRoute exact path = '/clients' component={Clients} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             
