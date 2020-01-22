@@ -1,7 +1,7 @@
 import React, {useReducer, useContext} from 'react';
 import PageContext from './pageContext';
 import pageReducer from './pageReducer';
-import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT, SET_TRAINERS } from '../types'
+import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT, SET_TRAINERS, SET_SECTION } from '../types'
 import request from '../../utils/axios-config'
 import AuthContext from '../auth/authContext';
 import AlertContext from '../alert/alertContext'
@@ -22,7 +22,8 @@ const PageState = props => {
         myPage: null,
         currentPackage: null,
         lastCharge: null,
-        trainers: null
+        trainers: null,
+        section: 'Home'
     }
 
     const [state, dispatch] = useReducer(pageReducer, initialState)
@@ -111,12 +112,21 @@ const PageState = props => {
             payload: response.data
         })
     }
+
+    const setSection = (section) => {
+        dispatch({
+            type: SET_SECTION,
+            payload: section
+        })
+    }
+
     return(
         <PageContext.Provider
             value={{
                 currentPage: state.currentPage,
                 roleOnPage: state.roleOnPage,
                 currentPackage: state.currentPackage,
+                section: state.section,
                 getPage,
                 findRole,
                 createPage,
@@ -127,7 +137,8 @@ const PageState = props => {
                 buyPackage,
                 lastCharge: state.lastCharge,
                 trainers: state.trainers,
-                getTrainers
+                getTrainers,
+                setSection
             }}>
                 {props.children}
         </PageContext.Provider>

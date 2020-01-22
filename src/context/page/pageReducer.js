@@ -1,5 +1,5 @@
 import {
-    SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT, SET_TRAINERS
+    SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT, SET_TRAINERS, SET_SECTION
 } from '../types'
 
 export default (state, action) => {
@@ -34,6 +34,11 @@ export default (state, action) => {
             return{
                 ...state,
                 trainers: action.payload
+            }
+        case SET_SECTION:
+            return {
+                ...state,
+                section: action.payload
             }
         default:
             return state

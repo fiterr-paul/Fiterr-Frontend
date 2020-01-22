@@ -11,7 +11,7 @@ import AuthContext from '../../context/auth/authContext';
 
 const PageBodyTimelineColumn = ({ posts }) => {
 
-  const { currentPage } = useContext(PageContext);  
+  const { currentPage: { trainers, pageOwner, contentCreators } } = useContext(PageContext);  
   const { user: { _id } } = useContext(AuthContext);  
 
   console.log('POOOOOSTS', posts);
@@ -21,7 +21,7 @@ const PageBodyTimelineColumn = ({ posts }) => {
         {/* LEFT COL - PROFILE TIMELINE */}
           <div className="timeline-wrapper">
             
-            { currentPage.trainers.includes(_id) && <NewPost /> }
+            { (trainers.includes(_id) || (_id === pageOwner) || (contentCreators.includes(_id))) && <NewPost /> }
 
             <Posts posts={posts}/>
 

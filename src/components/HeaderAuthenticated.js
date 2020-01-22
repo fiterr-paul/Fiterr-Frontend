@@ -141,7 +141,7 @@ const SubHeaderAuthenticated = () => {
     }
   }
   const clients = () => {
-    if(user.isProfessional){
+    if(user && user.isProfessional){
       return(
         <Link onClick={scrollPage} className="link-submenu" to='/clients'> Clients </Link>
       )
