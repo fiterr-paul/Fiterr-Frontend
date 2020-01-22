@@ -16,13 +16,13 @@ const Training = () => {
     
 
     const getPendingSessions = async() => {
-        const response = await request.get('/api/profiles/trainer-pending-sessions', config)
+        const response = await request.get('/api/session/trainer-pending-sessions', config)
         console.log(response)
         setSessions({...sessions, pending: response.data})
     }
 
     const getUpcomingSessions = async() => {
-        const response = await request.get('/api/profiles/trainer-upcoming-sessions', config)
+        const response = await request.get('/api/session/trainer-upcoming-sessions', config)
         console.log(response)
         setSessions({...sessions, upcoming: response.data})
     }
@@ -39,7 +39,7 @@ const Training = () => {
         e.preventDefault()
         let body = new FormData
         body.append('id', e.target.value)
-        const response = await request.put('/api/profiles/trainer-approval', body, config )
+        const response = await request.put('/api/session/trainer-approval', body, config )
     }
 
     const pendingSessionShow = () => {

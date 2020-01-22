@@ -113,7 +113,7 @@ const ProfileState = props => {
     }
 
     const sessionCreate = async(body) => {
-        const response = await request.post('/api/profiles/session', body, config)
+        const response = await request.post('/api/session/session-create', body, config)
         dispatch({
             type: SET_SERVICES,
             payload: response.data
