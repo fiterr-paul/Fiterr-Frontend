@@ -38,7 +38,7 @@ const CardSection = (props) => {
         body.append('receipt_email', receipt_email)
         
 
-        await buyPackage(handle, pack._id, body)
+        buyPackage(handle, pack._id, body)
   }
   if (lastCharge) {
     return (
@@ -49,7 +49,6 @@ const CardSection = (props) => {
       </div>
     )
   }
-  console.log(pack)
   return (
     <div className="checkout-form">
       <p>Amount: ${pack.price}</p>

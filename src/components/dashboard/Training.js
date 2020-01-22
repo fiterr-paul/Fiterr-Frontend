@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import request from '../../utils/axios-config'
-
+import './styles/session.scss'
 
 const Training = () => {
     const config = {
@@ -60,9 +60,9 @@ const Training = () => {
         const show = upcoming.map((sesh,index)=>{
             return(
                 <div key={index}>
-                    <h1>{sesh.time}</h1>
-                    <p>{sesh.date}</p>
-                    <p>{sesh.location}</p>
+                    <h1>Time {sesh.time}</h1>
+                    <p>Date: {sesh.date}</p>
+                    <p>Location: {sesh.location}</p>
                 </div>
             )
         })
@@ -73,10 +73,17 @@ const Training = () => {
     return(
         <>
             <div className="sessionApproval">
-                <h1>Sessions To Approve</h1>
-                {pendingSessionShow()}
-                <h1>Upcoming Sessions</h1>
-                {upcomingSessions()}
+                <div>
+                    <h1>Sessions To Approve</h1>
+                    {pendingSessionShow()}
+                </div>
+                
+
+                <div>
+                    <h1>Upcoming Sessions</h1>
+                    {upcomingSessions()}
+                </div>
+                
             </div>
         </>
     )

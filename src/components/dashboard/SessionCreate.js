@@ -57,11 +57,11 @@ const SessionCreate = (props) => {
         <div className="HELLO">
             <form action="">
                 <label>Time</label>
-                <input type="text" name='time' id='time' value={time} onChange={onChange}/>
+                <input type="text" name='time' id='time' value={time} onChange={onChange}/><br/>
                 <label>Date</label>
-                <input type="date" name="date" id="date" value={date} onChange={onChange}/>
+                <input type="date" name="date" id="date" value={date} onChange={onChange}/><br/>
                 <label>Location</label>
-                <input type="text" name="location" id="location" value={location} onChange={onChange}/>
+                <input type="text" name="location" id="location" value={location} onChange={onChange}/><br/>
                 <label>Trainer Select</label>
                 <select name="trainer" id="trainer" value={trainer} onChange={onChange}>
                     <option value="" selected >Choose here</option>
@@ -70,7 +70,7 @@ const SessionCreate = (props) => {
                             <option key={index} value={trainer._id}>{trainer.firstname} {trainer.lastname}</option>
                         )
                     })}
-                </select>
+                </select><br/>
                 <div className="submit-button">
                     <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
                 </div>

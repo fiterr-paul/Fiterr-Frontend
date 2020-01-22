@@ -11,7 +11,10 @@
 }
   
 .checkout-form {
-    width: 400px;
+    position: fixed;
+    left: 25%;
+    top: 20%;
+    width: 50%;
     padding: 2em;
     border-radius: 8px;
     background-color: #fff;
