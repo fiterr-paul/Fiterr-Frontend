@@ -75,6 +75,7 @@ const PageState = props => {
         })
     }
     const createPackage = async(body) => {
+        console.log('hhhhhh')
         const response = await request.post('/api/packages/package-register', body, config)
         dispatch({
             type: SET_PAGE,

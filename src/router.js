@@ -61,7 +61,6 @@ const Router = () => {
             
             <Route path='/draftprofile' component={draftProfile} />
             <Route path='/draftnewsfeed' component={draftNewsfeed} />
-            <Route path='/draftpage' component={draftPage} />
             
             <Route path='/professionals' component={Professionals} />
             <Route path='/search' component={Search} />
