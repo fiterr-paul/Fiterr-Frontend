@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import TextareaAutosize from 'react-autosize-textarea';
 
-import PostComment from './PostComment';
-import NewComment from './NewComment';
+import PostComment from '../posts/PostComment';
+import NewComment from '../posts/NewComment';
 
-import profileImgPaul from '../assets/media/paul-900x900.jpg';
 import stockIMG from '../assets/media/stockIMG.jpg';
 
 
@@ -86,8 +85,7 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes, postOwnerUs
             </div>
               { myprofile.user._id === userId && 
               (<div className="post-options">
-                  <i onClick={() => removePost(_id)} className="fas fa-trash"></i>
-                {/* <button type="button" className="btn-post-options" onClick={postOptionsDropdownHandler} onBlur={postOptionsDropdownRemove} >
+                <button type="button" className="btn-post-options" onClick={postOptionsDropdownHandler} onBlur={postOptionsDropdownRemove} >
                   <i className="fas fa-ellipsis-h"></i>
                 </button>
                 <div id="post-options-dropdown" style={{display: "none"}} className="options-dropdown-wrapper caret">
@@ -97,7 +95,7 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes, postOwnerUs
                       <li onClick={() => removePost(_id)}>delete post</li>
                     </ul>
                   </div>
-                </div> */}
+                </div>
               </div>)}
           </div>
           <div className="body">
@@ -152,7 +150,7 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes, postOwnerUs
             {comments.map(comment => (
               <PostComment key={comment._id} comment={comment} postId={_id} />
             ))}
-
+  
             <NewComment postId={_id} />
 
           </div>

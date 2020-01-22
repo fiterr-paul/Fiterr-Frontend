@@ -11,22 +11,22 @@ import {
     GET_POSTS,
     UPDATE_COMMENT_REPLY,
     UPDATE_COMMENT_REPLY_LIKES,
-    REMOVE_REPLY
+    REMOVE_REPLY,
+    GET_PAGE_POSTS
 } from '../types'
 
 export default (state, action) => {
     let index, updatedComments;
 
     switch(action.type){
-        // works
-
         case GET_POSTS:
+        case GET_NEWSFEED:
+        case GET_PAGE_POSTS:
             return {
                 ...state,
                 posts: action.payload
             }
         case UPDATE_LIKES:
-            // this just update the like array with the 'updated' like array from the back end
             return {
                 ...state,
                 posts: state.posts.map(post => post._id === action.payload.postId ? { ...post, likes: action.payload.likes } : post)
@@ -42,10 +42,8 @@ export default (state, action) => {
                 posts: state.posts.filter(post => post._id !== action.payload)
             }
         case ADD_COMMENT:
-            // do we want logic in the reducer??
             index = state.posts.findIndex(post => post._id === action.payload.postId);
             updatedComments = state.posts[index].comments.concat(action.payload.comment);
-            // console.log('updated', updatedComments);
             return {
                 ...state,
                 posts: state.posts.map(post => post._id === action.payload.postId ? { ...post, comments: updatedComments} : post)
@@ -53,13 +51,10 @@ export default (state, action) => {
         case REMOVE_COMMENT:
             index = state.posts.findIndex(post => post._id === action.payload.postId);
             updatedComments = state.posts[index].comments.filter(comment => comment._id !== action.payload.commentId);
-            console.log(updatedComments, 'updated');
             return {
                 ...state,
                 posts: state.posts.map(post => post._id === action.payload.postId ? { ...post, comments: updatedComments} : post)
             }
-            
-            
         case UPDATE_COMMENT_LIKES:
         case UPDATE_COMMENT_REPLY:
         case REMOVE_REPLY:
@@ -67,25 +62,7 @@ export default (state, action) => {
             return {
                 ...state,
                 posts: state.posts.map(post => post._id === action.payload.postId ? { ...post, comments: action.payload.comments} : post)
-            }        
-            
-        
-        case GET_NEWSFEED:
-            console.log('we get to the dipatch yeah?', action.payload);
-            return {
-                ...state,
-                posts: action.payload
-            }
-
-        
-        case FIND_FOLLOWING_POSTS:
-            return{
-                ...state,
-                followingPosts: action.payload
-            }
-
-            
-
+            }             
         case CLEAR_POST_STATE:
             return {
                 myPosts: null,
@@ -93,7 +70,6 @@ export default (state, action) => {
                 followingPosts: null,
                 otherPosts: null
             }
-
         default:
             return state
     }

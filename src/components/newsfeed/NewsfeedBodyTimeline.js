@@ -1,14 +1,10 @@
 import React, { useContext, useEffect, Fragment } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
-import TimelinePosts from '../newsfeed/TimelinePosts';
-import TimelinePostPhoto from '../newsfeed/TimelinePostPhoto';
 import Spinner from '../layout/Spinner';
 
 
 import NewPost from '../posts/NewPost';
 import Posts from '../posts/Posts';
-
-import profileImgPaul from '../../components/assets/media/paul-900x900.jpg';
 
 import PostContext from '../../context/post/postContext';
 

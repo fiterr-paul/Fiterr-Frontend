@@ -93,7 +93,7 @@ const AuthState = props => {
         }
 
         try {
-            const res = await request.post('/api/users/login', formData, config);
+            await request.post('/api/users/login', formData, config);
 
             dispatch({
                 type: LOGIN_SUCCESS,

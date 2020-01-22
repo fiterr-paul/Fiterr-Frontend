@@ -47,6 +47,7 @@ export const GET_POSTS = 'GET_POSTS';
 export const UPDATE_COMMENT_REPLY = 'UPDATE_COMMENT_REPLY';
 export const UPDATE_COMMENT_REPLY_LIKES = 'UPDATE_COMMENT_REPLY_LIKES';
 export const REMOVE_REPLY = 'REMOVE_REPLY';
+export const GET_PAGE_POSTS = 'GET_PAGE_POSTS';
 
 
 // Page Context 
