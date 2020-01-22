@@ -14,6 +14,7 @@ import pageImg2 from '../../components/assets/media/logo-livefit_livelean-640x64
 import pageImg3 from '../../components/assets/media/logo-28_day_kickstart-1080x1080.png';
 
 const ModalCreatePackage = (props) => {
+    const {open, close, customStyles} = props;
     const pageContext = useContext(PageContext)
     const authContext = useContext(AuthContext)
     
@@ -42,7 +43,7 @@ const ModalCreatePackage = (props) => {
   const onChange = (e) => {
       setPackage({...thisPackage, [e.target.name]: e.target.value})
   }
-  const onSubmit = (e)=>{
+  const onSubmit = async(e)=>{
       e.preventDefault()
       let body = new FormData
       body.append('pageID', currentPage._id)
@@ -50,12 +51,14 @@ const ModalCreatePackage = (props) => {
       body.append('description', description)
       body.append('numberOfSessions', numberOfSessions)
       body.append('price', price)
-
+      console.log('body', body)
       createPackage(body)
-      history.push(`/page/${currentPage.pageHandle}`)
+      close()
+      // history.push(`/page/${currentPage.pageHandle}`)
+
   }
 
-    const {open, close, customStyles} = props;
+    
 
     if(!currentPage){
       return(null)
@@ -79,7 +82,7 @@ const ModalCreatePackage = (props) => {
                     <p>package title:</p>
                   </div>
                   <div className="col-right">
-                    <input type="text" autoComplete="off" placeholder="Enter a title for this package ..." required value={title} onChange={onChange}/>
+                    <input type="text" autoComplete="off" name="title" placeholder="Enter a title for this package ..." required value={title} onChange={onChange}/>
                   </div>
                 </div>
                 <div className="row description">
@@ -87,7 +90,7 @@ const ModalCreatePackage = (props) => {
                     <p style={{marginTop: "6px"}}>description:</p>
                   </div>
                   <div className="col-right">
-                    <TextareaAutosize  type="textarea" autoComplete="off" placeholder="Enter a description for this package ..." required value={description} onChange={onChange}/>
+                    <TextareaAutosize  type="textarea" autoComplete="off" name="description" placeholder="Enter a description for this package ..." required value={description} onChange={onChange}/>
                   </div>
                 </div>
                 <div className="row">
@@ -95,7 +98,7 @@ const ModalCreatePackage = (props) => {
                     <p># of sessions:</p>
                   </div>
                   <div className="col-right">
-                  <input type="number" autoComplete="off" placeholder="ie: 10" required/>
+                    <input type="number" autoComplete="off" name="numberOfSessions" placeholder="ie: 10" required value={numberOfSessions} onChange={onChange}/>
                   </div>
                 </div>
                 <div className="row">
@@ -103,17 +106,16 @@ const ModalCreatePackage = (props) => {
                     <p>price:</p>
                   </div>
                   <div className="col-right">
-                  <input type="number" autoComplete="off" placeholder="$ 0.00" required/>
+                  <input type="number" autoComplete="off" name="price" placeholder="$ 0.00" required value={price} onChange={onChange}/>
                   </div>
                 </div>
-  
                 <div className="row actions">
                   <div className="col-left">
                     <button type="button" className="delete">delete</button>
                   </div>
                   <div className="col-right">
                   <button type="button" className="cancel" onClick={close}>cancel</button>
-                    <button type="button" className="submit" >save &amp; close</button>
+                  <button type="submit" className="submit" onClick={onSubmit}>Add Package </button>
                   </div>
                 </div>
                 

@@ -67,6 +67,16 @@ const PageBodyServices = (props) => {
   if(!currentPage){
     return null
   }
+  const packageShow = () => {
+    return (
+      <>
+        {currentPage.packages.map((pack, index) => (
+          <PackageCard key={index} pack={pack} handle={handle} role={role}/>
+        ))}
+      </>
+  )
+    
+  } 
 
   return (
     <div className="page-container services">
@@ -81,7 +91,7 @@ const PageBodyServices = (props) => {
           {packageSetting()}
         </div>
         <div className="body services">
-          <PackageCard />
+          {packageShow()}
           <ModalCreatePackage id="modal-create-package" open={modalIsOpen} close={closeModal} customStyles={customStyles} />
         </div>
       </div>
