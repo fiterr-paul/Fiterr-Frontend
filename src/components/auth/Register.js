@@ -76,8 +76,8 @@ const Register = (props) => {
 							<h1>create your account</h1>
 							<form className="signup" onSubmit={onSubmit}>
 								<div className="field-row title">
-                  <h3>Enter your account details</h3>
-                </div>
+									<h3>Enter your account details</h3>
+								</div>
 								<div className="field-row input name">
 									<div className="width-50">
 										<input type="text" name="firstname" value={firstname} onChange={onChange} autoComplete="off" placeholder="First Name" required/>

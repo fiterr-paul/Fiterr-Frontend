@@ -3,6 +3,7 @@ import './assets/scss/header-nav.scss';
 import { withRouter } from 'react-router';
 import { Link, useHistory } from 'react-router-dom'
 import Logo from './assets/media/icn-fiterr-white-500x500.png';
+import IsUserProfessional from '../components/professional/isProfessional'
 
 import profileImgPaul from './assets/media/paul-900x900.jpg';
 
@@ -158,6 +159,7 @@ const SubHeaderAuthenticated = () => {
           <div className="submenu">
             <div className="col-left">
               <Link onClick={scrollPage} className="link-submenu" to='/dashboard'> dashboard </Link>
+              <IsUserProfessional />
               {clients()}
               <Link onClick={scrollPage} className="link-submenu" to='/bookings'> bookings </Link>
               {trainingSessions()}

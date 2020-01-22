@@ -52,20 +52,48 @@ const PageCreate = () => {
     
     return(
         <>
-            <h1>You're now a Professional! Go ahead and create your own page</h1>
-            <form action="">
-                <label> Enter the Handle For your Page</label> 
-                {/* matty^^ need to check if handle is taken by username or page handle */}
-                <input type="text" name="pageHandle" id="pageHandle" value={pageHandle} onChange={onChange}/>
-                <label>Enter the title for your page</label>
-                <input type="text" name="pageTitle" id="pageTitle" value={pageTitle} onChange={onChange} />
-                <label>Tell us about your page!</label>
-                <input type="text" name="pageAbout" id="pageAbout" value={pageAbout} onChange={onChange}/>
-                <input type="file" name="image" id="image" onChange={onFileChange}/>
-                <div className="submit-button">
-                    <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
+            <section className="body login">
+                <div className="image-overlay">
+                    <div className="container">
+                        <div className="form-container">
+                            <h1>You're now a Professional! Create your own page</h1>
+                            <form className="page-create-container">
+                                <div>
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <input type="text" name="pageHandle" id="pageHandle" value={pageHandle} onChange={onChange} placeholder="Enter Page Handle"/>
+                                        </div>
+                                    </div>
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <input type="text" name="pageTitle" id="pageTitle" value={pageTitle} onChange={onChange} placeholder="Enter Page Title"/>
+                                        </div>
+                                    </div>
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <input type="text" name="pageAbout" id="pageAbout" value={pageAbout} onChange={onChange} placeholder="About Your Page"/>
+                                        </div>
+                                    </div>
+                                    <div className="field-row input">
+                                        <div className="width-50">
+                                            <label >Upload an Display Image</label>
+                                            <input type="file" name="image" id="image" onChange={onFileChange}/>
+                                        </div>
+                                    </div>
+
+                                    <div className="field-row button">
+                                        <button onClick={onSubmit} type="submit" value="submit"> Submit </button>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    
                 </div>
-            </form>
+                
+            </section>
+            
         </>
     )
 }

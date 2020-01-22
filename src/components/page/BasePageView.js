@@ -64,7 +64,7 @@ const BasePageView = (props) => {
         )
     }
     const packageShow = () => {
-        const part= currentPage.packages.map((pack, index)=>{
+        const part = currentPage.packages.map((pack, index)=>{
             return(
                 <div key={index} className="package">
                     <h3>{pack.title}</h3>
