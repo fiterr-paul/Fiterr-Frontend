@@ -75,22 +75,22 @@ const PageState = props => {
         })
     }
     const createPackage = async(body) => {
-        const response = await request.post('/api/pages/package-create', body, config)
+        const response = await request.post('/api/packages/package-register', body, config)
         dispatch({
             type: SET_PAGE,
             payload: response.data
         })
     }
 
-    const getPackage = async(pageID, packageID) => {
-        const response = await request.get(`/api/professional/${pageID}/${packageID}`, config)
+    const getPackage = async(pageHandle, packageID) => {
+        const response = await request.get(`/api/packages/${pageHandle}/${packageID}`, config)
         dispatch({
             type: SET_CURRENT_PACKAGE,
             payload: response.data
         })
     }
     const packagePriceChange = async(body) => {
-        const response = await request.put('/api/professional/package-price-update', body, config)
+        const response = await request.put('/api/packages/update-package-price', body, config)
         dispatch({
             type: SET_CURRENT_PACKAGE,
             payload: response.data
