@@ -130,6 +130,17 @@ const HeaderAuthenticated = () => {
 };
 
 const SubHeaderAuthenticated = () => {
+  const authContext = useContext(AuthContext);
+  const {user} = authContext
+  const trainingSessions = () => {
+    if(user.isProfessional){
+      return(
+        <Link onClick={scrollPage} className="link-submenu" to='/training'> Training Appointments </Link>
+      )
+    }
+    
+    
+  }
 
   const scrollPage = () => {
     window.scrollTo(0, 0);
@@ -145,6 +156,7 @@ const SubHeaderAuthenticated = () => {
               <Link onClick={scrollPage} className="link-submenu" to='/clients'> clients </Link>
               <Link onClick={scrollPage} className="link-submenu" to='/bookings'> bookings </Link>
               <Link onClick={scrollPage} className="link-submenu" to='/finances'> finances </Link>
+              {trainingSessions()}
             </div>
             <div className="col-right">
               <Link onClick={scrollPage} className="link-submenu" to='/settings'> settings </Link>

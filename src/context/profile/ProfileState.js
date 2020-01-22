@@ -100,6 +100,14 @@ const ProfileState = props => {
         })
     }
 
+    const sessionCreate = async(body) => {
+        const response = await request.post('/api/profiles/session', body, config)
+        dispatch({
+            type: SET_SERVICES,
+            payload: response.data
+        })
+    }
+
     return(
         <ProfileContext.Provider
             value={{
@@ -115,7 +123,8 @@ const ProfileState = props => {
                 unfollow,
                 loadMyUserAndProfile,
                 populateServices,
-                services: state.services
+                services: state.services,
+                sessionCreate
             }}>
                 { props.children }
         </ProfileContext.Provider>

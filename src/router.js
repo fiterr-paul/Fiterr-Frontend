@@ -14,7 +14,7 @@ import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
 
-import Profile from './pages/profile';
+import Profile from './pages/Profile';
 import ProperProfile from './pages/properProfile';
 
 import Page from './components/page/Page'
@@ -29,10 +29,12 @@ import ProfessionalCreate from './components/professional/ProfessionalCreate'
 import PageCreate from './components/page/PageCreate'
 import PackageShow from './components/page/packages/PackageShow'
 import Dashboard from './components/dashboard/Dashboard'
+import BookingsManager from './components/dashboard/BookingsManager'
 
 // Private Routes
 import PrivateRoute from './components/routing/PrivateRoute';
 import Checkout from './components/stripe/Checkout';
+import Training from './components/dashboard/Training'
 
 
 const Router = () => {
@@ -50,7 +52,9 @@ const Router = () => {
             <PrivateRoute exact path = '/page-create' component={PageCreate} />
             <PrivateRoute exact path = '/page/:handle/package/:id' component={PackageShow} />
             <PrivateRoute exact path = '/dashboard' component={Dashboard} />
+            <PrivateRoute exact path = '/bookings' component={BookingsManager} />
             <PrivateRoute exact path = '/checkout' component={Checkout} />
+            <PrivateRoute exact path = '/training' component={Training} />
             <Route exact path = '/messages' component={Messages} />
             <Route path='/enthusiasts' component={Enthusiasts} />
             
