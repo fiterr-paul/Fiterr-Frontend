@@ -7,6 +7,7 @@ import AlertContext from '../alert/alertContext';   // Note: you can use a conte
 // get axios util
 import request from '../../utils/axios-config';
 
+
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
@@ -17,6 +18,7 @@ import {
     LOGOUT,
     CLEAR_ERRORS
   } from '../types';
+
 
 const AuthState = props => {
     const initialState = {
@@ -37,14 +39,15 @@ const AuthState = props => {
     const loadUser = async () => {
         try {
             const res = await request.get('/api/auth');   //this route checks to see if youre logged in on the backend
-            // console.log(res.data);
+            console.log(res.data);
 
             dispatch({
                 type: USER_LOADED,
                 payload: res.data   //this is the actual user data that we get from hitting the GET /api/auth endpoint
             })
         } catch (err) {
-            console.log('Error:', err);
+            console.log(err.response)
+            // console.log('Error:', err);
             dispatch({
                 type: AUTH_ERROR
             })
