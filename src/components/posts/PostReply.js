@@ -34,12 +34,16 @@ const PostReply = ({ reply: { _id, text, likes, user }, postId, commentId }) => 
           <img src={displayImage} alt=""/>
         </div>
         <div className="reply-body">
-          <div className="reply-content">
-            <div className="author-name">
-              <Link to="/">{`${firstname} ${lastname}`}</Link>
-              {/* <span>posted a reply</span> */}
+          <div className="reply-content-wrapper">
+            <div className="reply-content">
+              <div className="author-name">
+                <Link to="/">{`${firstname} ${lastname}`}</Link>
+              </div>
+              <div className="comment"> { text } </div>
             </div>
-            <div className="comment"> { text } </div>
+            <div className="post-options">
+              <i className="fas fa-ellipsis-h"></i>
+            </div>
           </div>
           <div className="reply-actions">
             <span onClick={onReplyLike} className="action"> {liked ? 'liked' : 'like'} </span>
