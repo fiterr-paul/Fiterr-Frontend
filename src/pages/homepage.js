@@ -1,6 +1,5 @@
 import React from 'react';
 import './assets/scss/index.scss';
-import { Link } from 'react-router-dom';
 
 import splashVideoMP4 from './assets/media/splash-video-optimized.mp4';
 
