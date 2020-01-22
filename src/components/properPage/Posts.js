@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import TimelinePost from './TimelinePost';
 
-const Posts = ({ profile, posts }) => {
+const Posts = ({ posts }) => {
 
     return (
         <Fragment>

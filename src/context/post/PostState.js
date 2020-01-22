@@ -15,6 +15,7 @@ import {
     UPDATE_COMMENT_REPLY_LIKES,
     REMOVE_REPLY,
     CLEAR_POST_STATE, 
+    GET_PAGE_POSTS
 } from '../types'
 
 import request from '../../utils/axios-config'
@@ -46,6 +47,7 @@ const PostState = props => {
         })
     }
 
+    
     // get posts gets the posts on either your page or another users page
     // WORKS
     const getPosts = async (id) => {
@@ -78,7 +80,16 @@ const PostState = props => {
         })
     }
 
-    // WORKS
+    const getPagePosts = async(pageId) => {
+        console.log('got the pageId', pageId);
+        const res = await request.get(`/api/posts/page-posts/${pageId}`);
+
+        dispatch({
+            type: GET_PAGE_POSTS,
+            payload: res.data
+        })
+    }
+
     // remove your post 
     const removePost = async (id) => {
         const resp = await request.delete(`/api/posts/${id}`);
@@ -271,7 +282,8 @@ const PostState = props => {
                 likeReply,
                 unlikeReply,
                 removeReply,
-                fetchNewsfeed
+                fetchNewsfeed,
+                getPagePosts
             }}>
                 { props.children }
         </PostContext.Provider>

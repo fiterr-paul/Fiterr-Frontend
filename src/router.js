@@ -14,7 +14,7 @@ import Contact from './pages/contact';
 import Newsfeed from './pages/newsfeed';
 import Messages from './pages/messages';
 
-import Profile from './pages/Profile';
+import Profile from './pages/profile';
 import ProperProfile from './pages/properProfile';
 
 import Page from './components/properPage/Page'
