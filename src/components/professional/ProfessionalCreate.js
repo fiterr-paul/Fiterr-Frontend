@@ -1,14 +1,8 @@
-import React, {useState, useContext} from 'react'
-import authContext from '../../context/auth/authContext'
-import profileContext from '../../context/profile/profileContext'
+import React, {useState} from 'react'
 import request from '../../utils/axios-config'
 import { useHistory } from 'react-router-dom'
 
 const ProfessionalCreate = (props) => {
-    const AuthContext = useContext(authContext)
-    const ProfileContext = useContext(profileContext)
-    const { user, loadUser, isAuthenticated} = AuthContext
-    const {profile} = ProfileContext
     const history = useHistory()
 
     const [professional, setProfessional] = useState({
@@ -16,7 +10,7 @@ const ProfessionalCreate = (props) => {
         userID: ''
     })
 
-    const {phoneNumber, userID} = professional
+    const {phoneNumber} = professional
     const config = {
         headers: {
             'Content-Type': 'application/json'
@@ -24,10 +18,10 @@ const ProfessionalCreate = (props) => {
     }
     const onSubmit = async(e) => {
         e.preventDefault()
-        let body = new FormData
+        let body = new FormData()
         body.append('phoneNumber', phoneNumber)
 
-        const post = await request.post('/api/users/professional-activate', body, config)
+        await request.post('/api/users/professional-activate', body, config)
         history.push('/page-create')
     }
     const onChange = (e) => {

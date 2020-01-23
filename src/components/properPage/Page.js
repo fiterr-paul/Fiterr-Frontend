@@ -12,7 +12,7 @@ import StickyBox from 'react-sticky-box'
 import PageLeftNav from './PageLeftNav'
 
 const Page = () => {
-    const { user, isAuthenticated, loadUser } = useContext(AuthContext)
+    const { isAuthenticated, loadUser } = useContext(AuthContext)
     const { currentPage, roleOnPage, getPage, findRole } = useContext(PageContext)
     const { profile, getMyProfile } = useContext(ProfileContext);
 
@@ -27,6 +27,7 @@ const Page = () => {
         //     getPage(handle) 
         //     findRole(handle)
         // }
+        // eslint-disable-next-line 
     }, [isAuthenticated])
 
     if(!isAuthenticated || !currentPage) {

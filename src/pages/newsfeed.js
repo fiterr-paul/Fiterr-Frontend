@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, Fragment } from 'react'
+import React, { useContext, useEffect, Fragment } from 'react'
 
 import AuthContext from '../context/auth/authContext'
 import ProfileContext from '../context/profile/profileContext'
@@ -18,6 +18,7 @@ const Newsfeed = () => {
     useEffect(() => {
         if(!isAuthenticated){ loadUser() }
         else if(isAuthenticated && !profile){ getMyProfile() }
+        // eslint-disable-next-line 
     }, [isAuthenticated]);
 
 

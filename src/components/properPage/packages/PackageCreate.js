@@ -12,6 +12,7 @@ const PackageCreate = () => {
     const {loadUser, isAuthenticated} = authContext
     const {handle} = useParams()
     const history = useHistory()
+
     useEffect(() => {
         if(!isAuthenticated){ loadUser() } 
         if(!currentPage){getPage(handle)}
@@ -20,7 +21,8 @@ const PackageCreate = () => {
         //     getPage(handle) 
         //     findRole(handle)
         // }
-    }, [isAuthenticated, currentPage ])
+    // eslint-disable-next-line
+    }, [isAuthenticated, currentPage])
 
     const [thisPackage, setPackage] = useState({
         pageID: '',
@@ -29,13 +31,13 @@ const PackageCreate = () => {
         numberOfSessions: '',
         price: ''
     })
-    const {pageID, title, description, numberOfSessions, price} = thisPackage
+    const {title, description, numberOfSessions, price} = thisPackage
     const onChange = (e) => {
         setPackage({...thisPackage, [e.target.name]: e.target.value})
     }
     const onSubmit = (e)=>{
         e.preventDefault()
-        let body = new FormData
+        let body = new FormData();
         body.append('pageID', currentPage._id)
         body.append('title', title)
         body.append('description', description)

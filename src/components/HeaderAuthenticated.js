@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import './assets/scss/header-nav.scss';
 import { withRouter } from 'react-router';
 import { Link, useHistory } from 'react-router-dom'
@@ -22,8 +22,8 @@ const HeaderAuthenticated = () => {
   const postContext = useContext(PostContext)
 
   const { searchUsers, clearViewingUser, clearSearchState } = searchContext;
-  const { isAuthenticated, logout, user, loading } = authContext;
-  const { getProfile, profile, clearProfile } = profileContext;
+  const { logout, user } = authContext;
+  const { profile, clearProfile } = profileContext;
   const { clearPostState } = postContext;
 
   const [search, setSearch] = useState('');
@@ -134,7 +134,7 @@ const SubHeaderAuthenticated = () => {
   const authContext = useContext(AuthContext);
   const {user} = authContext
   const trainingSessions = () => {
-    if(user.isProfessional){
+    if(user && user.isProfessional){
       return(
         <Link onClick={scrollPage} className="link-submenu" to='/training'> Training Appointments </Link>
       )

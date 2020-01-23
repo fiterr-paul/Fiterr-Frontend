@@ -9,10 +9,9 @@ const Search = (props) => {
   const [search, setSearch] = useState('');
 
   const searchContext = useContext(SearchContext);
-  const { searchedUsers, searching, searchUsers, searchTerm, findResults } = searchContext;
+  const { searchedUsers, searching, searchUsers } = searchContext;
 
-  const querySearch = props.location.search.toString().split('=')[1];
-  // console.log(querySearch);
+  // const querySearch = props.location.search.toString().split('=')[1];
 
   const onSearch = (e) => {
     setSearch(e.target.value);

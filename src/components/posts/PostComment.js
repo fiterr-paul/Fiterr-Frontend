@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom';
 
 import PostContext from '../../context/post/postContext';
 import ProfileContext from '../../context/profile/profileContext';
-
-import profileImgFatBastard from '../../components/assets/media/fatbastard-185x185.jpg';
-import profileImgPaul from '../../components/assets/media/paul-900x900.jpg';
-
 import PostReply from './PostReply';
 import PostReplyForm from './PostReplyForm';
 
 const PostComment = ({ comment: { _id, likes, text, replies, user }, postId }) => {
 
+  // eslint-disable-next-line
     const { _id: userId, firstname, lastname, profile: { displayImage } } = user;
 
+    // eslint-disable-next-line
     const { likeComment, unlikeComment, removeComment } = useContext(PostContext);
     const { profile: myprofile } = useContext(ProfileContext);
 
@@ -50,14 +48,6 @@ const PostComment = ({ comment: { _id, likes, text, replies, user }, postId }) =
                 </div>
                 <div className="comment"> { text } </div>
               </div>
-
-              {/* { userId === myprofile.user._id && (
-                  <Fragment>
-                    <span className="space-dot">&middot;</span>
-                    <span onClick={() => removeComment(postId, _id)} className="action"> remove comment </span>
-                  </Fragment>
-                )} */}
-
               <div className="post-options">
                 <i className="fas fa-ellipsis-h"></i>
               </div>
@@ -69,6 +59,12 @@ const PostComment = ({ comment: { _id, likes, text, replies, user }, postId }) =
               <span onClick={toggleReply} className="action"> reply </span>
               <span className="space-dot">&middot;</span>
               <span className="action">{ likes.length } likes </span>
+              { userId === myprofile.user._id && (
+                  <Fragment>
+                    <span className="space-dot">&middot;</span>
+                    <span onClick={() => removeComment(postId, _id)} className="action"> remove comment </span>
+                  </Fragment>
+                )}
             </div>
   
             {replies.map(reply => (

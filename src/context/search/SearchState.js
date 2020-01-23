@@ -1,5 +1,4 @@
-import React, { useReducer, useContext } from 'react';
-import axios from 'axios';
+import React, { useReducer } from 'react';
 import SearchContext from './searchContext';
 import searchReducer from './searchReducer';
 

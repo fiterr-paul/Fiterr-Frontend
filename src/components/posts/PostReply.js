@@ -1,8 +1,6 @@
 import React, { useContext, Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import profileImgPaul from '../../components/assets/media/paul-900x900.jpg';
-
 import postContext from '../../context/post/postContext';
 import ProfileContext from '../../context/profile/profileContext';
 

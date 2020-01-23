@@ -1,4 +1,4 @@
-import React, {useReducer, useContext} from 'react';
+import React, {useReducer} from 'react';
 import PostContext from './postContext';
 import postReducer from './postReducer';
 
@@ -92,7 +92,7 @@ const PostState = props => {
 
     // remove your post 
     const removePost = async (id) => {
-        const resp = await request.delete(`/api/posts/${id}`);
+        await request.delete(`/api/posts/${id}`);
 
         dispatch({
             type: REMOVE_POST,

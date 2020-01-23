@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
-import profileImgPaul from '../../components/assets/media/paul-900x900.jpg';
 
 import stockIMG from '../assets/media/stockIMG.jpg'
 
@@ -8,7 +7,8 @@ import PageContext from '../../context/page/pageContext';
 
 const PageLeftNav = () => {
 
-    const [section, setSection] = ('Home')
+    // eslint-disable-next-line
+    const [section, setSection] = useState('Home')
 
     const { currentPage: { displayImage, pageHandle, pageTitle } } = useContext(PageContext);
 
@@ -17,7 +17,7 @@ const PageLeftNav = () => {
         <div className="page-image-wrapper">
           <div className="page-image-border">
             <div className="page-image">
-              <img src={ displayImage ? displayImage : stockIMG } alt="Profile Image"/>
+              <img src={ displayImage ? displayImage : stockIMG } alt="Profile"/>
               <div className="image-update">
                 <i className="fas fa-camera"></i>
                 <h3>update</h3>

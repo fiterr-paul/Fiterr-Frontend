@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import StickyBox from "react-sticky-box";
 import ProfileLeftNav from '../profile/ProfileLeftNav'
 import ProfileHeader from '../profile/ProfileHeader';
-import Spinner from '../../components/layout/Spinner';
 
 // import './assets/scss/index.scss';
 import '../../pages/assets/scss/index.scss'

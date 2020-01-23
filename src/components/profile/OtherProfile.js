@@ -19,6 +19,8 @@ const OtherProfile = () => {
     useEffect(() => {
       console.log('hit the other profile use effect');
       getOtherProfile(username);
+      
+      // eslint-disable-next-line
     }, [])
 
     // might need to change the if logic here a bit

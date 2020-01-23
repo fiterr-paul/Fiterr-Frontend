@@ -2,9 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 import pageImg1 from '../../components/assets/media/logo-paul_meier_fitness-1080x1080.png';
-import pageImg2 from '../../components/assets/media/logo-livefit_livelean-640x640.png';
-import pageImg3 from '../../components/assets/media/logo-28_day_kickstart-1080x1080.png';
-
 
 const NewsfeedBodyWidgets = () => {
     return (

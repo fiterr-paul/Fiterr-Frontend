@@ -1,7 +1,6 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, { useContext, useEffect} from 'react'
 import AuthContext from '../../context/auth/authContext'
 import ProfileContext from '../../context/profile/profileContext'
-import PageContext from '../../context/page/pageContext'
 import SessionCreate from './SessionCreate'
 import './styles/session.scss'
 import Moment from 'react-moment'
@@ -9,7 +8,6 @@ import Moment from 'react-moment'
 const BookingsManager = () => {
     const authContext = useContext(AuthContext)
     const profileContext = useContext(ProfileContext)
-    const pageContext = useContext(PageContext)
     const {isAuthenticated, user, loadUser} = authContext
     const {profile, getMyProfile, populateServices, services} = profileContext
 
@@ -21,6 +19,7 @@ const BookingsManager = () => {
         //     getPage(handle) 
         //     findRole(handle)
         // }
+        // eslint-disable-next-line
     }, [ profile, services ])
 
     const returnSessions = (service) => {

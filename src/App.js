@@ -13,7 +13,6 @@ import ProfileState from './context/profile/ProfileState'
 import SearchState from './context/search/SearchState'
 import PostState from './context/post/PostState';
 import PageState from './context/page/PageState';
-import IsUserProfessional from './components/professional/isProfessional'
 
 function App() {
   return (

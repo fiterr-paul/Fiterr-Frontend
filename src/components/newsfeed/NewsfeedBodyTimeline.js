@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, Fragment } from 'react';
-import TextareaAutosize from 'react-autosize-textarea';
 import Spinner from '../layout/Spinner';
-
 
 import NewPost from '../posts/NewPost';
 import Posts from '../posts/Posts';
@@ -19,6 +17,7 @@ const NewsfeedBodyTimeline = () => {
       return () => {
         clearPostState();
       }
+      // eslint-disable-next-line
     }, [])
 
     if(!posts) {

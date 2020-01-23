@@ -1,10 +1,10 @@
-import React, {useState, useContext, Fragment} from 'react'
+import React, {useContext, Fragment} from 'react'
 import AuthContext from '../../context/auth/authContext'
 import { Link } from 'react-router-dom'
 
 const IsUserProfessional = (props) => {
     const authContext = useContext(AuthContext);
-    const { isAuthenticated, user } = authContext;
+    const { user } = authContext;
     
     const scrollPage = () => {
         window.scrollTo(0, 0);

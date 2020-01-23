@@ -1,9 +1,19 @@
 import React, {useReducer, useContext} from 'react';
 import PageContext from './pageContext';
 import pageReducer from './pageReducer';
-import { SET_PAGE, SET_CURRENT_PAGE_ROLE, SET_MY_PAGE, SET_MY_PAGE_FAIL, SET_CURRENT_PACKAGE, SERVICE_BOUGHT, SET_TRAINERS, SET_SECTION } from '../types'
+
+import { 
+    SET_PAGE, 
+    SET_CURRENT_PAGE_ROLE, 
+    SET_MY_PAGE, 
+    SET_MY_PAGE_FAIL, 
+    SET_CURRENT_PACKAGE, 
+    SERVICE_BOUGHT,
+    SET_TRAINERS, 
+    SET_SECTION 
+} from '../types'
+
 import request from '../../utils/axios-config'
-import AuthContext from '../auth/authContext';
 import AlertContext from '../alert/alertContext'
 
 const config = {
@@ -27,9 +37,6 @@ const PageState = props => {
     }
 
     const [state, dispatch] = useReducer(pageReducer, initialState)
-
-    const authContext = useContext(AuthContext)
-    const {user} = authContext
 
     const createPage = async(body) => {
         try {

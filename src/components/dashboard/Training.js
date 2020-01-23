@@ -32,15 +32,16 @@ const Training = () => {
     useEffect(() => {
         if(!pending){getPendingSessions()}
         if(!upcoming){getUpcomingSessions()}
+        // eslint-disable-next-line
     }, [pending, upcoming])
     
     if(!pending || !upcoming){return(null)}
     
     const onApproval = async(e) => {
         e.preventDefault()
-        let body = new FormData
+        let body = new FormData();
         body.append('id', e.target.value)
-        const response = await request.put('/api/session/trainer-approval', body, config )
+        await request.put('/api/session/trainer-approval', body, config )
     }
 
     const pendingSessionShow = () => {
