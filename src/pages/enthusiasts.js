@@ -15,8 +15,10 @@ const Enthusiasts = () => {
             </div>
           </div>
         </div>
-        <div className="container">
-          <h1>Enthusists</h1>
+        <div className="container-enthusists">
+          <div className="enthusists-image">
+            <h1>Enthusists</h1>
+          </div>
         </div>
       </section>
     </>

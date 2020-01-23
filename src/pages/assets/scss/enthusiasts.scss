@@ -46,7 +46,29 @@
       }
     }
   }
-  .container {
-    margin: 50px 0;
+  .container-enthusists {
+    align-items: center;
+    background-image: url('../media/banner-barbell.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+    justify-content: center;
+    width: 100vw;
+    margin: 0;
+    .enthusists-image {
+      // background-image: url('../media/banner-barbell.jpg');
+      // background-position: center center;
+      // background-repeat: no-repeat;
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      height: 250px;
+      overflow: hidden;
+      width: 100%;
+    }
   }
 }
