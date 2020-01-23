@@ -29,8 +29,10 @@ const CardSection = (props) => {
         let body = new FormData
         
         const { token } = await stripe.createToken()
-        let amount = pack.price*100 
+        let amount = Number(pack.price)*100
         amount.toString().replace('.', '')
+        console.log(amount)
+        
         const source = token.id
         const receipt_email = user.email
         body.append('amount', amount)
