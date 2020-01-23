@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 
-import profileImgPaul from '../../components/assets/media/paul-900x900.jpg';
-
 import PostContext from '../../context/post/postContext';
 import ProfileContext from '../../context/profile/profileContext';
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { Fragment, useContext } from 'react'
 
 import HeaderUnauthenticated from '../HeaderUnauthenticated';
 import HeaderAuthenticated from '../HeaderAuthenticated';
@@ -9,9 +9,7 @@ const Navbar = () => {
 
     const authContext = useContext(AuthContext);
 
-    const { isAuthenticated, user } = authContext;
-
-    // console.log(isAuthenticated, user);
+    const { isAuthenticated } = authContext;
 
     return (
         <Fragment>

@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import  {injectStripe, CardNumberElement, CardExpiryElement, CardCVCElement} from 'react-stripe-elements';
 import './MyCardElement.scss'
 import AuthState from '../../context/auth/authContext'
@@ -12,8 +12,7 @@ const CardSection = (props) => {
     const authState = useContext(AuthState)
     const pageState = useContext(PageState)
     const {user, isAuthenticated, loadUser} = authState
-    const {currentPackage, getPackage, buyPackage, lastCharge} = pageState
-    const [receiptUrl, setReceiptUrl] = useState(null)
+    const { buyPackage, lastCharge} = pageState
     console.log(props)
 
     const {pack, handle, number, stripe} = props   
@@ -26,7 +25,7 @@ const CardSection = (props) => {
     
     const handleSubmit = async event => {
         event.preventDefault()
-        let body = new FormData
+        let body = new FormData()
         
         const { token } = await stripe.createToken()
         let amount = Number(pack.price)*100

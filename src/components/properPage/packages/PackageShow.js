@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { useHistory, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PageContext from '../../../context/page/pageContext'
 import AuthContext from '../../../context/auth/authContext'
 import {useParams} from 'react-router'
@@ -9,10 +9,9 @@ const PackageShow = () => {
     const pageContext = useContext(PageContext)
     const authContext = useContext(AuthContext)
     
-    const {currentPage, createPackage, getPage, roleOnPage, findRole, getPackage, currentPackage, packagePriceChange, buyPackage} = pageContext
+    const {currentPage, getPage, roleOnPage, findRole, getPackage, currentPackage, packagePriceChange } = pageContext
     const {loadUser, isAuthenticated} = authContext
     const {handle, id} = useParams()
-    const history = useHistory()
     const role = roleOnPage
     // getPackage(handle, id)
     const [pack, setPack] = useState({
@@ -25,6 +24,7 @@ const PackageShow = () => {
         if(!currentPage){getPage(handle)}
         if(!roleOnPage){findRole(handle)}
         if(!currentPackage){getPackage(handle, id)}
+        // eslint-disable-next-line
     }, [isAuthenticated, currentPage ])
     if(!currentPage || !currentPackage){
         return null
@@ -38,7 +38,7 @@ const PackageShow = () => {
         });
     }
     const updateIfPermission = () => {
-        if(role =='Owner' || role == 'Trainer'){
+        if(role === 'Owner' || role === 'Trainer'){
             return(
                 <>
                     <button type="button" id="formButton" onClick={onPriceUpdateClick}>Edit Price</button>
@@ -58,7 +58,7 @@ const PackageShow = () => {
     
     const onEditPriceSubmit = async(e) => {
         e.preventDefault()
-        let body = new FormData
+        let body = new FormData()
         body.append('price', price)
         body.append('id', id)
         packagePriceChange(body)
@@ -73,7 +73,7 @@ const PackageShow = () => {
     //     }/>
     // }
     const purchasePackageButton = () =>{
-        if(role=='Owner' || role=='Visitor'){
+        if(role==='Owner' || role==='Visitor'){
             return(
             <Link to={{ 
                 pathname:'/checkout',

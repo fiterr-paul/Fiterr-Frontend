@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import profileImgPaul from '../assets/media/paul-900x900.jpg';
+import { useParams } from 'react-router-dom';
 import PostContext from '../../context/post/postContext';
 import AuthContext from '../../context/auth/authContext';
 import ProfileContext from '../../context/profile/profileContext';

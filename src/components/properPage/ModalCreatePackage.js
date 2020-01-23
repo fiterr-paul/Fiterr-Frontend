@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import TextareaAutosize from 'react-autosize-textarea';
 import Modal from 'react-modal';
-import { useHistory } from 'react-router-dom'
 import PageContext from '../../context/page/pageContext'
 import AuthContext from '../../context/auth/authContext'
 import {useParams} from 'react-router'
@@ -14,7 +13,6 @@ const ModalCreatePackage = (props) => {
     const {currentPage, createPackage, getPage, roleOnPage, findRole} = pageContext
     const {loadUser, isAuthenticated} = authContext
     const {handle} = useParams()
-    const history = useHistory()
     useEffect(() => {
       if(!isAuthenticated){ loadUser() } 
       if(!currentPage){getPage(handle)}
@@ -23,6 +21,7 @@ const ModalCreatePackage = (props) => {
       //     getPage(handle) 
       //     findRole(handle)
       // }
+      // eslint-disable-next-line
     }, [isAuthenticated, currentPage ])
 
     const [thisPackage, setPackage] = useState({
@@ -32,13 +31,13 @@ const ModalCreatePackage = (props) => {
       numberOfSessions: '',
       price: ''
   })
-  const {pageID, title, description, numberOfSessions, price} = thisPackage
+  const {title, description, numberOfSessions, price} = thisPackage
   const onChange = (e) => {
       setPackage({...thisPackage, [e.target.name]: e.target.value})
   }
   const onSubmit = async(e)=>{
       e.preventDefault()
-      let body = new FormData
+      let body = new FormData()
       body.append('pageID', currentPage._id)
       body.append('title', title)
       body.append('description', description)

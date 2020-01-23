@@ -18,6 +18,7 @@ const Profile = () => {
     useEffect(() => {
         if(!isAuthenticated){ loadUser() }
         else if(isAuthenticated && !profile){ getMyProfile() }
+        // eslint-disable-next-line
     }, [isAuthenticated])
     
     if(!isAuthenticated || !profile){

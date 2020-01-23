@@ -1,7 +1,5 @@
 import React, { useContext, useState, Fragment } from 'react';
 
-import { findIsFollowing } from '../../utils/Utils';
-
 import ProfileContext from '../../context/profile/profileContext';
 
 const Follow = ({ userId }) => {

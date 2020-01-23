@@ -1,14 +1,11 @@
 import React, {useState, useContext, useEffect} from 'react'
-import AuthContext from '../../context/auth/authContext'
 import ProfileContext from '../../context/profile/profileContext'
 import PageContext from '../../context/page/pageContext'
 
 const SessionCreate = (props) => {
-    const authContext = useContext(AuthContext)
     const profileContext = useContext(ProfileContext)
     const pageContext = useContext(PageContext)
-    const {isAuthenticated, user, loadUser} = authContext
-    const {profile, getMyProfile, populateServices, services, sessionCreate} = profileContext
+    const {sessionCreate} = profileContext
     const {trainers, getTrainers} = pageContext
 
     const {service} = props
@@ -26,14 +23,15 @@ const SessionCreate = (props) => {
 
     useEffect(() => {
         if(!trainers){ getTrainers(pageID) } 
-
+        
+        // eslint-disable-next-line
     }, [trainers])
     if(!trainers){return(null)}
     
     // const showHideClassName = show ? "modal display-block" : "modal display-none";
 
 
-    const {time, date, location, trainer, serviceID} = session
+    const {time, date, location, trainer} = session
 
     
     const onChange = (e) => {
@@ -43,7 +41,7 @@ const SessionCreate = (props) => {
 
     const onSubmit = async(e) => {
         e.preventDefault()
-        let body = new FormData
+        let body = new FormData()
         body.append('time', time)
         body.append('date', date)
         body.append('location', location)

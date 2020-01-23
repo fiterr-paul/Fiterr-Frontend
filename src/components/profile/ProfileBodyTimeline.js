@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 
 // newPost and Posts needs to come from the posts folder
 import NewPost from '../posts/NewPost';
@@ -6,7 +6,6 @@ import Posts from '../posts/Posts';
 
 import Spinner from '../layout/Spinner';
 
-import { useParams } from 'react-router-dom';
 import PostContext from '../../context/post/postContext';
 
 
@@ -25,6 +24,7 @@ const ProfileBodyTimeline = ({ profile }) => {
       console.log('unmounting of the PROFILE BODY TIMELINE component')
       clearPostState();
     }
+    // eslint-disable-next-line
   }, [])
 
   if(!posts) {

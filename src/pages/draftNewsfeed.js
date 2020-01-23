@@ -1,14 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { withRouter } from 'react-router';
-import { Link, useHistory } from 'react-router-dom';
-import AuthContext from '../context/auth/authContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './assets/scss/index.scss';
 import StickyBox from "react-sticky-box";
 import TextareaAutosize from 'react-autosize-textarea';
 
 import profileImgPaul from '../components/assets/media/paul-900x900.jpg';
 import nyePaul from '../components/assets/media/nye.jpg';
-import coverImage from '../components/assets/media/sports-bike.jpg';
 import profileImgFatBastard from '../components/assets/media/fatbastard-185x185.jpg';
 import pageImg1 from '../components/assets/media/logo-paul_meier_fitness-1080x1080.png';
 import pageImg2 from '../components/assets/media/logo-livefit_livelean-640x640.png';

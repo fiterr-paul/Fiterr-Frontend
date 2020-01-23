@@ -1,6 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react'
 import AuthContext from '../../context/auth/authContext'
-import request from '../../utils/axios-config'
 import { useHistory } from 'react-router-dom'
 import PageContext from '../../context/page/pageContext'
 
@@ -17,6 +16,7 @@ const PageCreate = () => {
         if(!isAuthenticated){
             loadUser()
         }
+        // eslint-disable-next-line
     }, [isAuthenticated])
     
     const [page, setPage] = useState({
@@ -27,11 +27,11 @@ const PageCreate = () => {
         image: null
     })
 
-    const {pageTitle, pageAbout, pageOwner, pageHandle, image} = page
+    const {pageTitle, pageAbout, pageHandle, image} = page
 
     const onSubmit = async(e) => {
         e.preventDefault()
-        let body = new FormData
+        let body = new FormData()
         body.append('pageOwner', user._id)
         body.append('pageHandle', pageHandle)
         body.append('pageTitle', pageTitle)

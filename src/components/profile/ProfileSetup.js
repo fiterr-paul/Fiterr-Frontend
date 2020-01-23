@@ -1,13 +1,10 @@
-import React, {useState, useContext, useEffect } from 'react'
+import React, {useState, useContext } from 'react'
 import ProfileContext from '../../context/profile/profileContext'
-import AuthContext from '../../context/auth/authContext'
 
 const ProfileSetup = (props) => {
     const profileContext = useContext(ProfileContext);
-    const authContext = useContext(AuthContext);
 
-    const { user } = authContext;
-    const { makeProfile, getProfile, profileComplete } = profileContext;
+    const { makeProfile } = profileContext;
 
     // useEffect(() => {
     //     if(profileComplete){

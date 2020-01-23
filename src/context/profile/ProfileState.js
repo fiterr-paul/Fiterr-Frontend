@@ -1,7 +1,14 @@
 import React, {useReducer, useContext} from 'react';
 import ProfileContext from './profileContext'
 import profileReducer from './profileReducer'
-import { SET_PROFILE, CLEAR_PROFILE, SET_OTHER_PROFILE, FETCHING_PROFILE, SET_SERVICES, FOLLOW_USER, UNFOLLOW_USER } from '../types'
+import { 
+    SET_PROFILE, 
+    CLEAR_PROFILE, 
+    SET_OTHER_PROFILE, 
+    SET_SERVICES, 
+    FOLLOW_USER, 
+    UNFOLLOW_USER 
+} from '../types'
 
 import request from '../../utils/axios-config'
 
@@ -50,12 +57,9 @@ const ProfileState = props => {
     }
 
     const getOtherProfile = async (username) => {
-        // dispatch({
-        //     type: FETCHING_PROFILE
-        // })
 
         const res = await request.get(`/api/profiles/other-profile/${username}`)
-        // console.log('other profile', res.data);
+
         dispatch({
             type: SET_OTHER_PROFILE,
             payload: res.data
@@ -70,7 +74,6 @@ const ProfileState = props => {
         })
     }
 
-    // what is the id that is coming here?
     const follow = async(id) => {
         const res = await request.get(`/api/profiles/follow/${id}`);    // should get back the new following array
 

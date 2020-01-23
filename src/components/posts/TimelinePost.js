@@ -1,17 +1,14 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
-import TextareaAutosize from 'react-autosize-textarea';
 
 import PostComment from './PostComment';
 import NewComment from './NewComment';
 
-import profileImgPaul from '../assets/media/paul-900x900.jpg';
 import stockIMG from '../assets/media/stockIMG.jpg';
 
 
 // contexts
-import AuthContext from '../../context/auth/authContext';
 import ProfileContext from '../../context/profile/profileContext';
 import PostContext from '../../context/post/postContext';
 
@@ -43,10 +40,7 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes, postOwnerUs
       }
     }
 
-    const clickclick = () => {
-      console.log('been clicked');
-    }
-
+    // eslint-disable-next-line
     const postOptionsDropdownHandler = (e) => {
       const element = document.getElementById("post-options-dropdown");
       if (element.style.display === "none") {
@@ -56,6 +50,7 @@ const TimelinePost = ({ post: { _id, content, date, comments, likes, postOwnerUs
       }
     };
   
+    // eslint-disable-next-line
     const postOptionsDropdownRemove = (e) => {
       const menu = e.target.parentNode.childNodes[1]
       menu.style.display = "none"

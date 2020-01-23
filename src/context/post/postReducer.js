@@ -1,5 +1,4 @@
 import { 
-    FIND_FOLLOWING_POSTS, 
     GET_NEWSFEED,
     REMOVE_POST, 
     CLEAR_POST_STATE, 
